@@ -22,7 +22,7 @@ namespace XedoFramework.TestObjects.Controls
 
         public static class Locators
         {
-            public static readonly By Container = By.XPath("//div[@class='navigation-position']");
+            public static readonly By Container = By.XPath("//div[contains(@class, 'header-container')]");
             public static readonly By OpenLoginPanelButton = By.XPath("//span[contains(text(), 'Sign In')]");
         }
 

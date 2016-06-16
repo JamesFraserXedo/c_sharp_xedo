@@ -5,6 +5,7 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using System;
 using static XedoFramework.SupportTools.Utils;
+using System.Configuration;
 
 namespace XedoFramework.Core.Utilities
 {
@@ -68,6 +69,7 @@ namespace XedoFramework.Core.Utilities
             switch (browserToUse)
             {
                 case BrowserType.FIREFOX:
+                    Console.WriteLine(TestsConfig.FirefoxPath);
                     FirefoxBinary binary = new FirefoxBinary(TestsConfig.FirefoxPath);
                     FirefoxProfile profile = new FirefoxProfile();
                     return new FirefoxDriver(binary, profile);
