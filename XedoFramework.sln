@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumTests", "SeleniumTests\SeleniumTests.csproj", "{5410F5BC-9C8E-421D-8EB6-74D12A8A3157}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XedoFramework", "XedoFramework\XedoFramework.csproj", "{837E0799-0BBB-4AC9-8BB3-0ED51B257660}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5410F5BC-9C8E-421D-8EB6-74D12A8A3157}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5410F5BC-9C8E-421D-8EB6-74D12A8A3157}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5410F5BC-9C8E-421D-8EB6-74D12A8A3157}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5410F5BC-9C8E-421D-8EB6-74D12A8A3157}.Release|Any CPU.Build.0 = Release|Any CPU
+		{837E0799-0BBB-4AC9-8BB3-0ED51B257660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{837E0799-0BBB-4AC9-8BB3-0ED51B257660}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{837E0799-0BBB-4AC9-8BB3-0ED51B257660}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{837E0799-0BBB-4AC9-8BB3-0ED51B257660}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,958 @@
+{
+  "locked": false,
+  "version": 2,
+  "targets": {
+    ".NETFramework,Version=v4.5.1": {
+      "Microsoft.CSharp/4.0.1-beta-23516": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "NUnit/3.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/nunit.framework.dll": {}
+        }
+      },
+      "Selenium.Support/2.53.0": {
+        "type": "package",
+        "dependencies": {
+          "Selenium.WebDriver": "2.53.0"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing"
+        ],
+        "compile": {
+          "lib/net40/WebDriver.Support.dll": {}
+        },
+        "runtime": {
+          "lib/net40/WebDriver.Support.dll": {}
+        }
+      },
+      "Selenium.WebDriver/2.53.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing"
+        ],
+        "compile": {
+          "lib/net40/WebDriver.dll": {}
+        },
+        "runtime": {
+          "lib/net40/WebDriver.dll": {}
+        }
+      },
+      "Selenium.WebDriverBackedSelenium/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1",
+        "dependencies": {
+          "ThoughtWorks.Selenium.Core": "1.0.0",
+          "WebDriver": "1.0.0"
+        }
+      },
+      "SpecFlow/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/TechTalk.SpecFlow.dll": {}
+        },
+        "runtime": {
+          "lib/net45/TechTalk.SpecFlow.dll": {}
+        }
+      },
+      "SpecRun.Runner/1.4.0": {
+        "type": "package"
+      },
+      "SpecRun.SpecFlow/1.4.0": {
+        "type": "package",
+        "dependencies": {
+          "SpecFlow": "2.1.0",
+          "SpecRun.Runner": "1.4.0"
+        },
+        "compile": {
+          "lib/net45/SpecRun.SpecFlowPlugin.dll": {},
+          "lib/net45/TechTalk.SpecRun.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SpecRun.SpecFlowPlugin.dll": {},
+          "lib/net45/TechTalk.SpecRun.dll": {}
+        }
+      },
+      "System.Collections/4.0.11-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.Linq/4.0.1-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.Runtime/4.0.21-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.Threading/4.0.11-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "ThoughtWorks.Selenium.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1"
+      },
+      "WebDriver/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1"
+      }
+    },
+    ".NETFramework,Version=v4.5.1/win7-x86": {
+      "Microsoft.CSharp/4.0.1-beta-23516": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "NUnit/3.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/nunit.framework.dll": {}
+        }
+      },
+      "runtime.win7.System.Threading/4.0.11-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/dotnet/_._": {}
+        }
+      },
+      "Selenium.Support/2.53.0": {
+        "type": "package",
+        "dependencies": {
+          "Selenium.WebDriver": "2.53.0"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing"
+        ],
+        "compile": {
+          "lib/net40/WebDriver.Support.dll": {}
+        },
+        "runtime": {
+          "lib/net40/WebDriver.Support.dll": {}
+        }
+      },
+      "Selenium.WebDriver/2.53.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing"
+        ],
+        "compile": {
+          "lib/net40/WebDriver.dll": {}
+        },
+        "runtime": {
+          "lib/net40/WebDriver.dll": {}
+        }
+      },
+      "Selenium.WebDriverBackedSelenium/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1",
+        "dependencies": {
+          "ThoughtWorks.Selenium.Core": "1.0.0",
+          "WebDriver": "1.0.0"
+        }
+      },
+      "SpecFlow/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/TechTalk.SpecFlow.dll": {}
+        },
+        "runtime": {
+          "lib/net45/TechTalk.SpecFlow.dll": {}
+        }
+      },
+      "SpecRun.Runner/1.4.0": {
+        "type": "package"
+      },
+      "SpecRun.SpecFlow/1.4.0": {
+        "type": "package",
+        "dependencies": {
+          "SpecFlow": "2.1.0",
+          "SpecRun.Runner": "1.4.0"
+        },
+        "compile": {
+          "lib/net45/SpecRun.SpecFlowPlugin.dll": {},
+          "lib/net45/TechTalk.SpecRun.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SpecRun.SpecFlowPlugin.dll": {},
+          "lib/net45/TechTalk.SpecRun.dll": {}
+        }
+      },
+      "System.Collections/4.0.11-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.Linq/4.0.1-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.Runtime/4.0.21-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.Threading/4.0.11-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "ThoughtWorks.Selenium.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1"
+      },
+      "WebDriver/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1"
+      }
+    },
+    ".NETFramework,Version=v4.5.1/win7-x64": {
+      "Microsoft.CSharp/4.0.1-beta-23516": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "NUnit/3.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/nunit.framework.dll": {}
+        }
+      },
+      "runtime.win7.System.Threading/4.0.11-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/dotnet/_._": {}
+        }
+      },
+      "Selenium.Support/2.53.0": {
+        "type": "package",
+        "dependencies": {
+          "Selenium.WebDriver": "2.53.0"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing"
+        ],
+        "compile": {
+          "lib/net40/WebDriver.Support.dll": {}
+        },
+        "runtime": {
+          "lib/net40/WebDriver.Support.dll": {}
+        }
+      },
+      "Selenium.WebDriver/2.53.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing"
+        ],
+        "compile": {
+          "lib/net40/WebDriver.dll": {}
+        },
+        "runtime": {
+          "lib/net40/WebDriver.dll": {}
+        }
+      },
+      "Selenium.WebDriverBackedSelenium/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1",
+        "dependencies": {
+          "ThoughtWorks.Selenium.Core": "1.0.0",
+          "WebDriver": "1.0.0"
+        }
+      },
+      "SpecFlow/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/TechTalk.SpecFlow.dll": {}
+        },
+        "runtime": {
+          "lib/net45/TechTalk.SpecFlow.dll": {}
+        }
+      },
+      "SpecRun.Runner/1.4.0": {
+        "type": "package"
+      },
+      "SpecRun.SpecFlow/1.4.0": {
+        "type": "package",
+        "dependencies": {
+          "SpecFlow": "2.1.0",
+          "SpecRun.Runner": "1.4.0"
+        },
+        "compile": {
+          "lib/net45/SpecRun.SpecFlowPlugin.dll": {},
+          "lib/net45/TechTalk.SpecRun.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SpecRun.SpecFlowPlugin.dll": {},
+          "lib/net45/TechTalk.SpecRun.dll": {}
+        }
+      },
+      "System.Collections/4.0.11-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.Linq/4.0.1-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.Runtime/4.0.21-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.Threading/4.0.11-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "ThoughtWorks.Selenium.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1"
+      },
+      "WebDriver/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1"
+      }
+    }
+  },
+  "libraries": {
+    "Selenium.WebDriverBackedSelenium/1.0.0": {
+      "type": "project",
+      "path": "../../wrap/Selenium.WebDriverBackedSelenium/project.json"
+    },
+    "ThoughtWorks.Selenium.Core/1.0.0": {
+      "type": "project",
+      "path": "../../wrap/ThoughtWorks.Selenium.Core/project.json"
+    },
+    "WebDriver/1.0.0": {
+      "type": "project",
+      "path": "../../wrap/WebDriver/project.json"
+    },
+    "Microsoft.CSharp/4.0.1-beta-23516": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "fb+HO3nIjHao9lqsVVM0ne3GM/+1EfRQUoM58cxEOt+5biy/8DQ1nxIahZ9VaJKw7Wgb6XhRhsdwg8DkePEOJA==",
+      "files": [
+        "lib/dotnet5.4/Microsoft.CSharp.dll",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/Microsoft.CSharp.dll",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "Microsoft.CSharp.4.0.1-beta-23516.nupkg",
+        "Microsoft.CSharp.4.0.1-beta-23516.nupkg.sha512",
+        "Microsoft.CSharp.nuspec",
+        "ref/dotnet5.1/de/Microsoft.CSharp.xml",
+        "ref/dotnet5.1/es/Microsoft.CSharp.xml",
+        "ref/dotnet5.1/fr/Microsoft.CSharp.xml",
+        "ref/dotnet5.1/it/Microsoft.CSharp.xml",
+        "ref/dotnet5.1/ja/Microsoft.CSharp.xml",
+        "ref/dotnet5.1/ko/Microsoft.CSharp.xml",
+        "ref/dotnet5.1/Microsoft.CSharp.dll",
+        "ref/dotnet5.1/Microsoft.CSharp.xml",
+        "ref/dotnet5.1/ru/Microsoft.CSharp.xml",
+        "ref/dotnet5.1/zh-hans/Microsoft.CSharp.xml",
+        "ref/dotnet5.1/zh-hant/Microsoft.CSharp.xml",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/de/Microsoft.CSharp.xml",
+        "ref/netcore50/es/Microsoft.CSharp.xml",
+        "ref/netcore50/fr/Microsoft.CSharp.xml",
+        "ref/netcore50/it/Microsoft.CSharp.xml",
+        "ref/netcore50/ja/Microsoft.CSharp.xml",
+        "ref/netcore50/ko/Microsoft.CSharp.xml",
+        "ref/netcore50/Microsoft.CSharp.dll",
+        "ref/netcore50/Microsoft.CSharp.xml",
+        "ref/netcore50/ru/Microsoft.CSharp.xml",
+        "ref/netcore50/zh-hans/Microsoft.CSharp.xml",
+        "ref/netcore50/zh-hant/Microsoft.CSharp.xml",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._"
+      ]
+    },
+    "NUnit/3.2.1": {
+      "type": "package",
+      "sha512": "tBlwEclR6C6+rNSOA+vbwR0SkfLJPgF5Fm0YYNtpgfzkXhZT/rpqAWmo2Y4wn4R6ueRrUE793fR0xCJlbyAKOQ==",
+      "files": [
+        "CHANGES.txt",
+        "lib/dotnet/nunit.framework.dll",
+        "lib/dotnet/nunit.framework.xml",
+        "lib/net20/nunit.framework.dll",
+        "lib/net20/nunit.framework.xml",
+        "lib/net35/nunit.framework.dll",
+        "lib/net35/nunit.framework.xml",
+        "lib/net40/nunit.framework.dll",
+        "lib/net40/nunit.framework.xml",
+        "lib/net45/nunit.framework.dll",
+        "lib/net45/nunit.framework.xml",
+        "lib/portable-net45+win8+wp8+wpa81+Xamarin.Mac+MonoAndroid10+MonoTouch10+Xamarin.iOS10/nunit.framework.dll",
+        "lib/portable-net45+win8+wp8+wpa81+Xamarin.Mac+MonoAndroid10+MonoTouch10+Xamarin.iOS10/nunit.framework.xml",
+        "LICENSE.txt",
+        "NOTICES.txt",
+        "NUnit.3.2.1.nupkg",
+        "NUnit.3.2.1.nupkg.sha512",
+        "NUnit.nuspec"
+      ]
+    },
+    "runtime.win7.System.Threading/4.0.11-beta-23516": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "paSNXQ5Y6Exu3OpekooyMJFQ8mitn69fGO5Br3XLIfQ1KiMYVmRf+o6dMprC0SpPROVCiCxdUaJx5XkDEVL3uA==",
+      "files": [
+        "ref/dotnet/_._",
+        "runtime.win7.System.Threading.4.0.11-beta-23516.nupkg",
+        "runtime.win7.System.Threading.4.0.11-beta-23516.nupkg.sha512",
+        "runtime.win7.System.Threading.nuspec",
+        "runtimes/win7/lib/DNXCore50/System.Threading.dll",
+        "runtimes/win7/lib/netcore50/System.Threading.dll",
+        "runtimes/win8-aot/lib/netcore50/System.Threading.dll"
+      ]
+    },
+    "Selenium.Support/2.53.0": {
+      "type": "package",
+      "sha512": "grzbNA1RME3/HzVNt635iS92HSCZCX+074yQ2Ei92NAxucu+NvHgBBbATRNz2zCOc7rUIst/Hot0UqT9oUbc3g==",
+      "files": [
+        "lib/net35/WebDriver.Support.dll",
+        "lib/net35/WebDriver.Support.xml",
+        "lib/net40/WebDriver.Support.dll",
+        "lib/net40/WebDriver.Support.xml",
+        "Selenium.Support.2.53.0.nupkg",
+        "Selenium.Support.2.53.0.nupkg.sha512",
+        "Selenium.Support.nuspec"
+      ]
+    },
+    "Selenium.WebDriver/2.53.0": {
+      "type": "package",
+      "sha512": "V/j3ZucpSByuL8FgQuSUnd+lUoVpBWK9nP864o9fyORh44N3am2Osv0WzEGQ2GnXhBtGxPbwuQMJSBLIg+1eFg==",
+      "files": [
+        "lib/net35/WebDriver.dll",
+        "lib/net35/WebDriver.xml",
+        "lib/net40/WebDriver.dll",
+        "lib/net40/WebDriver.xml",
+        "Selenium.WebDriver.2.53.0.nupkg",
+        "Selenium.WebDriver.2.53.0.nupkg.sha512",
+        "Selenium.WebDriver.nuspec"
+      ]
+    },
+    "SpecFlow/2.1.0": {
+      "type": "package",
+      "sha512": "lc6y3/Zu8CSU1EKve7V5LAvYt4TeLRU1H5bS+oO+cHTqx9elDlY4dxsnmaHeSSOOqJnKmlw0YtCu1TLu5lnrjA==",
+      "files": [
+        "changelog.txt",
+        "content/App.config.transform",
+        "lib/net45/TechTalk.SpecFlow.dll",
+        "LICENSE.txt",
+        "SpecFlow.2.1.0.nupkg",
+        "SpecFlow.2.1.0.nupkg.sha512",
+        "SpecFlow.nuspec",
+        "tools/app.config",
+        "tools/Gherkin.dll",
+        "tools/Microsoft.Build.Utilities.v3.5.dll",
+        "tools/plugincompability.config",
+        "tools/specflow.exe",
+        "tools/specflow.exe.config",
+        "tools/TechTalk.SpecFlow.dll",
+        "tools/TechTalk.SpecFlow.Generator.dll",
+        "tools/TechTalk.SpecFlow.Parser.dll",
+        "tools/TechTalk.SpecFlow.Reporting.dll",
+        "tools/TechTalk.SpecFlow.targets",
+        "tools/TechTalk.SpecFlow.tasks",
+        "tools/TechTalk.SpecFlow.Utils.dll"
+      ]
+    },
+    "SpecRun.Runner/1.4.0": {
+      "type": "package",
+      "sha512": "hCoVOc9mdkUieV324LL872akWEWqUdsIvm5fqtAndu3Zzq6x+S4gFf8TpBJJ9V52YzObw3Ifv0am3qvhpj4YpQ==",
+      "files": [
+        "changelog.txt",
+        "docs/01_BasicExecution.feature",
+        "docs/02_ConsoleRunner.feature",
+        "docs/03_Reports.feature",
+        "docs/04_PendingInconclusiveAndIgnoredTests.feature",
+        "docs/05_CaptureTestStepResults.feature",
+        "docs/Agents/OutProcExecution.feature",
+        "docs/DeploymentTransformations/ConfigTransformation.feature",
+        "docs/DeploymentTransformations/CopyFolderTransformation.feature",
+        "docs/DeploymentTransformations/DeploymentTransformations.feature",
+        "docs/DeploymentTransformations/RelocateConfigurationFile.feature",
+        "docs/DeploymentTransformations/RelocateTransformation.feature",
+        "docs/ExecutionFeatures/ApartmentState.feature",
+        "docs/ExecutionFeatures/CancelTestRun.feature",
+        "docs/ExecutionFeatures/InAppDomainParallelExecution.feature",
+        "docs/ExecutionFeatures/ParallelTestExecution.feature",
+        "docs/ExecutionFeatures/RetryTests.feature",
+        "docs/ExecutionFeatures/StopAfterANumberOfFailures.feature",
+        "docs/ExecutionFeatures/Targets.feature",
+        "docs/Filtering/00_Filtering.feature",
+        "docs/Filtering/01_FilterExpressions.feature",
+        "docs/Filtering/02_TagFiltering.feature",
+        "docs/Filtering/03_TestPathFiltering.feature",
+        "docs/GherkinSupport/HooksSupport.feature",
+        "docs/GherkinSupport/ScenarioOutlineSupport.feature",
+        "docs/GherkinSupport/Scheduling/AdaptiveTestScheduling.feature",
+        "docs/GherkinSupport/Scheduling/RandomTestScheduling.feature",
+        "docs/Loging/BasicLoging.feature",
+        "docs/NUnitSupport.txt",
+        "docs/ParallelizationPerformance.feature",
+        "docs/readme.txt",
+        "docs/Sample.runsettings",
+        "docs/Server/PublishResults.feature",
+        "docs/Server/WorkingOffline.feature",
+        "docs/SpecRun.speclog",
+        "docs/SpecRun_Docs.html",
+        "readme.txt",
+        "SpecRun.Runner.1.4.0.nupkg",
+        "SpecRun.Runner.1.4.0.nupkg.sha512",
+        "SpecRun.Runner.nuspec",
+        "templates/ReportTemplate.cshtml",
+        "tools/Microsoft.Data.Services.Client.dll",
+        "tools/Microsoft.Web.Publishing.Tasks.dll",
+        "tools/NConsoler.dll",
+        "tools/Newtonsoft.Json.dll",
+        "tools/RazorEngine.dll",
+        "tools/RestSharp.dll",
+        "tools/server/Castle.Core.dll",
+        "tools/server/Castle.Windsor.dll",
+        "tools/server/EntityFramework.dll",
+        "tools/server/Microsoft.ApplicationServer.Common.dll",
+        "tools/server/Microsoft.ApplicationServer.Http.dll",
+        "tools/server/Microsoft.ApplicationServer.HttpEnhancements.dll",
+        "tools/server/Microsoft.ApplicationServer.Serialization.dll",
+        "tools/server/Microsoft.ApplicationServer.ServiceModel.dll",
+        "tools/server/Microsoft.Net.Http.dll",
+        "tools/server/Microsoft.QueryComposition.dll",
+        "tools/server/Microsoft.Runtime.Serialization.Json.dll",
+        "tools/server/Microsoft.ServiceModel.Web.jQuery.dll",
+        "tools/server/NConsoler.dll",
+        "tools/server/Ncqrs.CommandService.Contracts.dll",
+        "tools/server/Ncqrs.CommandService.Contracts.pdb",
+        "tools/server/Ncqrs.CommandService.dll",
+        "tools/server/Ncqrs.CommandService.pdb",
+        "tools/server/Ncqrs.Config.Windsor.dll",
+        "tools/server/Ncqrs.Config.Windsor.pdb",
+        "tools/server/Ncqrs.dll",
+        "tools/server/Ncqrs.EventBus.dll",
+        "tools/server/Ncqrs.EventBus.pdb",
+        "tools/server/Ncqrs.Eventing.Sourcing.Snapshotting.DynamicSnapshot.dll",
+        "tools/server/Ncqrs.Eventing.Sourcing.Snapshotting.DynamicSnapshot.pdb",
+        "tools/server/Ncqrs.pdb",
+        "tools/server/Newtonsoft.Json.dll",
+        "tools/server/Newtonsoft.Json.pdb",
+        "tools/server/NLog.dll",
+        "tools/server/SpecRun.Server.exe",
+        "tools/server/SpecRun.Server.exe.config",
+        "tools/server/SpecRun.Server.pdb",
+        "tools/server/TechTalk.SpecRun.Server.Commands.dll",
+        "tools/server/TechTalk.SpecRun.Server.Commands.pdb",
+        "tools/server/TechTalk.SpecRun.Server.Model.dll",
+        "tools/server/TechTalk.SpecRun.Server.Model.pdb",
+        "tools/server/TechTalk.SpecRun.Server.Service.exe",
+        "tools/server/TechTalk.SpecRun.Server.Service.exe.config",
+        "tools/server/TechTalk.SpecRun.Server.Service.pdb",
+        "tools/SpecRun.exe",
+        "tools/SpecRun.exe.config",
+        "tools/SpecRun.pdb",
+        "tools/SpecRunTestProfile.xsd",
+        "tools/System.Web.Razor.dll",
+        "tools/TechTalk.SpecRun.dll",
+        "tools/TechTalk.SpecRun.Framework.dll",
+        "tools/TechTalk.SpecRun.Framework.Executor.anycpu.clr20.exe",
+        "tools/TechTalk.SpecRun.Framework.Executor.anycpu.clr20.exe.config",
+        "tools/TechTalk.SpecRun.Framework.Executor.anycpu.clr20.pdb",
+        "tools/TechTalk.SpecRun.Framework.Executor.anycpu.clr40.exe",
+        "tools/TechTalk.SpecRun.Framework.Executor.anycpu.clr40.exe.config",
+        "tools/TechTalk.SpecRun.Framework.Executor.anycpu.clr40.pdb",
+        "tools/TechTalk.SpecRun.Framework.Executor.dll",
+        "tools/TechTalk.SpecRun.Framework.Executor.pdb",
+        "tools/TechTalk.SpecRun.Framework.Executor.x86.clr20.exe",
+        "tools/TechTalk.SpecRun.Framework.Executor.x86.clr20.exe.config",
+        "tools/TechTalk.SpecRun.Framework.Executor.x86.clr20.pdb",
+        "tools/TechTalk.SpecRun.Framework.Executor.x86.clr40.exe",
+        "tools/TechTalk.SpecRun.Framework.Executor.x86.clr40.exe.config",
+        "tools/TechTalk.SpecRun.Framework.Executor.x86.clr40.pdb",
+        "tools/TechTalk.SpecRun.Framework.Interfaces.dll",
+        "tools/TechTalk.SpecRun.Framework.Interfaces.pdb",
+        "tools/TechTalk.SpecRun.Framework.pdb",
+        "tools/TechTalk.SpecRun.Framework.Utils.dll",
+        "tools/TechTalk.SpecRun.Framework.Utils.pdb",
+        "tools/TechTalk.SpecRun.pdb",
+        "tools/TechTalk.SpecRun.Server.CommandClient.dll",
+        "tools/TechTalk.SpecRun.Server.CommandClient.pdb",
+        "tools/TechTalk.SpecRun.Server.Commands.dll",
+        "tools/TechTalk.SpecRun.Server.Commands.pdb",
+        "tools/TechTalk.SpecRun.Server.ReadModelClient.dll",
+        "tools/TechTalk.SpecRun.Server.ReadModelClient.pdb",
+        "tools/TechTalk.SpecRun.VisualStudio.TestAdapter.dll",
+        "tools/TechTalk.SpecRun.VisualStudio.TestAdapter.pdb"
+      ]
+    },
+    "SpecRun.SpecFlow/1.4.0": {
+      "type": "package",
+      "sha512": "HiT1aC7BAB5lyRnFS+peEeqObucY/BQlV0l5M4YYr+BQcqxuh5G44fbNg6ntGioiB0TZfAZTrhgU0XCxt5ZNug==",
+      "files": [
+        "changelog.txt",
+        "content/App.config.transform",
+        "content/Default.srprofile.pp",
+        "content/runtests.cmd.pp",
+        "content/SpecRunTestProfile.xsd",
+        "lib/net45/SpecRun.SpecFlowPlugin.dll",
+        "lib/net45/SpecRun.SpecFlowPlugin.pdb",
+        "lib/net45/TechTalk.SpecRun.dll",
+        "readme.txt",
+        "SpecRun.SpecFlow.1.4.0.nupkg",
+        "SpecRun.SpecFlow.1.4.0.nupkg.sha512",
+        "SpecRun.SpecFlow.nuspec",
+        "tools/install.ps1"
+      ]
+    },
+    "System.Collections/4.0.11-beta-23516": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "TDca4OETV0kkXdpkyivMw1/EKKD1Sa/NVAjirw+fA0LZ37jLDYX+KhPPUQxgkvhCe/SVvxETD5Viiudza2k7OQ==",
+      "files": [
+        "lib/DNXCore50/System.Collections.dll",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/System.Collections.dll",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "ref/dotnet5.1/de/System.Collections.xml",
+        "ref/dotnet5.1/es/System.Collections.xml",
+        "ref/dotnet5.1/fr/System.Collections.xml",
+        "ref/dotnet5.1/it/System.Collections.xml",
+        "ref/dotnet5.1/ja/System.Collections.xml",
+        "ref/dotnet5.1/ko/System.Collections.xml",
+        "ref/dotnet5.1/ru/System.Collections.xml",
+        "ref/dotnet5.1/System.Collections.dll",
+        "ref/dotnet5.1/System.Collections.xml",
+        "ref/dotnet5.1/zh-hans/System.Collections.xml",
+        "ref/dotnet5.1/zh-hant/System.Collections.xml",
+        "ref/dotnet5.4/de/System.Collections.xml",
+        "ref/dotnet5.4/es/System.Collections.xml",
+        "ref/dotnet5.4/fr/System.Collections.xml",
+        "ref/dotnet5.4/it/System.Collections.xml",
+        "ref/dotnet5.4/ja/System.Collections.xml",
+        "ref/dotnet5.4/ko/System.Collections.xml",
+        "ref/dotnet5.4/ru/System.Collections.xml",
+        "ref/dotnet5.4/System.Collections.dll",
+        "ref/dotnet5.4/System.Collections.xml",
+        "ref/dotnet5.4/zh-hans/System.Collections.xml",
+        "ref/dotnet5.4/zh-hant/System.Collections.xml",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/de/System.Collections.xml",
+        "ref/netcore50/es/System.Collections.xml",
+        "ref/netcore50/fr/System.Collections.xml",
+        "ref/netcore50/it/System.Collections.xml",
+        "ref/netcore50/ja/System.Collections.xml",
+        "ref/netcore50/ko/System.Collections.xml",
+        "ref/netcore50/ru/System.Collections.xml",
+        "ref/netcore50/System.Collections.dll",
+        "ref/netcore50/System.Collections.xml",
+        "ref/netcore50/zh-hans/System.Collections.xml",
+        "ref/netcore50/zh-hant/System.Collections.xml",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "runtimes/win8-aot/lib/netcore50/System.Collections.dll",
+        "System.Collections.4.0.11-beta-23516.nupkg",
+        "System.Collections.4.0.11-beta-23516.nupkg.sha512",
+        "System.Collections.nuspec"
+      ]
+    },
+    "System.Linq/4.0.1-beta-23516": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "uNxm2RB+kMeiKnY26iPvOtJLzTzNaAF4A2qqyzev6j8x8w2Dr+gg7LF7BHCwC55N7OirhHrAWUb3C0n4oi9qYw==",
+      "files": [
+        "lib/dotnet5.4/System.Linq.dll",
+        "lib/net45/_._",
+        "lib/netcore50/System.Linq.dll",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "ref/dotnet5.1/de/System.Linq.xml",
+        "ref/dotnet5.1/es/System.Linq.xml",
+        "ref/dotnet5.1/fr/System.Linq.xml",
+        "ref/dotnet5.1/it/System.Linq.xml",
+        "ref/dotnet5.1/ja/System.Linq.xml",
+        "ref/dotnet5.1/ko/System.Linq.xml",
+        "ref/dotnet5.1/ru/System.Linq.xml",
+        "ref/dotnet5.1/System.Linq.dll",
+        "ref/dotnet5.1/System.Linq.xml",
+        "ref/dotnet5.1/zh-hans/System.Linq.xml",
+        "ref/dotnet5.1/zh-hant/System.Linq.xml",
+        "ref/net45/_._",
+        "ref/netcore50/de/System.Linq.xml",
+        "ref/netcore50/es/System.Linq.xml",
+        "ref/netcore50/fr/System.Linq.xml",
+        "ref/netcore50/it/System.Linq.xml",
+        "ref/netcore50/ja/System.Linq.xml",
+        "ref/netcore50/ko/System.Linq.xml",
+        "ref/netcore50/ru/System.Linq.xml",
+        "ref/netcore50/System.Linq.dll",
+        "ref/netcore50/System.Linq.xml",
+        "ref/netcore50/zh-hans/System.Linq.xml",
+        "ref/netcore50/zh-hant/System.Linq.xml",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "System.Linq.4.0.1-beta-23516.nupkg",
+        "System.Linq.4.0.1-beta-23516.nupkg.sha512",
+        "System.Linq.nuspec"
+      ]
+    },
+    "System.Runtime/4.0.21-beta-23516": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "R174ctQjJnCIVxA2Yzp1v68wfLfPSROZWrbaSBcnEzHAQbOjprBQi37aWdr5y05Pq2J/O7h6SjTsYhVOLdiRYQ==",
+      "files": [
+        "lib/DNXCore50/System.Runtime.dll",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/System.Runtime.dll",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "ref/dotnet5.1/de/System.Runtime.xml",
+        "ref/dotnet5.1/es/System.Runtime.xml",
+        "ref/dotnet5.1/fr/System.Runtime.xml",
+        "ref/dotnet5.1/it/System.Runtime.xml",
+        "ref/dotnet5.1/ja/System.Runtime.xml",
+        "ref/dotnet5.1/ko/System.Runtime.xml",
+        "ref/dotnet5.1/ru/System.Runtime.xml",
+        "ref/dotnet5.1/System.Runtime.dll",
+        "ref/dotnet5.1/System.Runtime.xml",
+        "ref/dotnet5.1/zh-hans/System.Runtime.xml",
+        "ref/dotnet5.1/zh-hant/System.Runtime.xml",
+        "ref/dotnet5.3/de/System.Runtime.xml",
+        "ref/dotnet5.3/es/System.Runtime.xml",
+        "ref/dotnet5.3/fr/System.Runtime.xml",
+        "ref/dotnet5.3/it/System.Runtime.xml",
+        "ref/dotnet5.3/ja/System.Runtime.xml",
+        "ref/dotnet5.3/ko/System.Runtime.xml",
+        "ref/dotnet5.3/ru/System.Runtime.xml",
+        "ref/dotnet5.3/System.Runtime.dll",
+        "ref/dotnet5.3/System.Runtime.xml",
+        "ref/dotnet5.3/zh-hans/System.Runtime.xml",
+        "ref/dotnet5.3/zh-hant/System.Runtime.xml",
+        "ref/dotnet5.4/de/System.Runtime.xml",
+        "ref/dotnet5.4/es/System.Runtime.xml",
+        "ref/dotnet5.4/fr/System.Runtime.xml",
+        "ref/dotnet5.4/it/System.Runtime.xml",
+        "ref/dotnet5.4/ja/System.Runtime.xml",
+        "ref/dotnet5.4/ko/System.Runtime.xml",
+        "ref/dotnet5.4/ru/System.Runtime.xml",
+        "ref/dotnet5.4/System.Runtime.dll",
+        "ref/dotnet5.4/System.Runtime.xml",
+        "ref/dotnet5.4/zh-hans/System.Runtime.xml",
+        "ref/dotnet5.4/zh-hant/System.Runtime.xml",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/de/System.Runtime.xml",
+        "ref/netcore50/es/System.Runtime.xml",
+        "ref/netcore50/fr/System.Runtime.xml",
+        "ref/netcore50/it/System.Runtime.xml",
+        "ref/netcore50/ja/System.Runtime.xml",
+        "ref/netcore50/ko/System.Runtime.xml",
+        "ref/netcore50/ru/System.Runtime.xml",
+        "ref/netcore50/System.Runtime.dll",
+        "ref/netcore50/System.Runtime.xml",
+        "ref/netcore50/zh-hans/System.Runtime.xml",
+        "ref/netcore50/zh-hant/System.Runtime.xml",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "runtimes/win8-aot/lib/netcore50/System.Runtime.dll",
+        "System.Runtime.4.0.21-beta-23516.nupkg",
+        "System.Runtime.4.0.21-beta-23516.nupkg.sha512",
+        "System.Runtime.nuspec"
+      ]
+    },
+    "System.Threading/4.0.11-beta-23516": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "AiuvOzOo6CZpIIw3yGJZcs3IhiCZcy0P/ThubazmWExERHJZoOnD/jB+Bn2gxTAD0rc/ytrRdBur9PuX6DvvvA==",
+      "files": [
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "ref/dotnet5.1/de/System.Threading.xml",
+        "ref/dotnet5.1/es/System.Threading.xml",
+        "ref/dotnet5.1/fr/System.Threading.xml",
+        "ref/dotnet5.1/it/System.Threading.xml",
+        "ref/dotnet5.1/ja/System.Threading.xml",
+        "ref/dotnet5.1/ko/System.Threading.xml",
+        "ref/dotnet5.1/ru/System.Threading.xml",
+        "ref/dotnet5.1/System.Threading.dll",
+        "ref/dotnet5.1/System.Threading.xml",
+        "ref/dotnet5.1/zh-hans/System.Threading.xml",
+        "ref/dotnet5.1/zh-hant/System.Threading.xml",
+        "ref/dotnet5.4/de/System.Threading.xml",
+        "ref/dotnet5.4/es/System.Threading.xml",
+        "ref/dotnet5.4/fr/System.Threading.xml",
+        "ref/dotnet5.4/it/System.Threading.xml",
+        "ref/dotnet5.4/ja/System.Threading.xml",
+        "ref/dotnet5.4/ko/System.Threading.xml",
+        "ref/dotnet5.4/ru/System.Threading.xml",
+        "ref/dotnet5.4/System.Threading.dll",
+        "ref/dotnet5.4/System.Threading.xml",
+        "ref/dotnet5.4/zh-hans/System.Threading.xml",
+        "ref/dotnet5.4/zh-hant/System.Threading.xml",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/de/System.Threading.xml",
+        "ref/netcore50/es/System.Threading.xml",
+        "ref/netcore50/fr/System.Threading.xml",
+        "ref/netcore50/it/System.Threading.xml",
+        "ref/netcore50/ja/System.Threading.xml",
+        "ref/netcore50/ko/System.Threading.xml",
+        "ref/netcore50/ru/System.Threading.xml",
+        "ref/netcore50/System.Threading.dll",
+        "ref/netcore50/System.Threading.xml",
+        "ref/netcore50/zh-hans/System.Threading.xml",
+        "ref/netcore50/zh-hant/System.Threading.xml",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "runtime.json",
+        "System.Threading.4.0.11-beta-23516.nupkg",
+        "System.Threading.4.0.11-beta-23516.nupkg.sha512",
+        "System.Threading.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "NUnit >= 3.2.1",
+      "Selenium.Support >= 2.53.0",
+      "Selenium.WebDriver >= 2.53.0",
+      "SpecFlow >= 2.1.0",
+      "SpecRun.SpecFlow >= 1.4.0"
+    ],
+    ".NETFramework,Version=v4.5.1": [
+      "Microsoft.CSharp >= 4.0.1-beta-23516",
+      "Selenium.WebDriverBackedSelenium >= 1.0.0-*",
+      "System.Collections >= 4.0.11-beta-23516",
+      "System.Linq >= 4.0.1-beta-23516",
+      "System.Runtime >= 4.0.21-beta-23516",
+      "System.Threading >= 4.0.11-beta-23516"
+    ]
+  }
+}
