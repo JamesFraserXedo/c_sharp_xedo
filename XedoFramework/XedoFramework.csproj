@@ -87,7 +87,7 @@
     <Compile Include="Model\TestObjects\Controls\Common\Header\Header.cs" />
     <Compile Include="Model\TestObjects\Controls\Common\Header\NavigationBar.cs" />
     <Compile Include="Model\TestObjects\Controls\Common\LoginForm.cs" />
-    <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Filter\ColourFilter\ColourFilter.cs" />
+    <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Filter\Colour\ColourFilter.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Filter\ExpandableFilterBase.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Filter\FilterBase.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Filter\FilterPanel.cs" />
