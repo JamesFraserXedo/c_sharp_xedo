@@ -9,14 +9,15 @@ namespace XedoFramework.Core.Steps.StepsSupport
     {
         public static void TearDown()
         {
-            Console.WriteLine("Tearing down");
             QuitDriver();
         }
 
         private static void QuitDriver()
         {
             if (Driver != null)
+            {
                 Driver.Quit();
+            }
             Driver = null;
         }
     }

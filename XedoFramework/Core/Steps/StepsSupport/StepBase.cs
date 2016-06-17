@@ -21,6 +21,11 @@ namespace XedoFramework.Core.Steps.StepsSupport
             get { return new HomePage(GetTestSettings()); }
         }
 
+        public static ExclusiveAccessPage ExclusiveAccessPage
+        {
+            get { return new ExclusiveAccessPage(GetTestSettings()); }
+        }
+
         public static LoginForm LoginForm 
         {
             get { return new LoginForm(GetTestSettings()); }

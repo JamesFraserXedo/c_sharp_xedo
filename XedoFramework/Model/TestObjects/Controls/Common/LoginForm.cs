@@ -118,7 +118,7 @@ namespace XedoFramework.TestObjects.Controls.Common
             throw new NotImplementedException();
         }
 
-        public static class Locators
+        public class Locators
         {
             public static readonly By Container = By.XPath("//div[@class='signin-wrapper panel-equalize']");
             public static readonly By DismissButton = By.Id("signin-close-button");

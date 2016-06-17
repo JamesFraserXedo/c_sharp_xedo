@@ -43,7 +43,7 @@ namespace XedoFramework.TestObjects.Pages
             SubmitPasswordButton.Click();
         }
 
-        public static class Locators
+        public class Locators
         {
             public static readonly By Container = By.XPath("//div[@class='password-page-section']");
             public static readonly By PasswordInputBox = By.Id("Password");

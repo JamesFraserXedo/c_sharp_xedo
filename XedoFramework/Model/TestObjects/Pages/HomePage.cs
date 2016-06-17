@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using System;
 using XedoFramework.TestObjects.Bases;
 
 namespace XedoFramework.TestObjects.Pages
@@ -9,6 +10,11 @@ namespace XedoFramework.TestObjects.Pages
         {
         }
 
+        public IWebElement MainImageContent
+        {
+            get { return Driver.FindElement(Locators.MainImageContent); }
+        }
+
         public override bool IsLoaded()
         {
             throw new NotImplementedException();
@@ -17,6 +23,12 @@ namespace XedoFramework.TestObjects.Pages
         public override void SetupState()
         {
             Driver.Navigate().GoToUrl(BaseUrl);
+        }
+
+        public class Locators
+        {
+            public static readonly By MainImageContent = By.Id("hp-hero-Image");
+            
         }
     }
 }

@@ -20,10 +20,10 @@ namespace XedoFramework.TestObjects.Controls
             get { return Driver.FindElement(Container, Locators.OpenLoginPanelButton); }
         }
 
-        public static class Locators
+        public class Locators
         {
             public static readonly By Container = By.XPath("//div[contains(@class, 'header-container')]");
-            public static readonly By OpenLoginPanelButton = By.XPath("//span[contains(text(), 'Sign In')]");
+            public static readonly By OpenLoginPanelButton = By.XPath("//a[contains(text(), 'Sign In')]");
         }
 
             /*

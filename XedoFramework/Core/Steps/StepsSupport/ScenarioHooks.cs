@@ -9,8 +9,8 @@ namespace XedoFramework.Core.Steps.StepsSupport
         [BeforeScenario]
         private void BeforeScenario()
         {
-            Console.WriteLine("Getting Driver");
-            Driver = WebDriverFactory.Get();            
+            Driver = WebDriverFactory.Get();
+            Driver.Manage().Window.Maximize();
         }
 
         [AfterScenario]
