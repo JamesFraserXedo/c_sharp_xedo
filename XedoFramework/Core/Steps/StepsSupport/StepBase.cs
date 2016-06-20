@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using TechTalk.SpecFlow;
+using XedoFramework.Core.Contexts;
 using XedoFramework.TestObjects.Bases;
 using XedoFramework.TestObjects.Controls;
 using XedoFramework.TestObjects.Controls.Common;
@@ -44,6 +45,15 @@ namespace XedoFramework.Core.Steps.StepsSupport
         public static Footer Footer
         {
             get { return new Footer(GetTestSettings()); }
+        }
+
+
+        protected const string QuickTryOnContextName = "QuickTryOnContext";
+
+        protected static QuickTryOnContext CurrentQuickTryOnContext
+        {
+            get { return (QuickTryOnContext)ScenarioContext.Current[QuickTryOnContextName]; }
+            set { ScenarioContext.Current[QuickTryOnContextName] = value; }
         }
 
 

@@ -64,10 +64,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HomePage.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\QuickTryOn.feature.cs">
+    <Compile Include="Features\QuickTryOn\QuickTryOn.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QuickTryOn.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\QuickTryOn\ShippingAddress.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShippingAddress.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -77,9 +82,13 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>HomePage.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\QuickTryOn.feature">
+    <None Include="Features\QuickTryOn\QuickTryOn.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>QuickTryOn.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\QuickTryOn\ShippingAddress.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ShippingAddress.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

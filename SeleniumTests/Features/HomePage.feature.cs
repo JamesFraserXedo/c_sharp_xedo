@@ -90,10 +90,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 9
 this.ScenarioSetup(scenarioInfo);
 #line 10
- testRunner.Given("I have passed the Xedo exclusive access", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I am on the Xedo home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 11
- testRunner.And("I am on the Xedo home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 12
  testRunner.Then("The main image content is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

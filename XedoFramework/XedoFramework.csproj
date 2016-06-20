@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Configuration\Configuration.cs" />
+    <Compile Include="Core\Contexts\QuickTryOnContext.cs" />
     <Compile Include="Core\Steps\QuickTryOnSteps.cs" />
     <Compile Include="Core\Steps\SharedSteps\ExclusiveAccessPageSteps.cs" />
     <Compile Include="Core\Steps\SharedSteps\HomePageSteps.cs" />

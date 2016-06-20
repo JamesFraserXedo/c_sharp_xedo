@@ -13,17 +13,15 @@ namespace XedoFramework.Core.Steps.SharedSteps
         [Given(@"I am on the (.*) (.*) page")]
         public void GivenIAmOnTheSite(Site site, Page page)
         {
+            //Driver.Navigate().GoToUrl(UrlBuilder.GetUrl(site, Page.Home));
             Driver.Navigate().GoToUrl(UrlBuilder.GetUrl(site, page));
+            if (ExclusiveAccessPage.Container.Displayed)
+            {
+                ExclusiveAccessPage.InputPassword("atlanta123");
+                ExclusiveAccessPage.Submit();
+            }            
         }
         
-        [Given(@"I have passed the (.*) exclusive access")]
-        public void GivenIHavePassedTheSiteExclusiveAccess(Site site)
-        {
-            Driver.Navigate().GoToUrl(UrlBuilder.GetUrl(site, Page.Home));
-            ExclusiveAccessPage.InputPassword("atlanta123");
-            ExclusiveAccessPage.Submit();
-        }
-
         [When(@"I click the login button in the header")]
         public void WhenIClickTheLoginButtonInTheHeader()
         {

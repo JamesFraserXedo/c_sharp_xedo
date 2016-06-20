@@ -7,6 +7,5 @@ Scenario: Open the login panel
 	Then the login panel should be open
 
 Scenario: Check the Xedo homepage
-	Given I have passed the Xedo exclusive access
-	And I am on the Xedo home page
+	Given I am on the Xedo home page
 	Then The main image content is visible
