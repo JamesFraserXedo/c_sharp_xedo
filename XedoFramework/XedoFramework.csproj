@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Configuration\Configuration.cs" />
+    <Compile Include="Core\Steps\QuickTryOnSteps.cs" />
     <Compile Include="Core\Steps\SharedSteps\ExclusiveAccessPageSteps.cs" />
     <Compile Include="Core\Steps\SharedSteps\HomePageSteps.cs" />
     <Compile Include="Core\Steps\StepsSupport\ScenarioHooks.cs" />
@@ -87,14 +88,17 @@
     <Compile Include="Model\TestObjects\Controls\Common\Header\Header.cs" />
     <Compile Include="Model\TestObjects\Controls\Common\Header\NavigationBar.cs" />
     <Compile Include="Model\TestObjects\Controls\Common\LoginForm.cs" />
-    <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Choosers\AccessoryChooser.cs" />
+    <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Choosers\Accessories\Accessory.cs" />
+    <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Choosers\Accessories\AccessoryChooser.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Choosers\ChooserBase.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Choosers\ChooserPanel.cs" />
-    <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Choosers\NeckwearChooser.cs" />
-    <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Choosers\ShirtChooser.cs" />
+    <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Choosers\ClothingItem.cs" />
+    <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Choosers\Neckwears\Neckwear.cs" />
+    <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Choosers\Neckwears\NeckwearChooser.cs" />
+    <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Choosers\Shirts\ShirtChooser.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Choosers\Suits\Suit.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Choosers\Suits\SuitChooser.cs" />
-    <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Choosers\WaistcoatChooser.cs" />
+    <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Choosers\Waistcoats\WaistcoatChooser.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Dummy\OutfitViewer.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Filters\AccessoryFilter.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Filters\Colour\ColourFilter.cs" />
@@ -107,9 +111,12 @@
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Filters\WaistcoatFilter.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\OutfitControls.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\WelcomePopup.cs" />
+    <Compile Include="Model\TestObjects\Controls\QuickTryOn\DatePicker.cs" />
+    <Compile Include="Model\TestObjects\Controls\QuickTryOn\QuickTryOnForm.cs" />
     <Compile Include="Model\TestObjects\Pages\ExclusiveAccessPage.cs" />
     <Compile Include="Model\TestObjects\Pages\HomePage.cs" />
     <Compile Include="Model\TestObjects\Pages\OutfitBuilder.cs" />
+    <Compile Include="Model\TestObjects\Pages\QuickTryOnPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

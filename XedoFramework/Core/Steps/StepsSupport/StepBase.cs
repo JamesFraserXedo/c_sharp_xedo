@@ -26,6 +26,11 @@ namespace XedoFramework.Core.Steps.StepsSupport
             get { return new ExclusiveAccessPage(GetTestSettings()); }
         }
 
+        public static QuickTryOnPage QuickTryOnPage
+        {
+            get { return new QuickTryOnPage(GetTestSettings()); }
+        }
+
         public static LoginForm LoginForm 
         {
             get { return new LoginForm(GetTestSettings()); }

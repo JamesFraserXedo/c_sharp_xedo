@@ -16,7 +16,7 @@ namespace XedoFramework.Core.Steps.StepsSupport
         {
             if (Driver != null)
             {
-                Driver.Quit();
+                //Driver.Quit();
             }
             Driver = null;
         }
