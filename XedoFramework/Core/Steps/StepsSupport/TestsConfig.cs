@@ -49,16 +49,18 @@ namespace XedoFramework.Core.Steps.StepsSupport
                 {
                     case "local":
                         return WebDriverFactory.TestExecutionEnvironment.Local;
-                    /*
+                        /*
                 case "grid":
                     return WebDriverFactory.TestExecutionEnvironment.Grid;
                      */
                     case "saucelabs":
                         return WebDriverFactory.TestExecutionEnvironment.Saucelabs;
-                        
+
                     default:
-                        throw new ConfigurationErrorsException(String.Format("Could not recognise the test execution environment specified in app.config: '{0}'",
-                        ConfigurationManager.AppSettings["TestExecutionEnvironment"]));
+                        throw new ConfigurationErrorsException(
+                            String.Format(
+                                "Could not recognise the test execution environment specified in app.config: '{0}'",
+                                ConfigurationManager.AppSettings["TestExecutionEnvironment"]));
                 }
             }
         }

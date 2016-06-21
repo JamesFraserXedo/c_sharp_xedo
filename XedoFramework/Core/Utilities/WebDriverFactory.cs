@@ -13,6 +13,7 @@ namespace XedoFramework.Core.Utilities
 {
     public class WebDriverFactory
     {
+        public static string SaucelabsJobId;
         public static Utils.BrowserType CurrentBrowser;
         private const string EnvNotSetMessage = "Please specify an execution environment in App.config.";
         private static readonly Configuration.Configuration Config = new Configuration.Configuration();
@@ -94,20 +95,6 @@ namespace XedoFramework.Core.Utilities
                                                 "' when initialising driver for local environment.");
             }
         }
-
-        private static IWebDriver GetDriverForSaucelabsEnvironment(Utils.BrowserType browserToUse)
-        {
-            var caps = new DesiredCapabilities();
-            caps.SetCapability(CapabilityType.BrowserName, "chrome");
-            caps.SetCapability(CapabilityType.Version, "45");
-            caps.SetCapability(CapabilityType.Platform, "Windows 7");
-            caps.SetCapability("username", TestsConfig.SaucelabsUsername);
-            caps.SetCapability("accessKey", TestsConfig.SaucelabsAccessKey);
-            caps.SetCapability("name", TestContext.CurrentContext.Test.Name);
-
-            return new RemoteWebDriver(new Uri(TestsConfig.SaucelabsHubUrl), caps, TimeSpan.FromSeconds(600));
-        }
-
 
         private static IWebDriver GetDriverForSauceLabs(Utils.BrowserType browserType, string browserVersion = "")
         {
@@ -243,7 +230,9 @@ namespace XedoFramework.Core.Utilities
             capabilities.SetCapability("name", ScenarioContext.Current.ScenarioInfo.Title);
             capabilities.SetCapability("tags", ScenarioContext.Current.ScenarioInfo.Tags);
 
-            return new RemoteWebDriver(new Uri(sauceLabsHubUrl), capabilities, nodeQueueingTimeout);
+            var driver = new SaucelabsDriver(new Uri(sauceLabsHubUrl), capabilities, nodeQueueingTimeout);
+            SaucelabsJobId = driver.JobId.ToString();
+            return driver;
         }
 
         private static Utils.BrowserType GetBrowserChoiceFromEnvironment()

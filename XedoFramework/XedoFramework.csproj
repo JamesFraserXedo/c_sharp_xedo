@@ -73,6 +73,8 @@
     <Compile Include="Core\Steps\StepsSupport\TestsConfig.cs" />
     <Compile Include="Core\Steps\StepsSupport\Transforms.cs" />
     <Compile Include="Core\Steps\StepsSupport\Urls.cs" />
+    <Compile Include="Core\Utilities\SaucelabsClient.cs" />
+    <Compile Include="Core\Utilities\SaucelabsDriver.cs" />
     <Compile Include="Core\Utilities\WebDriverFactory.cs" />
     <Compile Include="Model\Sites\Page.cs" />
     <Compile Include="Model\Sites\Site.cs" />
