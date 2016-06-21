@@ -15,7 +15,7 @@ namespace XedoFramework.Core.Steps.SharedSteps
         {
             //Driver.Navigate().GoToUrl(UrlBuilder.GetUrl(site, Page.Home));
             Driver.Navigate().GoToUrl(UrlBuilder.GetUrl(site, page));
-            if (ExclusiveAccessPage.Container.Displayed)
+            if (ExclusiveAccessPage.OnPage)
             {
                 ExclusiveAccessPage.InputPassword("atlanta123");
                 ExclusiveAccessPage.Submit();

@@ -1,4 +1,5 @@
-﻿using XedoFramework.Core.Utilities;
+﻿using XedoFramework.Core.Contexts;
+using XedoFramework.Core.Utilities;
 using TechTalk.SpecFlow;
 using System;
 
@@ -9,6 +10,8 @@ namespace XedoFramework.Core.Steps.StepsSupport
         [BeforeScenario]
         private void BeforeScenario()
         {
+            ScenarioContext.Current[QuickTryOnContextName] = new QuickTryOnContext();
+
             Driver = WebDriverFactory.Get();
             Driver.Manage().Window.Maximize();
         }

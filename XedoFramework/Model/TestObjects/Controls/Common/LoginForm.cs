@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using System.Threading;
+using OpenQA.Selenium;
 using System;
 using XedoFramework.TestObjects.Bases;
 using XedoFramework.SupportTools;
@@ -111,6 +112,16 @@ namespace XedoFramework.TestObjects.Controls.Common
         public void Submit()
         {
             LoginButton.Click();
+        }
+
+        //ToDo: Cleanup sleep
+        public void Login()
+        {
+            Expand();
+            InputEmail("littlebobbytables@notanemail.com");
+            InputPassword("Password");
+            Submit();
+            Thread.Sleep(5000);
         }
 
         public void WaitUntilStable()

@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using System.Linq;
+using OpenQA.Selenium;
 using XedoFramework.SupportTools;
 using XedoFramework.TestObjects.Bases;
 
@@ -24,6 +25,11 @@ namespace XedoFramework.TestObjects.Pages
         public IWebElement SubmitPasswordButton
         {
             get { return Driver.FindElement(Container, Locators.SubmitPasswordButton); }
+        }
+
+        public bool OnPage
+        {
+            get { return Driver.FindElements(Locators.Container).Any(); }
         }
 
         public void ClearPasswordInputBox()

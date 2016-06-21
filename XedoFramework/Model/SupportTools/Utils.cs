@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Threading;
@@ -49,22 +50,34 @@ namespace XedoFramework.SupportTools
 
         public static IWebElement FindElement(IWebDriver driver, By by, int timeout = Timeouts.StandardTimeout)
         {
+            IWebElement element;
             if (timeout > 0)
             {
                 var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeout));
-                return wait.Until(drv => drv.FindElement(by));
+                element = wait.Until(drv => drv.FindElement(by));
             }
-            return driver.FindElement(by);
+            else
+            {
+                element = driver.FindElement(by);
+            }
+            ShowElementOnScreen(driver, element);
+            return element;
         }
 
         public static IWebElement FindElement(IWebDriver driver, IWebElement parent, By by, int timeout = Timeouts.StandardTimeout)
         {
+            IWebElement element;
             if (timeout > 0)
             {
                 var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeout));
-                return wait.Until(drv => parent.FindElement(by));
+                element = wait.Until(drv => parent.FindElement(by));
             }
-            return parent.FindElement(by);
+            else
+            {
+                element = parent.FindElement(by);
+            }
+            ShowElementOnScreen(driver, element);
+            return element;
         }
 
         public static bool ElementExists(IWebDriver driver, By loc)
@@ -99,5 +112,13 @@ namespace XedoFramework.SupportTools
             public const int StandardTimeout = 5;
         }
 
+        public static void ShowElementOnScreen(IWebDriver driver, IWebElement element)
+        {
+            //((IJavaScriptExecutor) driver).ExecuteScript("arguments[0].scrollIntoView(false);", element);
+
+            var js = driver as IJavaScriptExecutor;
+            var script = "window.scrollTo(" + element.Location.X + "," + (element.Location.Y - 400) + ");";
+            js.ExecuteScript(script);
+        }
     }
 }

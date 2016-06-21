@@ -4,14 +4,14 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using System;
-using static XedoFramework.SupportTools.Utils;
+using XedoFramework.SupportTools;
 using System.Configuration;
 
 namespace XedoFramework.Core.Utilities
 {
     public class WebDriverFactory
     {
-        public static BrowserType CurrentBrowser;
+        public static Utils.BrowserType CurrentBrowser;
         private const string EnvNotSetMessage = "Please specify an execution environment in App.config.";
         private static readonly Configuration.Configuration Config = new Configuration.Configuration();
 
@@ -64,17 +64,17 @@ namespace XedoFramework.Core.Utilities
             return driver;
         }
 
-        private static IWebDriver GetDriverForLocalEnvironment(BrowserType browserToUse)
+        private static IWebDriver GetDriverForLocalEnvironment(Utils.BrowserType browserToUse)
         {
             switch (browserToUse)
             {
-                case BrowserType.FIREFOX:
+                case Utils.BrowserType.FIREFOX:
                     Console.WriteLine(TestsConfig.FirefoxPath);
                     FirefoxBinary binary = new FirefoxBinary(TestsConfig.FirefoxPath);
                     FirefoxProfile profile = new FirefoxProfile();
                     return new FirefoxDriver(binary, profile);
 
-                case BrowserType.IE:
+                case Utils.BrowserType.IE:
                     InternetExplorerOptions options = new InternetExplorerOptions
                     {
                         InitialBrowserUrl = "about:blank",
@@ -85,7 +85,7 @@ namespace XedoFramework.Core.Utilities
 
                     return new InternetExplorerDriver(TestsConfig.IeServerPath, options);
 
-                case BrowserType.CHROME:
+                case Utils.BrowserType.CHROME:
                     return new ChromeDriver(TestsConfig.ChromeDriverPath);
                 default:
                     throw new ArgumentException("Unrecognised browser choice '" + browserToUse +
@@ -93,18 +93,18 @@ namespace XedoFramework.Core.Utilities
             }
         }
 
-        private static BrowserType GetBrowserChoiceFromEnvironment()
+        private static Utils.BrowserType GetBrowserChoiceFromEnvironment()
         {
             var browserValue = Environment.GetEnvironmentVariable(TestsConfig.BrowserVariableName);
 
             if (browserValue == null)
             {
-                return BrowserType.FIREFOX;
+                return Utils.BrowserType.FIREFOX;
             }
 
             try
             {
-                return (BrowserType)Enum.Parse(typeof(BrowserType), browserValue, true);
+                return (Utils.BrowserType)Enum.Parse(typeof(Utils.BrowserType), browserValue, true);
             }
             catch (ArgumentException)
             {
@@ -112,7 +112,7 @@ namespace XedoFramework.Core.Utilities
                     string.Format(
                         "'{0}' is not one of the supported browsers! Try one of the following values: {1}.",
                         browserValue,
-                        String.Join(", ", Enum.GetNames(typeof(BrowserType)))
+                        String.Join(", ", Enum.GetNames(typeof(Utils.BrowserType)))
                         )
                     );
             }

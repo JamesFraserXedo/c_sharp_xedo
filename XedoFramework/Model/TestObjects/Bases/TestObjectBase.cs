@@ -1,5 +1,5 @@
 ﻿using OpenQA.Selenium;
-using static XedoFramework.SupportTools.Utils;
+using XedoFramework.SupportTools;
 
 namespace XedoFramework.TestObjects.Bases
 {
@@ -17,7 +17,7 @@ namespace XedoFramework.TestObjects.Bases
             get { return TestSettings.Driver; }
         }
 
-        public SiteVersion SiteVersion
+        public Utils.SiteVersion SiteVersion
         {
             get { return TestSettings.SiteVersion; }
         }

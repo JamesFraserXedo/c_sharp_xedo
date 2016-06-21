@@ -1,12 +1,12 @@
 ﻿using OpenQA.Selenium;
-using static XedoFramework.SupportTools.Utils;
+using XedoFramework.SupportTools;
 
 namespace XedoFramework.TestObjects.Bases
 {
     public class TestSettings
     {
         public IWebDriver Driver;
-        public SiteVersion SiteVersion;
+        public Utils.SiteVersion SiteVersion;
         public string BaseUrl;
 
         public TestSettings(IWebDriver driver)
