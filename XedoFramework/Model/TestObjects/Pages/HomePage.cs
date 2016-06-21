@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 using System;
-using XedoFramework.TestObjects.Bases;
+using XedoFramework.Model.TestObjects.Bases;
 
 namespace XedoFramework.TestObjects.Pages
 {

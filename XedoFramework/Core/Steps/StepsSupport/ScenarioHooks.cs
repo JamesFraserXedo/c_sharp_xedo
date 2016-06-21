@@ -1,7 +1,6 @@
 ﻿using XedoFramework.Core.Contexts;
 using XedoFramework.Core.Utilities;
 using TechTalk.SpecFlow;
-using System;
 
 namespace XedoFramework.Core.Steps.StepsSupport
 {

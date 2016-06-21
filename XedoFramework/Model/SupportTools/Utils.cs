@@ -1,10 +1,9 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Support.UI;
-using System;
+﻿using System;
 using System.Threading;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
-namespace XedoFramework.SupportTools
+namespace XedoFramework.Model.SupportTools
 {
     public static class Utils
     {

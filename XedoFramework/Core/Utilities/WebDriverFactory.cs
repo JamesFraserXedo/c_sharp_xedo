@@ -4,8 +4,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using System;
-using XedoFramework.SupportTools;
-using System.Configuration;
+using XedoFramework.Model.SupportTools;
 
 namespace XedoFramework.Core.Utilities
 {

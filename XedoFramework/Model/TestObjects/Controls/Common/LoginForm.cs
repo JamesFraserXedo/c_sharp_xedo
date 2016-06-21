@@ -1,17 +1,17 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using OpenQA.Selenium;
-using System;
-using XedoFramework.TestObjects.Bases;
-using XedoFramework.SupportTools;
+using XedoFramework.Model.SupportTools;
+using XedoFramework.Model.TestObjects.Bases;
 
-namespace XedoFramework.TestObjects.Controls.Common
+namespace XedoFramework.Model.TestObjects.Controls.Common
 {
     public class LoginForm : ControlBase
     {
-        private Header Header;
+        private Header.Header Header;
 
         public LoginForm(TestSettings testSettings) : base(testSettings) {
-            Header = new Header(testSettings);
+            Header = new Header.Header(testSettings);
         }
         
         public IWebElement Container

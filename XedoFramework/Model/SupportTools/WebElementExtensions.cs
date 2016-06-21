@@ -1,8 +1,6 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Threading;
 
-namespace XedoFramework.SupportTools
+namespace XedoFramework.Model.SupportTools
 {
     public static class WebElementExtensions
     {

@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
-using XedoFramework.SupportTools;
+using XedoFramework.Model.SupportTools;
 
-namespace XedoFramework.TestObjects.Bases
+namespace XedoFramework.Model.TestObjects.Bases
 {
     public abstract class TestObjectBase
     {

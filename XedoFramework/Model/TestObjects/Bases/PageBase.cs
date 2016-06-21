@@ -1,17 +1,23 @@
-﻿using XedoFramework.TestObjects.Controls;
-using XedoFramework.TestObjects.Controls.Common;
+﻿using System;
+using System.Diagnostics;
+using System.Threading;
+using XedoFramework.Model.TestObjects.Controls.Common.Footer;
+using XedoFramework.Model.TestObjects.Controls.Common.Header;
 
-namespace XedoFramework.TestObjects.Bases
+namespace XedoFramework.Model.TestObjects.Bases
 {
     public abstract class PageBase : TestObjectBase
     {
         public Header Header;
         public Footer Footer;
 
+        protected int PageTimeoutSeconds = 15;
+
         protected PageBase(TestSettings testSettings) : base(testSettings)
         {
             Header = new Header(testSettings);
             Footer = new Footer(testSettings);
+            WaitUntilLoaded();
         }
 
         public string Url
@@ -37,6 +43,21 @@ namespace XedoFramework.TestObjects.Bases
         public void Forward()
         {
             Driver.Navigate().Forward();
+        }
+
+        public void WaitUntilLoaded()
+        {
+            var s = new Stopwatch();
+            s.Start();
+            while (!IsLoaded() && s.Elapsed < TimeSpan.FromSeconds(PageTimeoutSeconds))
+            {
+                Thread.Sleep(1000);
+            }
+            s.Stop();
+            if (!IsLoaded())
+            {
+                throw new TimeoutException(string.Format("The page did not load within {0} seconds", PageTimeoutSeconds));
+            }
         }
 
         public abstract bool IsLoaded();

@@ -1,9 +1,11 @@
 ﻿using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 using XedoFramework.Core.Contexts;
-using XedoFramework.TestObjects.Bases;
-using XedoFramework.TestObjects.Controls;
-using XedoFramework.TestObjects.Controls.Common;
+using XedoFramework.Model.TestObjects.Bases;
+using XedoFramework.Model.TestObjects.Controls.Common;
+using XedoFramework.Model.TestObjects.Controls.Common.Footer;
+using XedoFramework.Model.TestObjects.Controls.Common.Header;
+using XedoFramework.Model.TestObjects.Pages;
 using XedoFramework.TestObjects.Pages;
 
 namespace XedoFramework.Core.Steps.StepsSupport

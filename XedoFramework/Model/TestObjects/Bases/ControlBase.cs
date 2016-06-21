@@ -1,6 +1,4 @@
-﻿using OpenQA.Selenium;
-
-namespace XedoFramework.TestObjects.Bases
+﻿namespace XedoFramework.Model.TestObjects.Bases
 {
     public abstract class ControlBase : TestObjectBase
     {

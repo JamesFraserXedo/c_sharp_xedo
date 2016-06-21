@@ -1,6 +1,6 @@
-﻿using XedoFramework.TestObjects.Bases;
+﻿using XedoFramework.Model.TestObjects.Bases;
 
-namespace XedoFramework.TestObjects.Controls
+namespace XedoFramework.Model.TestObjects.Controls.Common.Footer
 {
     public class Footer : ControlBase
     {

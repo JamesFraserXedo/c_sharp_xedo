@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using OpenQA.Selenium;
-using XedoFramework.SupportTools;
-using XedoFramework.TestObjects.Bases;
+using XedoFramework.Model.SupportTools;
+using XedoFramework.Model.TestObjects.Bases;
 
 namespace XedoFramework.TestObjects.Pages
 {

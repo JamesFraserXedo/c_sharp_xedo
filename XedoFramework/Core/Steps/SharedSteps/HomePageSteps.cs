@@ -1,5 +1,4 @@
 ﻿using XedoFramework.Core.Steps.StepsSupport;
-using System;
 using TechTalk.SpecFlow;
 using NUnit.Framework;
 using XedoFramework.Model.Sites;

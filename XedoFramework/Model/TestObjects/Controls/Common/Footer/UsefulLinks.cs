@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace XedoFramework.TestObjects.Controls.Common.Footer
+﻿namespace XedoFramework.Model.TestObjects.Controls.Common.Footer
 {
     public class UsefulLinks
     {

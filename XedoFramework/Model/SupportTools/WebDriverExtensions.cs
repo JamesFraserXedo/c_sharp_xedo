@@ -1,18 +1,13 @@
-﻿using System;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
-namespace XedoFramework.SupportTools
+namespace XedoFramework.Model.SupportTools
 {
     public static class WebDriverExtensions
     {
 
         public static IWebElement FindElement(this IWebDriver driver, By loc)
         {
-            if(Utils.ElementExists(driver, loc))
-            {
-                return Utils.FindElement(driver, loc);
-            }
-            return null;
+            return Utils.ElementExists(driver, loc) ? Utils.FindElement(driver, loc) : null;
         }
 
         public static IWebElement FindElement(this IWebDriver driver, IWebElement parent, By loc)
