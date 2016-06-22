@@ -15,11 +15,11 @@ namespace XedoFramework.Core.Steps.StepsSupport
                 case WebDriverFactory.TestExecutionEnvironment.Local:
                     LocalTearDown();
                     break;
-                    /*
+                    
                 case WebDriverFactory.TestExecutionEnvironment.Grid:
                     GridTearDown();
                     break;
-                     */
+                     
                 case WebDriverFactory.TestExecutionEnvironment.Saucelabs:
                     SaucelabsTearDown();
                     break;
@@ -46,6 +46,11 @@ namespace XedoFramework.Core.Steps.StepsSupport
         private static void SaucelabsTearDown()
         {
             ((IJavaScriptExecutor)Driver).ExecuteScript("sauce:job-result=" + (DidTestPass() ? "passed" : "failed"));
+            QuitDriver();
+        }
+
+        private static void GridTearDown()
+        {
             QuitDriver();
         }
 

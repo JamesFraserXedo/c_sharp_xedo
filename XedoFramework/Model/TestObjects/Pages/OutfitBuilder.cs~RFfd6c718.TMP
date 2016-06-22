@@ -1,0 +1,38 @@
+﻿using OpenQA.Selenium;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using XedoFramework.TestObjects.Bases;
+
+namespace XedoFramework.Model.TestObjects.Pages
+{
+    public class OutfitBuilder : PageBase
+    {
+        public OutfitBuilder(TestSettings testSettings) : base(testSettings)
+        {
+        }
+
+        public IWebElement WelcomePopup
+        {
+            get { return Driver.FindElement(Locators.WelcomePopup); }
+        }
+
+        public override bool IsLoaded()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void SetupState()
+        {
+            Driver.Navigate().GoToUrl(BaseUrl);
+        }
+
+        public static class Locators
+        {
+            public static readonly By WelcomePopup = By.Id("ob-price-information-popup");
+            public static readonly By DismissWelcomePopupButton = By.XPath("//button[@class='mfp-close']");
+        }
+    }
+}

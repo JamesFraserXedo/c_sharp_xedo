@@ -119,7 +119,7 @@
     <Compile Include="Model\TestObjects\Controls\QuickTryOn\QuickTryOnForm.cs" />
     <Compile Include="Model\TestObjects\Pages\ExclusiveAccessPage.cs" />
     <Compile Include="Model\TestObjects\Pages\HomePage.cs" />
-    <Compile Include="Model\TestObjects\Pages\OutfitBuilder.cs" />
+    <Compile Include="Model\TestObjects\Pages\OutfitBuilderPage.cs" />
     <Compile Include="Model\TestObjects\Pages\QuickTryOnPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

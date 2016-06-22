@@ -26,10 +26,9 @@ namespace XedoFramework.Core.Utilities
             if (TestsConfig.TestExecutionEnvironment == TestExecutionEnvironment.Saucelabs)
                 return TestExecutionEnvironment.Saucelabs;
 
-            /*
             if (TestsConfig.TestExecutionEnvironment == TestExecutionEnvironment.Grid)
                 return TestExecutionEnvironment.Grid;
-            */
+            
             return TestExecutionEnvironment.Local;
         }
 
@@ -48,22 +47,20 @@ namespace XedoFramework.Core.Utilities
                 case TestExecutionEnvironment.Saucelabs:
                     driver = GetDriverForSauceLabs(CurrentBrowser);
                     break;
-                    /*
-            case TestExecutionEnvironment.Grid:
-                driver = GetDriverForGrid(CurrentBrowserType);
-                break;
-                */
+                case TestExecutionEnvironment.Grid:
+                    driver = GetDriverForGrid(CurrentBrowser);
+                    break;
                 default:
                     throw new ArgumentException("Test execution environment not recognised.");
             }
 
-            /*
+            
             if (GetTestExecutionEnvironment() != TestExecutionEnvironment.Saucelabs)
             {
                 driver.Manage().Window.Maximize();
                 driver.Manage().Cookies.DeleteAllCookies();
             }
-            */
+            
 
             return driver;
         }
@@ -155,64 +152,6 @@ namespace XedoFramework.Core.Utilities
                     capabilities.SetCapability("screen-resolution", screenResolution);
                     capabilities.SetCapability("selenium-version", seleniumVersion);
                     break;
-                    /*
-                case Utils.BrowserType.SAFARI:
-                    capabilities = DesiredCapabilities.Safari();
-                    capabilities = SetSauceOsxBrowserCapabilities(capabilities, browserVersion);
-                    capabilities.SetCapability("selenium-version", seleniumVersion);
-                    break;
-                case Utils.BrowserType.ANDROID:
-                    capabilities = DesiredCapabilities.Android();
-                    browserVersion = String.IsNullOrEmpty(browserVersion) ? "4.4" : browserVersion;
-
-                    if (browserVersion == "beta")
-                    {
-                        //Sauce real device beta uses appium, max 5 devices concurrently
-                        capabilities.SetCapability("platformName", "Android");
-                        capabilities.SetCapability("deviceName", "Samsung Galaxy S4 Device");
-                        capabilities.SetCapability("platformVersion", "4.3");
-                        capabilities.SetCapability("browserName", "Chrome");
-                    }
-                    else
-                    {
-                        // We are using Selendroid with Sauce Connect
-                        capabilities.SetCapability("platform", "Linux");
-                        capabilities.SetCapability("version", browserVersion);
-                        capabilities.SetCapability("deviceName", "Android Emulator");
-                        capabilities.SetCapability("browserName", "Android");
-                        capabilities.SetCapability("javascriptEnabled", true);
-                    }
-
-                    capabilities.SetCapability("appium-version", "");
-                    capabilities.SetCapability("device-orientation", "portrait");
-                    capabilities.SetCapability("newCommandTimeout", "60");
-
-                    break;
-                case Utils.BrowserType.IPHONE:
-                    capabilities = DesiredCapabilities.IPhone();
-                    browserVersion = String.IsNullOrEmpty(browserVersion) ? "7.1" : browserVersion;
-                    capabilities.SetCapability("platformName", "iOS");
-                    capabilities.SetCapability("platformVersion", browserVersion);
-                    capabilities.SetCapability("browserName", "safari");
-                    capabilities.SetCapability("deviceName", "iPhone Simulator");
-                    capabilities.SetCapability("device-orientation", "portrait");
-                    capabilities.SetCapability("appium-version", "");
-                    capabilities.SetCapability("newCommandTimeout", "180");
-                    capabilities.SetCapability("safariAllowPopups", "true");
-                    break;
-                case Utils.BrowserType.IPAD:
-                    capabilities = DesiredCapabilities.IPad();
-                    browserVersion = String.IsNullOrEmpty(browserVersion) ? "7.1" : browserVersion;
-                    capabilities.SetCapability("platformName", "iOS");
-                    capabilities.SetCapability("platformVersion", browserVersion);
-                    capabilities.SetCapability("browserName", "safari");
-                    capabilities.SetCapability("deviceName", "iPad Simulator");
-                    capabilities.SetCapability("device-orientation", "landscape");
-                    capabilities.SetCapability("safariAllowPopups", "true");
-                    capabilities.SetCapability("newCommandTimeout", "180");
-                    capabilities.SetCapability("appium-version", "");
-                    break;
-                     */
                 default:
                     throw new ArgumentException("Unrecognised browser choice '" + browserType +
                                                 "' when initialising driver for Saucelabs.");
@@ -232,6 +171,43 @@ namespace XedoFramework.Core.Utilities
 
             var driver = new SaucelabsDriver(new Uri(sauceLabsHubUrl), capabilities, nodeQueueingTimeout);
             SaucelabsJobId = driver.JobId.ToString();
+            return driver;
+        }
+
+        private static IWebDriver GetDriverForGrid(Utils.BrowserType browserType)
+        {
+            DesiredCapabilities capabilities;
+
+            switch (browserType)
+            {
+                case Utils.BrowserType.FIREFOX:
+                    capabilities = DesiredCapabilities.Firefox();
+                    break;
+                case Utils.BrowserType.IE:
+                    capabilities = DesiredCapabilities.InternetExplorer();
+                    capabilities.SetCapability("ie.ensureCleanSession", "true");
+                    break;
+                case Utils.BrowserType.CHROME:
+                    capabilities = DesiredCapabilities.Chrome();
+                    break;
+                case Utils.BrowserType.SAFARI:
+                    capabilities = DesiredCapabilities.Safari();
+                    break;
+                default:
+                    throw new ArgumentException("Unrecognised browser choice '" + browserType +
+                                                "' when initialising driver for Grid.");
+            }
+
+            var platform = browserType.Equals(Utils.BrowserType.SAFARI) ? PlatformType.Mac : PlatformType.Vista;
+            capabilities.SetCapability(CapabilityType.Platform, new Platform(platform));
+            // So we know who's using it
+            capabilities.SetCapability("environment",
+                                        String.Format("{0} ({1})", TestsConfig.GridIdentifier, Environment.MachineName));
+
+            IWebDriver driver = new RemoteWebDriver(
+                new Uri(TestsConfig.GridHubUrl), capabilities, TimeSpan.FromSeconds(900));
+            
+
             return driver;
         }
 
@@ -264,7 +240,7 @@ namespace XedoFramework.Core.Utilities
         {
             Local,
             Saucelabs,
-            //Grid
+            Grid
         }
     }
 }

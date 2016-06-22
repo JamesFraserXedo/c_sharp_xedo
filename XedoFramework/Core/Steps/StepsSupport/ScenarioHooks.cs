@@ -12,7 +12,6 @@ namespace XedoFramework.Core.Steps.StepsSupport
             ScenarioContext.Current[QuickTryOnContextName] = new QuickTryOnContext();
 
             Driver = WebDriverFactory.Get();
-            Driver.Manage().Window.Maximize();
         }
 
         [AfterScenario]

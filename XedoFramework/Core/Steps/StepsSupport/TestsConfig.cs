@@ -20,13 +20,15 @@ namespace XedoFramework.Core.Steps.StepsSupport
         public static readonly string SaucelabsAccessKey = ConfigurationManager.AppSettings["SaucelabsAccessKey"];
         public static readonly string SaucelabsHubUrl = ConfigurationManager.AppSettings["SaucelabsHubUrl"];
 
+        public static readonly string GridHubUrl = ConfigurationManager.AppSettings["GridHubUrl"];
+
 
         public static string GridIdentifier
         {
             get
             {
                 return String.IsNullOrEmpty(ConfigurationManager.AppSettings["GridIdentifier"])
-                    ? "Flights C# Core"
+                    ? "Xedo Testing"
                     : ConfigurationManager.AppSettings["GridIdentifier"];
             }
         }
@@ -49,10 +51,10 @@ namespace XedoFramework.Core.Steps.StepsSupport
                 {
                     case "local":
                         return WebDriverFactory.TestExecutionEnvironment.Local;
-                        /*
-                case "grid":
-                    return WebDriverFactory.TestExecutionEnvironment.Grid;
-                     */
+
+                    case "grid":
+                        return WebDriverFactory.TestExecutionEnvironment.Grid;
+
                     case "saucelabs":
                         return WebDriverFactory.TestExecutionEnvironment.Saucelabs;
 
