@@ -1,8 +1,8 @@
-﻿using OpenQA.Selenium;
-using System;
+﻿using System;
+using OpenQA.Selenium;
 using XedoFramework.Model.TestObjects.Bases;
 
-namespace XedoFramework.TestObjects.Pages
+namespace XedoFramework.Model.TestObjects.Pages
 {
     public class HomePage : PageBase
     {

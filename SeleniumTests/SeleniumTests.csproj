@@ -72,6 +72,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HomePage.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\QuickTryOn\DraftTryOn.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DraftTryOn.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\QuickTryOn\PocketSquares.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -100,6 +105,10 @@
     <None Include="Features\HomePage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>HomePage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\QuickTryOn\DraftTryOn.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DraftTryOn.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\QuickTryOn\PocketSquares.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
