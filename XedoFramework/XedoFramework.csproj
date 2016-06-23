@@ -115,8 +115,10 @@
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Filters\WaistcoatFilter.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\OutfitControls.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\WelcomePopup.cs" />
+    <Compile Include="Model\TestObjects\Controls\QuickTryOn\ColourSelect.cs" />
     <Compile Include="Model\TestObjects\Controls\QuickTryOn\DatePicker.cs" />
-    <Compile Include="Model\TestObjects\Controls\QuickTryOn\QuickTryOnForm.cs" />
+    <Compile Include="Model\TestObjects\Controls\QuickTryOn\InfoForm.cs" />
+    <Compile Include="Model\TestObjects\Controls\QuickTryOn\SelectedColour.cs" />
     <Compile Include="Model\TestObjects\Pages\ExclusiveAccessPage.cs" />
     <Compile Include="Model\TestObjects\Pages\HomePage.cs" />
     <Compile Include="Model\TestObjects\Pages\OutfitBuilderPage.cs" />

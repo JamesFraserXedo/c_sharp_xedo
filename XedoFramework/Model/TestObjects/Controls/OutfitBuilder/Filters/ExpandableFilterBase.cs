@@ -17,21 +17,11 @@ namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Filters
         {
         }
         
-        public IWebElement BodyContainer
-        {
-            get { return Driver.FindElement(Container, Locators.BodyContainer); }
-        }
-
         public ColourFilter ColourFilter
         {
             get { return new ColourFilter(TestSettings, Container); }
         }
 
-        public bool Expanded
-        {
-            get { return BodyContainer.Displayed; }
-        }
-        
         public void Expand()
         {
             if (!Expanded)
@@ -50,7 +40,7 @@ namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Filters
 
         public new class Locators : FilterBase.Locators
         {
-            public static By BodyContainer = By.XPath("/nav");
+            public new static By BodyContainer = By.XPath("/nav");
             public static By ColourFilters = By.Id("filters-styles");
             public static By StyleFiltersPanel = By.Id("filters-pane-style");
             public static By StyleFilters = By.Id("filters-styles");

@@ -1,4 +1,6 @@
-﻿using XedoFramework.Core.Steps.StepsSupport;
+﻿using System;
+using XedoFramework.Core.Contexts;
+using XedoFramework.Core.Steps.StepsSupport;
 using TechTalk.SpecFlow;
 using NUnit.Framework;
 
@@ -10,7 +12,7 @@ namespace XedoFramework.Core.Steps
         [When(@"I enter a preferred Try On date")]
         public void WhenIEnterAPreferredTryOnDate()
         {
-            QuickTryOnPage.QuickTryOnForm.PreferredDateDatePicker.SelectFirstAvailableDate();
+            QuickTryOnPage.InfoForm.PreferredDateDatePicker.SelectFirstAvailableDate();
         }
 
         [Then(@"this should be confirmed on my Try On order")]
@@ -22,13 +24,13 @@ namespace XedoFramework.Core.Steps
         [Given(@"that I have previously entered a Try On delivery date")]
         public void GivenThatIHavePreviouslyEnteredATryOnDeliveryDate()
         {
-            QuickTryOnPage.QuickTryOnForm.PreferredDateDatePicker.SelectFirstAvailableDate();
+            QuickTryOnPage.InfoForm.PreferredDateDatePicker.SelectFirstAvailableDate();
         }
         
         [When(@"I then amend my Try On delivery date")]
         public void WhenIThenAmendMyTryOnDeliveryDate()
         {
-            QuickTryOnPage.QuickTryOnForm.PreferredDateDatePicker.SelectAvailableDate(1);
+            QuickTryOnPage.InfoForm.PreferredDateDatePicker.SelectAvailableDate(1);
         }
 
         [Then(@"the new date should be updated on my Try On order")]
@@ -40,55 +42,55 @@ namespace XedoFramework.Core.Steps
         [Given(@"I enter an address_1 (.*)")]
         public void GivenIEnterAnAddress1(string address)
         {
-            QuickTryOnPage.QuickTryOnForm.AddressOneInputBox.SendKeys(address);
+            QuickTryOnPage.InfoForm.AddressOneInputBox.SendKeys(address);
             CurrentQuickTryOnContext.EnteredAddress1 = address;
         }
 
         [Given(@"I enter a city (.*)")]
         public void GivenIEnterACity(string city)
         {
-            QuickTryOnPage.QuickTryOnForm.CityInputBox.SendKeys(city);
+            QuickTryOnPage.InfoForm.CityInputBox.SendKeys(city);
             CurrentQuickTryOnContext.EnteredCity = city;
         }
 
         [Given(@"I select a state (.*)")]
         public void GivenISelectAState(string state)
         {
-            QuickTryOnPage.QuickTryOnForm.SelectStateByName(state);
-            CurrentQuickTryOnContext.EnteredState = QuickTryOnPage.QuickTryOnForm.StateSelect.SelectedOption.Text;
+            QuickTryOnPage.InfoForm.SelectStateByName(state);
+            CurrentQuickTryOnContext.EnteredState = QuickTryOnPage.InfoForm.StateSelect.SelectedOption.Text;
             CurrentQuickTryOnContext.EnteredStateCode =
-                QuickTryOnPage.QuickTryOnForm.StateSelect.SelectedOption.GetAttribute("value");
+                QuickTryOnPage.InfoForm.StateSelect.SelectedOption.GetAttribute("value");
         }
 
         [Given(@"I enter a zip code (.*)")]
         public void GivenIEnterAZipCode(string zip)
         {
-            QuickTryOnPage.QuickTryOnForm.ZipInputBox.SendKeys(zip);
+            QuickTryOnPage.InfoForm.ZipInputBox.SendKeys(zip);
             CurrentQuickTryOnContext.EnteredZip = zip;
         }
 
         [When(@"I confirm the delivery address")]
         public void WhenIConfirmTheDeliveryAddress()
         {
-            QuickTryOnPage.QuickTryOnForm.ConfirmDeliveryAddress();
+            QuickTryOnPage.InfoForm.ConfirmDeliveryAddress();
         }
 
         [Then(@"The address should be checked by Fedex")]
         public void ThenTheAddressShouldBeCheckedByFedex()
         {
-            Assert.IsTrue(QuickTryOnPage.QuickTryOnForm.SuggestedAddressLabel.Displayed);
+            Assert.IsTrue(QuickTryOnPage.InfoForm.SuggestedAddressLabel.Displayed);
         }
 
         [When(@"I select the entered delivery address")]
         public void WhenISelectTheEnteredDeliveryAddress()
         {
-            QuickTryOnPage.QuickTryOnForm.ConfirmUserEnteredAddressButton.Click();
+            QuickTryOnPage.InfoForm.ConfirmUserEnteredAddressButton.Click();
         }
 
         [Then(@"The address should be saved as entered")]
         public void ThenTheAddressShouldBeSavedAsEntered()
         {
-            var savedAddress = QuickTryOnPage.QuickTryOnForm.ConfirmedAddress;
+            var savedAddress = QuickTryOnPage.InfoForm.ConfirmedAddress;
             Assert.IsTrue(savedAddress.Contains(CurrentQuickTryOnContext.EnteredAddress1));
             Assert.IsTrue(savedAddress.Contains(CurrentQuickTryOnContext.EnteredCity));
             Assert.IsTrue(savedAddress.Contains(CurrentQuickTryOnContext.EnteredState) || savedAddress.Contains(CurrentQuickTryOnContext.EnteredStateCode));
@@ -98,32 +100,32 @@ namespace XedoFramework.Core.Steps
         [Then(@"I should be warned that the address_1 field is required")]
         public void ThenIShouldBeWarnedThatTheAddress_1FieldIsRequired()
         {
-            Assert.IsTrue(QuickTryOnPage.QuickTryOnForm.AddressOneMissingLabel.Displayed);
+            Assert.IsTrue(QuickTryOnPage.InfoForm.AddressOneMissingLabel.Displayed);
         }
 
         [Then(@"I should be warned that the city field is required")]
         public void ThenIShouldBeWarnedThatTheCityFieldIsRequired()
         {
-            Assert.IsTrue(QuickTryOnPage.QuickTryOnForm.CityMissingLabel.Displayed);
+            Assert.IsTrue(QuickTryOnPage.InfoForm.CityMissingLabel.Displayed);
         }
 
         [Then(@"I should be warned that the state field is required")]
         public void ThenIShouldBeWarnedThatTheStateFieldIsRequired()
         {
-            Assert.IsTrue(QuickTryOnPage.QuickTryOnForm.StateMissingLabel.Displayed);
+            Assert.IsTrue(QuickTryOnPage.InfoForm.StateMissingLabel.Displayed);
         }
 
         [Then(@"I should be warned that the zip field is required")]
         public void ThenIShouldBeWarnedThatTheZipFieldIsRequired()
         {
-            Assert.IsTrue(QuickTryOnPage.QuickTryOnForm.ZipMissingLabel.Displayed);
+            Assert.IsTrue(QuickTryOnPage.InfoForm.ZipMissingLabel.Displayed);
         }
 
 
         [Then(@"The address should not be saved")]
         public void ThenTheAddressShouldNotBeSaved()
         {
-            Assert.IsFalse(QuickTryOnPage.QuickTryOnForm.AddressConfirmed);
+            Assert.IsFalse(QuickTryOnPage.InfoForm.AddressConfirmed);
         }
                 
         [Then(@"I should be warned that the zip code is invalid")]
@@ -189,5 +191,122 @@ namespace XedoFramework.Core.Steps
         {
             //Do nothing
         }
+        
+
+        [Given(@"the Try-On has less then two Pocket Squares")]
+        public void GivenTheTry_OnHasLessThenTwoPocketSquares()
+        {
+            QuickTryOnPage.ColourSelect.SecondSelectedColour.Remove();
+        }
+
+        [When(@"the Customer adds a Pocket Square")]
+        public void WhenTheCustomerAddsAPocketSquare()
+        {
+            var element = QuickTryOnPage.ColourSelect.ChooseFirstAvailableColour();
+            CurrentQuickTryOnContext.ThePocketSquareColour = element.GetAttribute("title");
+        }
+
+        [Then(@"the Pocket Square is added to the Try-On")]
+        public void ThenThePocketSquareIsAddedToTheTry_On()
+        {
+            var squareColour = CurrentQuickTryOnContext.ThePocketSquareColour;
+            Assert.IsTrue(QuickTryOnPage.ColourSelect.SelectedColours.Contains(squareColour));
+        }
+
+        [Given(@"the Try-On has the maximum number of Pocket Squares")]
+        public void GivenTheTry_OnHasTheMaximumNumberOfPocketSquares()
+        {
+            while (!QuickTryOnPage.ColourSelect.SecondSelectedColour.Selected)
+            {
+                QuickTryOnPage.ColourSelect.ChooseFirstAvailableColour();
+            }
+        }
+
+        [Then(@"the Customer is informed of the maximum number of Pocket Squares")]
+        public void ThenTheCustomerIsInformedOfTheMaximumNumberOfPocketSquares()
+        {
+            Assert.IsTrue(QuickTryOnPage.ColourSelect.ColourLimitReachedMessage.Displayed);
+        }
+
+        [Then(@"the new Pocket Square is not added to the Try-On")]
+        public void ThenTheNewPocketSquareIsNotAddedToTheTry_On()
+        {
+            var squareColour = CurrentQuickTryOnContext.ThePocketSquareColour;
+            Assert.IsFalse(QuickTryOnPage.ColourSelect.SelectedColours.Contains(squareColour));
+        }
+
+        [Given(@"the Try-On has at least one Pocket Square")]
+        public void GivenTheTry_OnHasAtLeastOnePocketSquare()
+        {
+            if (!QuickTryOnPage.ColourSelect.FirstSelectedColour.Selected)
+            {
+                QuickTryOnPage.ColourSelect.ChooseFirstAvailableColour();
+            }
+        }
+
+        [When(@"the Customer removes a Pocket Square")]
+        public void WhenTheCustomerRemovesAPocketSquare()
+        {
+            CurrentQuickTryOnContext.ThePocketSquareColour = QuickTryOnPage.ColourSelect.FirstSelectedColour.Name;
+            QuickTryOnPage.ColourSelect.FirstSelectedColour.Remove();
+        }
+
+        [Then(@"the Pocket Square is removed from the Try-On")]
+        public void ThenThePocketSquareIsRemovedFromTheTry_On()
+        {
+            var squareColour = CurrentQuickTryOnContext.ThePocketSquareColour;
+            Assert.IsFalse(QuickTryOnPage.ColourSelect.SelectedColours.Contains(squareColour));
+        }
+
+        [When(@"the Customer removes a Pocket Square by re-selecting the Pocket Square colour")]
+        public void WhenTheCustomerRemovesAPocketSquareByRe_SelectingThePocketSquareColour()
+        {
+            var element = QuickTryOnPage.ColourSelect.DeselectFirstSelectedColour();
+            CurrentQuickTryOnContext.ThePocketSquareColour = element.GetAttribute("title");
+        }
+
+        [Given(@"the Try-On contains zero Pocket Squares")]
+        public void GivenTheTry_OnContainsZeroPocketSquares()
+        {
+            QuickTryOnPage.ColourSelect.SecondSelectedColour.Remove();
+            QuickTryOnPage.ColourSelect.FirstSelectedColour.Remove();
+        }
+
+        [When(@"the Customer places the Try-On Order")]
+        public void WhenTheCustomerPlacesTheTry_OnOrder()
+        {
+            QuickTryOnPage.PlaceOrder();
+        }
+
+        [Then(@"the Customer is informed that at least one Pocket Square is required")]
+        public void ThenTheCustomerIsInformedThatAtLeastOnePocketSquareIsRequired()
+        {
+            Assert.IsTrue(QuickTryOnPage.ColourSelect.NoColoursSelectedMessage.Displayed);
+        }
+
+        [Given(@"the Try-On contains one Pocket Square")]
+        public void GivenTheTry_OnContainsOnePocketSquare()
+        {
+            QuickTryOnPage.ColourSelect.SecondSelectedColour.Remove();
+            if (!QuickTryOnPage.ColourSelect.FirstSelectedColour.Selected)
+            {
+                var element = QuickTryOnPage.ColourSelect.ChooseFirstAvailableColour();
+                CurrentQuickTryOnContext.ThePocketSquareColour = element.GetAttribute("title");
+            }
+        }
+
+        [When(@"the Customer attempts to add the same Pocket Square to the Try-On")]
+        public void WhenTheCustomerAttemptsToAddTheSamePocketSquareToTheTry_On()
+        {
+            QuickTryOnPage.ColourSelect.SelectColour(CurrentQuickTryOnContext.ThePocketSquareColour);
+        }
+
+        [Then(@"the Pocket Square is not added to the Try-On twice")]
+        public void ThenThePocketSquareIsNotAddedToTheTry_OnTwice()
+        {
+            Assert.IsTrue(QuickTryOnPage.ColourSelect.FirstSelectedColour.Name != QuickTryOnPage.ColourSelect.SecondSelectedColour.Name);
+        }
+
+
     }
 }

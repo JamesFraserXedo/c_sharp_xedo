@@ -82,7 +82,6 @@ namespace XedoFramework.Model.TestObjects.Controls.QuickTryOn
         {
             var element = Driver.FindElements(Locators.ValidDates)[index];
             var date = element.GetAttribute("data-full");
-            Console.WriteLine(date);
             SelectDate(date);
             return date;
         }
