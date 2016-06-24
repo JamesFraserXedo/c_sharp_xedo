@@ -13,7 +13,7 @@ namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Filters
 {
     public abstract class FilterBase : ControlBase
     {
-        private OutfitBuilderPage _builder;
+        internal OutfitBuilderPage _builder;
 
         protected FilterBase(TestSettings testSettings, OutfitBuilderPage builder) : base(testSettings)
         {
@@ -37,7 +37,7 @@ namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Filters
 
         public bool Expanded
         {
-            get { return Driver.ElementDisplayed(Locators.BodyContainer); }
+            get { return Driver.ElementDisplayed(Container, Locators.BodyContainer); }
         }
 
         public bool Completed
@@ -47,17 +47,14 @@ namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Filters
 
         public void SetActive()
         {
-            if (!Expanded)
-            {
-                HeadingContainer.Click();
-                _builder.WaitUntilLoaded();
-            }
+            HeadingContainer.Click();
+            _builder.WaitUntilLoaded();
         }
 
         public class Locators
         {
-            public static By HeadingContainer = By.XPath("/header");
-            public static By BodyContainer = By.XPath("/nav");
+            public static By HeadingContainer = By.XPath("./header");
+            public static By BodyContainer = By.XPath("./nav");
             public static By Container { get; internal set; }
         }
     }

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using XedoFramework.Model.TestObjects.Bases;
 
 namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Choosers.Shirts
@@ -11,6 +8,22 @@ namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Choosers.Shirts
     {
         public ShirtChooser(TestSettings testSettings) : base(testSettings)
         {
+        }
+
+        public override void SelectItemByName(string name)
+        {
+            var e = FindItemByName(name);
+            new Shirt(TestSettings, e).Select();
+        }
+
+        public override ReadOnlyCollection<ClothingItem> Items
+        {
+            get
+            {
+                var itemElements = Container.FindElements(Locators.Items);
+                var items = itemElements.Select(itemElement => new Shirt(TestSettings, itemElement)).Cast<ClothingItem>().ToList();
+                return items.AsReadOnly();
+            }
         }
     }
 }

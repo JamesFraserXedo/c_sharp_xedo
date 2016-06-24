@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using System.Threading;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,7 @@ namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Filters
             if (!Expanded)
             {
                 HeadingContainer.Click();
+                Thread.Sleep(500);
             }
         }
 
@@ -37,6 +39,13 @@ namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Filters
                 HeadingContainer.Click();
             }
         }
+
+        public new void SetActive()
+        {
+            Expand();
+            _builder.WaitUntilLoaded();
+        }
+        
 
         public new class Locators : FilterBase.Locators
         {

@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Drawing.Imaging;
+using System.IO;
+using System.Linq;
 using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
@@ -63,6 +66,32 @@ namespace XedoFramework.Model.SupportTools
             return element;
         }
 
+        public static void WaitForElementToAppear(IWebDriver driver, By by, int timeout = Timeouts.StandardTimeout)
+        {
+            if (timeout > 0)
+            {
+                var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeout));
+                wait.Until(drv => drv.FindElements(by).Any());
+            }
+            else
+            {
+                throw new ArgumentException("Timeout cannot be zero");
+            }
+        }
+
+        public static void WaitForElementToDisappear(IWebDriver driver, By by, int timeout = Timeouts.StandardTimeout)
+        {
+            if (timeout > 0)
+            {
+                var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeout));
+                wait.Until(drv => drv.FindElements(by).Count == 0);
+            }
+            else
+            {
+                throw new ArgumentException("Timeout cannot be zero");
+            }
+        }
+
         public static IWebElement FindElement(IWebDriver driver, IWebElement parent, By by, int timeout = Timeouts.StandardTimeout)
         {
             IWebElement element;
@@ -87,6 +116,13 @@ namespace XedoFramework.Model.SupportTools
         public static bool ElementDisplayed(IWebDriver driver, By loc)
         {
             var elements = driver.FindElements(loc);
+            if (elements.Count == 0) { return false; }
+            return elements[0].Displayed;
+        }
+
+        public static bool ElementDisplayed(IWebDriver driver, IWebElement parent, By loc)
+        {
+            var elements = parent.FindElements(loc);
             if (elements.Count == 0) { return false; }
             return elements[0].Displayed;
         }
@@ -118,6 +154,36 @@ namespace XedoFramework.Model.SupportTools
             var js = driver as IJavaScriptExecutor;
             var script = "window.scrollTo(" + element.Location.X + "," + (element.Location.Y - 400) + ");";
             js.ExecuteScript(script);
+        }
+
+        public static string TakeScreenshot(IWebDriver driver, string strFilename)
+        {
+            if (!Directory.Exists(ErrorScreenshotDirName))
+            {
+                Directory.CreateDirectory(ErrorScreenshotDirName);
+            }
+
+            // TODO: Deal with .format expectedText
+            //var filePath = ErrorScreenshotDirName + strFilename + "raw.png";
+            string filePath = ErrorScreenshotDirName + strFilename;
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+            }
+
+            // Bug: This could fail due to System.IO.PathTooLongException. Need a more intelligent mechanism.
+            ((ITakesScreenshot)driver).GetScreenshot().SaveAsFile(filePath, ImageFormat.Png);
+            return filePath;
+        }
+
+        public static void HighlightElement(IWebDriver driver, IWebElement element)
+        {
+            ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].style.border='3px solid red'", element);
+        }
+
+        public static void ScrollToElement(IWebDriver driver, IWebElement element)
+        {
+            ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].scrollIntoView(true);", element);
         }
     }
 }

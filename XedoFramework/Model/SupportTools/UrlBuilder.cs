@@ -23,6 +23,9 @@ namespace XedoFramework.Model.SupportTools
                         case Page.QuickTryOn:
                             url = Urls.Xedo.QuickTryOnPage;
                             break;
+                        case Page.OutfitBuilder:
+                            url = Urls.Xedo.OutfitBuilder;
+                            break;
                     }
                     break;
             }

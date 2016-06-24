@@ -3,6 +3,7 @@ using TechTalk.SpecFlow;
 using NUnit.Framework;
 using XedoFramework.Model.Sites;
 using XedoFramework.Model.SupportTools;
+using XedoFramework.Model.TestObjects.Bases;
 
 namespace XedoFramework.Core.Steps.SharedSteps
 {
@@ -18,7 +19,21 @@ namespace XedoFramework.Core.Steps.SharedSteps
             {
                 ExclusiveAccessPage.InputPassword("atlanta123");
                 ExclusiveAccessPage.Submit();
-            }            
+            }
+
+            switch (page)
+            {
+                case Page.Home:
+                    HomePage.WaitUntilLoaded();
+                    break;
+                case Page.QuickTryOn:
+                    QuickTryOnPage.WaitUntilLoaded();
+                    break;
+                case Page.OutfitBuilder:
+                    OutfitBuilderPage.WaitUntilLoaded();
+                    break;
+            }
+
         }
         
         [When(@"I click the login button in the header")]

@@ -34,6 +34,11 @@ namespace XedoFramework.Core.Steps.StepsSupport
             get { return new QuickTryOnPage(GetTestSettings()); }
         }
 
+        public static OutfitBuilderPage OutfitBuilderPage
+        {
+            get { return new OutfitBuilderPage(GetTestSettings()); }
+        }
+
         public static LoginForm LoginForm 
         {
             get { return new LoginForm(GetTestSettings()); }

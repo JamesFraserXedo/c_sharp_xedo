@@ -26,6 +26,26 @@ namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Filters
         {
             get { return new SuitFilter(TestSettings, _builder); }
         }
+
+        public NeckwearFilter NeckwearFilter
+        {
+            get { return new NeckwearFilter(TestSettings, _builder); }
+        }
+
+        public WaistcoatFilter WaistcoatFilter
+        {
+            get { return new WaistcoatFilter(TestSettings, _builder); }
+        }
+
+        public ShirtFilter ShirtFilter
+        {
+            get { return new ShirtFilter(TestSettings, _builder); }
+        }
+
+        public AccessoryFilter AccessoryFilter
+        {
+            get { return new AccessoryFilter(TestSettings, _builder); }
+        }
         
         public class Locators
         {

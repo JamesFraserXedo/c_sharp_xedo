@@ -64,10 +64,12 @@
   <ItemGroup>
     <Compile Include="Core\Configuration\Configuration.cs" />
     <Compile Include="Core\Contexts\QuickTryOnContext.cs" />
+    <Compile Include="Core\Steps\OutfitBuilderSteps.cs" />
     <Compile Include="Core\Steps\QuickTryOnSteps.cs" />
     <Compile Include="Core\Steps\SharedSteps\ExclusiveAccessPageSteps.cs" />
     <Compile Include="Core\Steps\SharedSteps\HomePageSteps.cs" />
     <Compile Include="Core\Steps\StepsSupport\ScenarioHooks.cs" />
+    <Compile Include="Core\Steps\StepsSupport\ScreenshotCreator.cs" />
     <Compile Include="Core\Steps\StepsSupport\StepBase.cs" />
     <Compile Include="Core\Steps\StepsSupport\TestFinaliser.cs" />
     <Compile Include="Core\Steps\StepsSupport\TestsConfig.cs" />
@@ -99,9 +101,11 @@
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Choosers\ClothingItem.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Choosers\Neckwears\Neckwear.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Choosers\Neckwears\NeckwearChooser.cs" />
+    <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Choosers\Shirts\Shirt.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Choosers\Shirts\ShirtChooser.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Choosers\Suits\Suit.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Choosers\Suits\SuitChooser.cs" />
+    <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Choosers\Waistcoats\Waistcoat.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Choosers\Waistcoats\WaistcoatChooser.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Dummy\OutfitViewer.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Filters\AccessoryFilter.cs" />
@@ -123,6 +127,7 @@
     <Compile Include="Model\TestObjects\Controls\QuickTryOn\DatePicker.cs" />
     <Compile Include="Model\TestObjects\Controls\QuickTryOn\InfoForm.cs" />
     <Compile Include="Model\TestObjects\Controls\QuickTryOn\SelectedColour.cs" />
+    <Compile Include="Model\TestObjects\Controls\QuickTryOn\TryOnPopup.cs" />
     <Compile Include="Model\TestObjects\Pages\ExclusiveAccessPage.cs" />
     <Compile Include="Model\TestObjects\Pages\HomePage.cs" />
     <Compile Include="Model\TestObjects\Pages\OrderConfirmationPage.cs" />

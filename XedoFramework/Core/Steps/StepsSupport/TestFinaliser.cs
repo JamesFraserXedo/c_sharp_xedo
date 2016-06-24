@@ -35,7 +35,10 @@ namespace XedoFramework.Core.Steps.StepsSupport
 
         private static void QuitDriver()
         {
-
+            if (!DidTestPass())
+            {
+                TakeScreenshot();
+            }
             if (Driver != null)
             {
                 Driver.Quit();
@@ -59,5 +62,9 @@ namespace XedoFramework.Core.Steps.StepsSupport
             return ScenarioContext.Current.TestError == null;
         }
 
+        private static void TakeScreenshot()
+        {
+            ScreenshotCreator.CreateErrorScreenshot(Driver);
+        }
     }
 }

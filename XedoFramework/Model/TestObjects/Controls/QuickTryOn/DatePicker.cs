@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using XedoFramework.Model.SupportTools;
 using XedoFramework.Model.TestObjects.Bases;
 
 namespace XedoFramework.Model.TestObjects.Controls.QuickTryOn
@@ -25,21 +26,23 @@ namespace XedoFramework.Model.TestObjects.Controls.QuickTryOn
 
         public void SelectDate(string date)
         {
+            Console.WriteLine(date);
             GoToMonth(int.Parse(date.Split('-')[1])+1);
             GoToYear(date.Split('-')[0]);
-            Container.FindElement(By.XPath(string.Format("//div[@data-full='{0}']", date))).Click();
+            Driver.FindElement(Container, Locators.FindDate(date)).Click();
         }
 
         public void SelectDate(int day, int month, int year)
         {
             GoToMonth(month);
             GoToYear(year.ToString());
-            Container.FindElement(By.XPath(string.Format("//div[@data-full='{0}-{1}-{2}']", year, month-1, day))).Click();
+
+            Driver.FindElement(Container, Locators.FindDate(day, month, year)).Click();
         }
 
         public bool DateActive(int day, int month, int year)
         {
-            IWebElement dateElement = Container.FindElement(By.XPath(string.Format("//div[@data-full='{0}-{1}-{2}']", year, month, day)));
+            var dateElement = Container.FindElement(Locators.FindDate(day, month, year));
             return dateElement.GetAttribute("class").ToLower().Contains("dw-cal-day-v");
         }
 
@@ -92,6 +95,19 @@ namespace XedoFramework.Model.TestObjects.Controls.QuickTryOn
             public static By YearPicker = By.XPath("//span[@class='dw-cal-year']");
             public static By SelectedDate = By.XPath("//*[@aria-selected='true']");
             public static By ValidDates = By.XPath("//*[contains(@class, 'dw-cal-day-v')]");
+
+            public static By FindDate(int day, int month, int year)
+            {
+                return By.XPath(
+                    string.Format("//div[(@data-full='{0}-{1}-{2}') and (not(contains(@class, 'dw-cal-day-diff')))]",
+                        year, month - 1, day));
+            }
+            public static By FindDate(string yyyymmdd)
+            {
+                return By.XPath(
+                    string.Format("//div[(@data-full='{0}') and (not(contains(@class, 'dw-cal-day-diff')))]",
+                        yyyymmdd));
+            }
         }
     }
 }

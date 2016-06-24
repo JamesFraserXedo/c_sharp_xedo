@@ -213,7 +213,8 @@ namespace XedoFramework.Core.Utilities
 
         private static Utils.BrowserType GetBrowserChoiceFromEnvironment()
         {
-            var browserValue = Environment.GetEnvironmentVariable(TestsConfig.BrowserVariableName);
+            //var browserValue = Environment.GetEnvironmentVariable(TestsConfig.BrowserVariableName);
+            var browserValue = TestsConfig.BrowserVariableName;
 
             if (browserValue == null)
             {

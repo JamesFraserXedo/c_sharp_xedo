@@ -9,11 +9,17 @@ namespace XedoFramework.Model.TestObjects.Pages
     {
         public QuickTryOnPage(TestSettings testSettings) : base(testSettings)
         {
+            TryOnPopup.Dismiss();
         }
 
         public IWebElement ReviewAndConfirmTryOnButton
         {
             get { return Driver.FindElement(Locators.ReviewAndConfirmTryOnButton); }
+        }
+
+        public TryOnPopup TryOnPopup
+        {
+            get { return new TryOnPopup(TestSettings); }
         }
 
         public InfoForm InfoForm
@@ -28,7 +34,7 @@ namespace XedoFramework.Model.TestObjects.Pages
 
         public override bool IsLoaded()
         {
-            return InfoForm.Container.Displayed;
+            return InfoForm.Container.Displayed || TryOnPopup.Container.Displayed;
         }
 
         public override void SetupState()

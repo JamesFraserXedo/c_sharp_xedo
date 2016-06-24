@@ -11,9 +11,9 @@ namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Choosers
 {
     public abstract class ClothingItem : ControlBase
     {
-        IWebElement _container;
+        public IWebElement _container;
 
-        public ClothingItem(TestSettings testSettings, IWebElement container) : base(testSettings)
+        protected ClothingItem(TestSettings testSettings, IWebElement container) : base(testSettings)
         {
             _container = container;
         }
@@ -37,6 +37,7 @@ namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Choosers
         {
             if (!Selected)
             {
+                Utils.ScrollToElement(Driver, _container);
                 _container.Click();
             }
         }
@@ -49,9 +50,14 @@ namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Choosers
             }
         }
 
-        public string Name
+        public string NameAsIs
         {
             get { return NameLabel.Text; }
+        }
+
+        public string Name
+        {
+            get { return NameLabel.Text.Replace("\n", " ").Replace("\r", " ").Replace("  ", " "); }
         }
 
         public string ID
@@ -75,7 +81,7 @@ namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Choosers
 
         public class Locators
         {
-            public static By NameLabel = By.XPath("//*[@class='item-text-link']");
+            public static By NameLabel = By.XPath(".//*[@class='item-text-link']");
             public static By Wrapper = By.XPath("//span[contains(@class, 'img-wrap')]");
             public static By SelectedWrapper = By.XPath("//span[@class='img-wrap selected']");
             public static By AvailableDate = By.XPath("//*[@class='item-unavailable-date-inner']");

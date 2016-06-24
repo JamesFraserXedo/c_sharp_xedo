@@ -6,13 +6,16 @@ using System.Text;
 using System.Threading.Tasks;
 using XedoFramework.Model.SupportTools;
 using XedoFramework.Model.TestObjects.Bases;
+using XedoFramework.Model.TestObjects.Pages;
 
 namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder
 {
     public class OutfitControls : ControlBase
     {
-        public OutfitControls(TestSettings testSettings) : base(testSettings)
+        private OutfitBuilderPage _builder;
+        public OutfitControls(TestSettings testSettings, OutfitBuilderPage builder) : base(testSettings)
         {
+            _builder = builder;
         }
 
         public IWebElement Container
@@ -43,6 +46,12 @@ namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder
         public IWebElement ExpandControlsButton
         {
             get { return Driver.FindElement(Container, Locators.ExpandControlsButton); }
+        }
+
+        public void ClearTux()
+        {
+            ClearTuxButton.Click();
+            _builder.WaitUntilLoaded();
         }
 
         public class Locators

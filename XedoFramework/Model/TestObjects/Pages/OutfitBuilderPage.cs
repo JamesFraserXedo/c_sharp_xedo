@@ -22,7 +22,7 @@ namespace XedoFramework.Model.TestObjects.Pages
 
         public OutfitControls OutfitControls
         {
-            get { return new OutfitControls(TestSettings); }
+            get { return new OutfitControls(TestSettings, this); }
         }
 
         public FilterPanel FilterPanel
@@ -37,12 +37,17 @@ namespace XedoFramework.Model.TestObjects.Pages
 
         public ChooserPanel ChooserPanel
         {
-            get { return new ChooserPanel(TestSettings); }
+            get { return new ChooserPanel(TestSettings, this); }
         }
 
         public override bool IsLoaded()
         {
-            return OutfitControls.Container.Displayed && !ChoicePanelLoading;
+            return (!PageLoading && !ChoicePanelLoading);
+        }
+
+        public bool PageLoading
+        {
+            get { return Driver.ElementDisplayed(Locators.PageLoading); }
         }
 
         public bool ChoicePanelLoading
@@ -57,6 +62,7 @@ namespace XedoFramework.Model.TestObjects.Pages
 
         public class Locators
         {
+            public static By PageLoading = By.XPath("//*[@class='outfit-builder ob-loading']");
             public static By ChoicePanelLoading = By.XPath("//*[contains(@class, 'outfit-catalogue-col loading')]");
         }
     }

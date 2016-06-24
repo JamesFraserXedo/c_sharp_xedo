@@ -85,6 +85,7 @@ Scenario: 8 - customer enters invalid address(invalid zip code)
 Scenario: 9 - existing logged on customer enters new valid address
 	Given I am on the Xedo QuickTryOn page
 	And I am logged on to the site
+	And I choose to enter the address
 	And I enter an address_1 4400 quality drive
 	And I enter a city Memphis
 	And I select a state Tennessee
@@ -97,6 +98,7 @@ Scenario: 9 - existing logged on customer enters new valid address
 Scenario: 10 - existing logged on customer enters new valid default address
 	Given I am on the Xedo QuickTryOn page
 	And I am logged on to the site
+	And I choose to enter the address
 	And I enter an address_1 4400 quality drive
 	And I enter a city Memphis
 	And I select a state Tennessee

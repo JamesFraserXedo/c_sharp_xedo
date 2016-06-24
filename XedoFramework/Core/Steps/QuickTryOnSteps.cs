@@ -38,7 +38,13 @@ namespace XedoFramework.Core.Steps
         {
             ScenarioContext.Current.Pending();
         }
-        
+
+        [Given(@"I choose to enter the address")]
+        public void GivenIChooseToEnterTheAddress()
+        {
+            QuickTryOnPage.InfoForm.SetToManualAddressInput();
+        }
+
         [Given(@"I enter an address_1 (.*)")]
         public void GivenIEnterAnAddress1(string address)
         {

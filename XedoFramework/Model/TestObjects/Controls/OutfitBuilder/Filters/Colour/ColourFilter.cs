@@ -78,20 +78,23 @@ namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Filters.Colour
                 }
             }
 
-            var xpath = string.Format("//li[@data-colour-desc='{0}']", colour);
+            var xpath = string.Format(".//li[@data-colour-desc='{0}']", colour);
             if (Container.FindElements(By.XPath(xpath)).Any())
             {
-                Driver.FindElement(By.XPath(xpath)).Click();
+                Driver.FindElement(Container, By.XPath(xpath)).Click();
             }
-            throw new ArgumentException("This colour was not available to select");
-            
+            else
+            {
+                throw new ArgumentException("This colour was not available to select");
+            }
+
         }
 
         public class Locators
         {
             public static By Container = By.Id("filters-colours");
-            public static By SelectedColourChooser = By.XPath("//li[contains(@class, 'selected')]");
-            public static By ColourChoosers = By.XPath("//li");
+            public static By SelectedColourChooser = By.XPath(".//li[contains(@class, 'selected')]");
+            public static By ColourChoosers = By.XPath(".//li");
         }
     }
 }

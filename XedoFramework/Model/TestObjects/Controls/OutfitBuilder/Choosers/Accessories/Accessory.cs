@@ -7,11 +7,7 @@ namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Choosers.Access
     {
         public Accessory(TestSettings testSettings, IWebElement container) : base(testSettings, container)
         {
-        }
-        
-        public new class Locators : ClothingItem.Locators
-        {
-            public new static By ItemDetails = By.XPath("//*[@data-level='accessories']");
+            Locators.ItemDetails = By.XPath("//*[@data-level='accessories']");
         }
     }
 }

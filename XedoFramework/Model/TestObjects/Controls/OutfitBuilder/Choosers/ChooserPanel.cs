@@ -1,9 +1,6 @@
 ﻿using OpenQA.Selenium;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using XedoFramework.Model.SupportTools;
 using XedoFramework.Model.TestObjects.Bases;
 using XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Choosers.Accessories;
@@ -11,13 +8,16 @@ using XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Choosers.Neckwears;
 using XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Choosers.Shirts;
 using XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Choosers.Suits;
 using XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Choosers.Waistcoats;
+using XedoFramework.Model.TestObjects.Pages;
 
 namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Choosers
 {
     public class ChooserPanel : ControlBase
     {
-        public ChooserPanel(TestSettings testSettings) : base(testSettings)
+        private OutfitBuilderPage _builder;
+        public ChooserPanel(TestSettings testSettings, OutfitBuilderPage builder) : base(testSettings)
         {
+            _builder = builder;
         }
 
         public IWebElement Container
@@ -38,6 +38,51 @@ namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Choosers
         public IWebElement PreviousSectionButton
         {
             get { return Driver.FindElement(Container, Locators.PreviousSectionButton); }
+        }
+
+        public SuitChooser SuitChooser
+        {
+            get
+            {
+                _builder.FilterPanel.SuitsFilter.SetActive();
+                return new SuitChooser(TestSettings);
+            }
+        }
+
+        public NeckwearChooser NeckwearChooser
+        {
+            get
+            {
+                _builder.FilterPanel.NeckwearFilter.SetActive(); 
+                return new NeckwearChooser(TestSettings);
+            }
+        }
+
+        public WaistcoatChooser WaistcoatChooser
+        {
+            get
+            {
+                _builder.FilterPanel.WaistcoatFilter.SetActive();
+                return new WaistcoatChooser(TestSettings);
+            }
+        }
+
+        public ShirtChooser ShirtChooser
+        {
+            get
+            {
+                _builder.FilterPanel.ShirtFilter.SetActive();
+                return new ShirtChooser(TestSettings);
+            }
+        }
+
+        public AccessoryChooser AccessoryChooser
+        {
+            get
+            {
+                _builder.FilterPanel.AccessoryFilter.SetActive();
+                return new AccessoryChooser(TestSettings);
+            }
         }
 
         public ChooserBase CurrentChooser
