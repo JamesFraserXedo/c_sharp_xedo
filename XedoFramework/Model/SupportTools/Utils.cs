@@ -185,5 +185,10 @@ namespace XedoFramework.Model.SupportTools
         {
             ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].scrollIntoView(true);", element);
         }
+
+        public static string StripBreaks(string input)
+        {
+            return input.Replace("\n", " ").Replace("\r", " ").Replace("  ", " ");
+        }
     }
 }

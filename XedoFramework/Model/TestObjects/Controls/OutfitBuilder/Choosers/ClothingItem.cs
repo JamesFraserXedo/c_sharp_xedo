@@ -57,7 +57,7 @@ namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Choosers
 
         public string Name
         {
-            get { return NameLabel.Text.Replace("\n", " ").Replace("\r", " ").Replace("  ", " "); }
+            get { return Utils.StripBreaks(NameLabel.Text); }
         }
 
         public string ID

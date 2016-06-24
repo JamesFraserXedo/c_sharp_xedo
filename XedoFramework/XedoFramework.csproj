@@ -88,6 +88,7 @@
     <Compile Include="Model\TestObjects\Bases\PageBase.cs" />
     <Compile Include="Model\TestObjects\Bases\TestObjectBase.cs" />
     <Compile Include="Model\TestObjects\Bases\TestSettings.cs" />
+    <Compile Include="Model\TestObjects\Controls\Collections\CollectionOutfit.cs" />
     <Compile Include="Model\TestObjects\Controls\Common\Footer\ContactDetails.cs" />
     <Compile Include="Model\TestObjects\Controls\Common\Footer\Footer.cs" />
     <Compile Include="Model\TestObjects\Controls\Common\Footer\UsefulLinks.cs" />
@@ -128,6 +129,7 @@
     <Compile Include="Model\TestObjects\Controls\QuickTryOn\InfoForm.cs" />
     <Compile Include="Model\TestObjects\Controls\QuickTryOn\SelectedColour.cs" />
     <Compile Include="Model\TestObjects\Controls\QuickTryOn\TryOnPopup.cs" />
+    <Compile Include="Model\TestObjects\Pages\CollectionsPage.cs" />
     <Compile Include="Model\TestObjects\Pages\ExclusiveAccessPage.cs" />
     <Compile Include="Model\TestObjects\Pages\HomePage.cs" />
     <Compile Include="Model\TestObjects\Pages\OrderConfirmationPage.cs" />
