@@ -15,12 +15,6 @@ namespace XedoFramework.Core.Steps
             QuickTryOnPage.InfoForm.PreferredDateDatePicker.SelectFirstAvailableDate();
         }
 
-        [Then(@"this should be confirmed on my Try On order")]
-        public void ThenThisShouldBeConfirmedOnMyTryOnOrder()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
         [Given(@"that I have previously entered a Try On delivery date")]
         public void GivenThatIHavePreviouslyEnteredATryOnDeliveryDate()
         {
@@ -31,12 +25,6 @@ namespace XedoFramework.Core.Steps
         public void WhenIThenAmendMyTryOnDeliveryDate()
         {
             QuickTryOnPage.InfoForm.PreferredDateDatePicker.SelectAvailableDate(1);
-        }
-
-        [Then(@"the new date should be updated on my Try On order")]
-        public void ThenTheNewDateShouldBeUpdatedOnMyTryOnOrder()
-        {
-            ScenarioContext.Current.Pending();
         }
 
         [Given(@"I choose to enter the address")]
@@ -137,50 +125,14 @@ namespace XedoFramework.Core.Steps
         [Then(@"I should be warned that the zip code is invalid")]
         public void ThenIShouldBeWarnedThatTheZipCodeIsInvalid()
         {
-            //Doesn't occur yet
-            ScenarioContext.Current.Pending();
+            Assert.IsTrue(QuickTryOnPage.InfoForm.ZipMissingLabel.Displayed);
+            Assert.IsTrue(QuickTryOnPage.InfoForm.ZipMissingLabel.Text.Contains("a valid"));
         }
 
         [Given(@"I am logged on to the site")]
         public void GivenIAmLoggedOnToTheSite()
         {
             LoginForm.Login();
-        }
-
-        [Then(@"the address should be saved as entered into my address book")]
-        public void ThenTheAddressShouldBeSavedAsEnteredIntoMyAddressBook()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Then(@"saved as the shipping address for the try on order")]
-        public void ThenSavedAsTheShippingAddressForTheTryOnOrder()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Given(@"I choose to save the address as my default address")]
-        public void GivenIChooseToSaveTheAddressAsMyDefaultAddress()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Then(@"the address should be saved as entered into my address book as the default address")]
-        public void ThenTheAddressShouldBeSavedAsEnteredIntoMyAddressBookAsTheDefaultAddress()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [When(@"I select the suggested delivery address from Fedex")]
-        public void WhenISelectTheSuggestedDeliveryAddressFromFedex()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Then(@"the address should be saved as suggested by Fedex")]
-        public void ThenTheAddressShouldBeSavedAsSuggestedByFedex()
-        {
-            ScenarioContext.Current.Pending();
         }
 
         [Given(@"I havent confirmed my order yet")]
@@ -311,6 +263,55 @@ namespace XedoFramework.Core.Steps
         public void ThenThePocketSquareIsNotAddedToTheTry_OnTwice()
         {
             Assert.IsTrue(QuickTryOnPage.ColourSelect.FirstSelectedColour.Name != QuickTryOnPage.ColourSelect.SecondSelectedColour.Name);
+        }
+
+        [Then(@"this should be confirmed on my Try On order")]
+        public void ThenThisShouldBeConfirmedOnMyTryOnOrder()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [Then(@"the new date should be updated on my Try On order")]
+        public void ThenTheNewDateShouldBeUpdatedOnMyTryOnOrder()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [When(@"I select the suggested delivery address from Fedex")]
+        public void WhenISelectTheSuggestedDeliveryAddressFromFedex()
+        {
+            CurrentQuickTryOnContext.FedexSuggestedAddress = QuickTryOnPage.InfoForm.SuggestedAddressLabel.Text;
+            QuickTryOnPage.InfoForm.ConfirmSuggestedAddressButton.Click();
+        }
+
+        [Then(@"the address should be saved as suggested by Fedex")]
+        public void ThenTheAddressShouldBeSavedAsSuggestedByFedex()
+        {
+            Assert.IsTrue(QuickTryOnPage.InfoForm.ConfirmedAddress == CurrentQuickTryOnContext.FedexSuggestedAddress);
+        }
+
+        [Then(@"the address should be saved as entered into my address book")]
+        public void ThenTheAddressShouldBeSavedAsEnteredIntoMyAddressBook()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [Then(@"saved as the shipping address for the try on order")]
+        public void ThenSavedAsTheShippingAddressForTheTryOnOrder()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [Given(@"I choose to save the address as my default address")]
+        public void GivenIChooseToSaveTheAddressAsMyDefaultAddress()
+        {
+            QuickTryOnPage.InfoForm.SaveAsDefaultAddress();
+        }
+
+        [Then(@"the address should be saved as entered into my address book as the default address")]
+        public void ThenTheAddressShouldBeSavedAsEnteredIntoMyAddressBookAsTheDefaultAddress()
+        {
+            ScenarioContext.Current.Pending();
         }
 
 

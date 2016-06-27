@@ -16,5 +16,8 @@ namespace XedoFramework.Core.Contexts
         public string EnteredZip { get; set; }
 
         public string ThePocketSquareColour { get; set; }
+
+        public string FedexSuggestedAddress { get; set; }
+        
     }
 }

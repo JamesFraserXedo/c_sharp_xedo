@@ -1,11 +1,11 @@
 ﻿Feature: QuickTryOn - Dates
 
-Scenario: 1 - Enter Preferred Try On date
+Scenario: Enter Preferred Try On date
 	Given I am on the Xedo QuickTryOn page
 	When I enter a preferred Try On date
 	Then this should be confirmed on my Try On order
 
-Scenario: 2 - Change Preferred Try On date
+Scenario: Change Preferred Try On date
 	Given I am on the Xedo QuickTryOn page
 	And that I have previously entered a Try On delivery date
 	And I havent confirmed my order yet

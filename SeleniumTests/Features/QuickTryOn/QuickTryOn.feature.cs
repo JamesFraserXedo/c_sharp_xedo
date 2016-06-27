@@ -61,10 +61,10 @@ namespace SeleniumTests.Features.QuickTryOn
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("1 - Enter Preferred Try On date", SourceLine=2)]
-        public virtual void _1_EnterPreferredTryOnDate()
+        [TechTalk.SpecRun.ScenarioAttribute("Enter Preferred Try On date", SourceLine=2)]
+        public virtual void EnterPreferredTryOnDate()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1 - Enter Preferred Try On date", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Enter Preferred Try On date", ((string[])(null)));
 #line 3
 this.ScenarioSetup(scenarioInfo);
 #line 4
@@ -77,10 +77,10 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("2 - Change Preferred Try On date", SourceLine=7)]
-        public virtual void _2_ChangePreferredTryOnDate()
+        [TechTalk.SpecRun.ScenarioAttribute("Change Preferred Try On date", SourceLine=7)]
+        public virtual void ChangePreferredTryOnDate()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2 - Change Preferred Try On date", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change Preferred Try On date", ((string[])(null)));
 #line 8
 this.ScenarioSetup(scenarioInfo);
 #line 9
@@ -153,10 +153,10 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("1 - Enter Preferred Try On date")]
-        public virtual void _1_EnterPreferredTryOnDate()
+        [NUnit.Framework.DescriptionAttribute("Enter Preferred Try On date")]
+        public virtual void EnterPreferredTryOnDate()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1 - Enter Preferred Try On date", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Enter Preferred Try On date", ((string[])(null)));
 #line 3
 this.ScenarioSetup(scenarioInfo);
 #line 4
@@ -170,10 +170,10 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2 - Change Preferred Try On date")]
-        public virtual void _2_ChangePreferredTryOnDate()
+        [NUnit.Framework.DescriptionAttribute("Change Preferred Try On date")]
+        public virtual void ChangePreferredTryOnDate()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2 - Change Preferred Try On date", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change Preferred Try On date", ((string[])(null)));
 #line 8
 this.ScenarioSetup(scenarioInfo);
 #line 9
