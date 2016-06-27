@@ -20,11 +20,5 @@ namespace XedoFramework.Core.Steps.SharedSteps
         {
             ExclusiveAccessPage.SubmitPasswordButton.Click();
         }
-
-        [Then(@"I am on the (.*) (.*) page")]
-        public void ThenIAmOnThePage(Site site, Page page)
-        {
-            Assert.IsTrue(Driver.Url == UrlBuilder.GetUrl(site, page));
-        }
     }
 }

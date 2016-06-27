@@ -6,6 +6,7 @@ using XedoFramework.Model.TestObjects.Controls.Common;
 using XedoFramework.Model.TestObjects.Controls.Common.Footer;
 using XedoFramework.Model.TestObjects.Controls.Common.Header;
 using XedoFramework.Model.TestObjects.Pages;
+using XedoFramework.Model.TestObjects.Pages.Profile;
 using XedoFramework.TestObjects.Pages;
 
 namespace XedoFramework.Core.Steps.StepsSupport
@@ -53,6 +54,11 @@ namespace XedoFramework.Core.Steps.StepsSupport
             get { return new LoginForm(GetTestSettings()); }
         }
 
+        public static NewMemberRegistrationPage NewMemberRegistrationPage
+        {
+            get { return new NewMemberRegistrationPage(GetTestSettings()); }
+        }
+
         public static Header Header
         {
             get { return new Header(GetTestSettings()); }
@@ -63,13 +69,39 @@ namespace XedoFramework.Core.Steps.StepsSupport
             get { return new Footer(GetTestSettings()); }
         }
 
+        public static ProfilePage ProfilePage
+        {
+            get { return new ProfilePage(GetTestSettings()); }
+        }
+
+        public static OrdersPage OrdersPage
+        {
+            get { return new OrdersPage(GetTestSettings()); }
+        }
+
+        public static AddressBookPage AddressBookPage
+        {
+            get { return new AddressBookPage(GetTestSettings()); }
+        }
+
+        public static FavouritesPage FavouritesPage
+        {
+            get { return new FavouritesPage(GetTestSettings()); }
+        }
 
         protected const string QuickTryOnContextName = "QuickTryOnContext";
+        protected const string CommonContextName = "CommonContext";
 
         protected static QuickTryOnContext CurrentQuickTryOnContext
         {
             get { return (QuickTryOnContext)ScenarioContext.Current[QuickTryOnContextName]; }
             set { ScenarioContext.Current[QuickTryOnContextName] = value; }
+        }
+
+        protected static CommonContext CurrentCommonContext
+        {
+            get { return (CommonContext)ScenarioContext.Current[CommonContextName]; }
+            set { ScenarioContext.Current[CommonContextName] = value; }
         }
 
 

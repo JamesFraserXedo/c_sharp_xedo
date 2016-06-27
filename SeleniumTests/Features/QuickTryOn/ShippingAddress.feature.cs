@@ -61,72 +61,78 @@ namespace SeleniumTests.Features.QuickTryOn
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("1 - New customer enters new valid address", SourceLine=2)]
-        public virtual void _1_NewCustomerEntersNewValidAddress()
+        public virtual void FeatureBackground()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1 - New customer enters new valid address", ((string[])(null)));
 #line 3
-this.ScenarioSetup(scenarioInfo);
 #line 4
  testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 5
- testRunner.And("I am not logged on to the site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("New customer enters new valid address", SourceLine=5)]
+        public virtual void NewCustomerEntersNewValidAddress()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("New customer enters new valid address", ((string[])(null)));
 #line 6
- testRunner.And("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
+#line 3
+this.FeatureBackground();
 #line 7
- testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I am not logged on to the site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
- testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
- testRunner.And("I enter a zip code 38118", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
- testRunner.When("I confirm the delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
+ testRunner.And("I enter a zip code 38118", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 12
+ testRunner.When("I confirm the delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 13
  testRunner.Then("The address should be checked by Fedex", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("2 - new customer enters new valid address and selects entered address", SourceLine=12)]
-        public virtual void _2_NewCustomerEntersNewValidAddressAndSelectsEnteredAddress()
+        [TechTalk.SpecRun.ScenarioAttribute("New customer enters new valid address and selects entered address", SourceLine=14)]
+        public virtual void NewCustomerEntersNewValidAddressAndSelectsEnteredAddress()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2 - new customer enters new valid address and selects entered address", ((string[])(null)));
-#line 13
-this.ScenarioSetup(scenarioInfo);
-#line 14
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("New customer enters new valid address and selects entered address", ((string[])(null)));
 #line 15
- testRunner.And("I am not logged on to the site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
+#line 3
+this.FeatureBackground();
 #line 16
- testRunner.And("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I am not logged on to the site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 17
- testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
- testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
- testRunner.And("I enter a zip code 38118", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
- testRunner.When("I confirm the delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I enter a zip code 38118", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
- testRunner.And("I select the entered delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I confirm the delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22
+ testRunner.And("I select the entered delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 23
  testRunner.Then("The address should be saved as entered", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("3 - new customer enters new valid address and selects suggested address from fede" +
-            "x", SourceLine=23)]
-        public virtual void _3_NewCustomerEntersNewValidAddressAndSelectsSuggestedAddressFromFedex()
+        [TechTalk.SpecRun.ScenarioAttribute("New customer enters new valid address and selects suggested address from fedex", SourceLine=24)]
+        public virtual void NewCustomerEntersNewValidAddressAndSelectsSuggestedAddressFromFedex()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3 - new customer enters new valid address and selects suggested address from fede" +
-                    "x", ((string[])(null)));
-#line 24
-this.ScenarioSetup(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("New customer enters new valid address and selects suggested address from fedex", ((string[])(null)));
 #line 25
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
+#line 3
+this.FeatureBackground();
 #line 26
- testRunner.And("I am not logged on to the site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I am not logged on to the site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 27
  testRunner.And("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 28
@@ -145,198 +151,198 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("4 - customer enters invalid address(no address 1)", SourceLine=34)]
-        public virtual void _4_CustomerEntersInvalidAddressNoAddress1()
+        [TechTalk.SpecRun.ScenarioAttribute("Customer enters invalid address(no address 1)", SourceLine=34)]
+        public virtual void CustomerEntersInvalidAddressNoAddress1()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4 - customer enters invalid address(no address 1)", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer enters invalid address(no address 1)", ((string[])(null)));
 #line 35
 this.ScenarioSetup(scenarioInfo);
+#line 3
+this.FeatureBackground();
 #line 36
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I do not enter an address_1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 37
- testRunner.And("I do not enter an address_1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 38
- testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 39
- testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I enter a zip code 38118", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 40
- testRunner.And("I enter a zip code 38118", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I confirm the delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 41
- testRunner.When("I confirm the delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 42
  testRunner.Then("I should be warned that the address_1 field is required", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 43
+#line 42
  testRunner.And("The address should not be saved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("5 - customer enters invalid address(no city)", SourceLine=44)]
-        public virtual void _5_CustomerEntersInvalidAddressNoCity()
+        [TechTalk.SpecRun.ScenarioAttribute("Customer enters invalid address(no city)", SourceLine=43)]
+        public virtual void CustomerEntersInvalidAddressNoCity()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("5 - customer enters invalid address(no city)", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer enters invalid address(no city)", ((string[])(null)));
+#line 44
+this.ScenarioSetup(scenarioInfo);
+#line 3
+this.FeatureBackground();
 #line 45
-this.ScenarioSetup(scenarioInfo);
+ testRunner.Given("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 46
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 47
- testRunner.And("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 48
  testRunner.And("I do not enter a city", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 47
+ testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 48
+ testRunner.And("I enter a zip code 38118", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 49
- testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I confirm the delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 50
- testRunner.And("I enter a zip code 38118", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 51
- testRunner.When("I confirm the delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 52
  testRunner.Then("I should be warned that the city field is required", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 51
+ testRunner.And("The address should not be saved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Customer enters invalid address(no state)", SourceLine=52)]
+        public virtual void CustomerEntersInvalidAddressNoState()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer enters invalid address(no state)", ((string[])(null)));
 #line 53
- testRunner.And("The address should not be saved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("6 - customer enters invalid address(no state)", SourceLine=54)]
-        public virtual void _6_CustomerEntersInvalidAddressNoState()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("6 - customer enters invalid address(no state)", ((string[])(null)));
+this.ScenarioSetup(scenarioInfo);
+#line 3
+this.FeatureBackground();
+#line 54
+ testRunner.Given("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 55
-this.ScenarioSetup(scenarioInfo);
+ testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 56
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 57
- testRunner.And("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 58
- testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 59
  testRunner.And("I do not select a state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 60
+#line 57
  testRunner.And("I enter a zip code 38118", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 61
+#line 58
  testRunner.When("I confirm the delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 62
+#line 59
  testRunner.Then("I should be warned that the state field is required", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 60
+ testRunner.And("The address should not be saved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Customer enters invalid address(no zip code)", SourceLine=61)]
+        public virtual void CustomerEntersInvalidAddressNoZipCode()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer enters invalid address(no zip code)", ((string[])(null)));
+#line 62
+this.ScenarioSetup(scenarioInfo);
+#line 3
+this.FeatureBackground();
 #line 63
- testRunner.And("The address should not be saved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("7 - customer enters invalid address(no zip code)", SourceLine=64)]
-        public virtual void _7_CustomerEntersInvalidAddressNoZipCode()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("7 - customer enters invalid address(no zip code)", ((string[])(null)));
+ testRunner.Given("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 64
+ testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 65
-this.ScenarioSetup(scenarioInfo);
+ testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 66
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 67
- testRunner.And("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 68
- testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 69
- testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 70
  testRunner.And("I do not enter a zip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 71
+#line 67
  testRunner.When("I confirm the delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 72
+#line 68
  testRunner.Then("I should be warned that the zip field is required", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 69
+ testRunner.And("The address should not be saved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Customer enters invalid address(invalid zip code)", SourceLine=70)]
+        public virtual void CustomerEntersInvalidAddressInvalidZipCode()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer enters invalid address(invalid zip code)", ((string[])(null)));
+#line 71
+this.ScenarioSetup(scenarioInfo);
+#line 3
+this.FeatureBackground();
+#line 72
+ testRunner.Given("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 73
- testRunner.And("The address should not be saved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("8 - customer enters invalid address(invalid zip code)", SourceLine=74)]
-        public virtual void _8_CustomerEntersInvalidAddressInvalidZipCode()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("8 - customer enters invalid address(invalid zip code)", ((string[])(null)));
+ testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 74
+ testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 75
-this.ScenarioSetup(scenarioInfo);
-#line 76
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 77
- testRunner.And("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 78
- testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 79
- testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 80
  testRunner.And("I enter a zip code xxxxx", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 81
+#line 76
  testRunner.When("I confirm the delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 82
+#line 77
  testRunner.Then("I should be warned that the zip code is invalid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 83
+#line 78
  testRunner.And("The address should not be saved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("9 - existing logged on customer enters new valid address", SourceLine=84)]
-        public virtual void _9_ExistingLoggedOnCustomerEntersNewValidAddress()
+        [TechTalk.SpecRun.ScenarioAttribute("Existing logged on customer enters new valid address", SourceLine=79)]
+        public virtual void ExistingLoggedOnCustomerEntersNewValidAddress()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("9 - existing logged on customer enters new valid address", ((string[])(null)));
-#line 85
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Existing logged on customer enters new valid address", ((string[])(null)));
+#line 80
 this.ScenarioSetup(scenarioInfo);
-#line 86
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 87
- testRunner.And("I am logged on to the site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 88
+#line 3
+this.FeatureBackground();
+#line 81
+ testRunner.Given("I am logged on to the site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 82
  testRunner.And("I choose to enter the address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 89
+#line 83
  testRunner.And("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 90
+#line 84
  testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 91
+#line 85
  testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 92
+#line 86
  testRunner.And("I enter a zip code 38118", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 93
+#line 87
  testRunner.When("I confirm the delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 94
+#line 88
  testRunner.And("I select the entered delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 95
+#line 89
  testRunner.Then("the address should be saved as entered into my address book", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 96
+#line 90
  testRunner.And("saved as the shipping address for the try on order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("10 - existing logged on customer enters new valid default address", SourceLine=97)]
-        public virtual void _10_ExistingLoggedOnCustomerEntersNewValidDefaultAddress()
+        [TechTalk.SpecRun.ScenarioAttribute("Existing logged on customer enters new valid default address", SourceLine=91)]
+        public virtual void ExistingLoggedOnCustomerEntersNewValidDefaultAddress()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("10 - existing logged on customer enters new valid default address", ((string[])(null)));
-#line 98
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Existing logged on customer enters new valid default address", ((string[])(null)));
+#line 92
 this.ScenarioSetup(scenarioInfo);
-#line 99
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 100
- testRunner.And("I am logged on to the site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 101
+#line 3
+this.FeatureBackground();
+#line 93
+ testRunner.Given("I am logged on to the site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 94
  testRunner.And("I choose to enter the address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 102
+#line 95
  testRunner.And("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 103
+#line 96
  testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 104
+#line 97
  testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 105
+#line 98
  testRunner.And("I enter a zip code 38118", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 106
+#line 99
  testRunner.And("I choose to save the address as my default address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 107
+#line 100
  testRunner.When("I confirm the delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 108
+#line 101
  testRunner.And("I select the entered delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 109
+#line 102
  testRunner.Then("the address should be saved as entered into my address book as the default addres" +
                     "s", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 110
+#line 103
  testRunner.And("saved as the shipping address for the try on order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -397,75 +403,81 @@ this.ScenarioSetup(scenarioInfo);
             testRunner.CollectScenarioErrors();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("1 - New customer enters new valid address")]
-        public virtual void _1_NewCustomerEntersNewValidAddress()
+        public virtual void FeatureBackground()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1 - New customer enters new valid address", ((string[])(null)));
 #line 3
-this.ScenarioSetup(scenarioInfo);
 #line 4
  testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 5
- testRunner.And("I am not logged on to the site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("New customer enters new valid address")]
+        public virtual void NewCustomerEntersNewValidAddress()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("New customer enters new valid address", ((string[])(null)));
 #line 6
- testRunner.And("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
+#line 3
+this.FeatureBackground();
 #line 7
- testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I am not logged on to the site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
- testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
- testRunner.And("I enter a zip code 38118", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
- testRunner.When("I confirm the delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
+ testRunner.And("I enter a zip code 38118", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 12
+ testRunner.When("I confirm the delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 13
  testRunner.Then("The address should be checked by Fedex", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2 - new customer enters new valid address and selects entered address")]
-        public virtual void _2_NewCustomerEntersNewValidAddressAndSelectsEnteredAddress()
+        [NUnit.Framework.DescriptionAttribute("New customer enters new valid address and selects entered address")]
+        public virtual void NewCustomerEntersNewValidAddressAndSelectsEnteredAddress()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2 - new customer enters new valid address and selects entered address", ((string[])(null)));
-#line 13
-this.ScenarioSetup(scenarioInfo);
-#line 14
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("New customer enters new valid address and selects entered address", ((string[])(null)));
 #line 15
- testRunner.And("I am not logged on to the site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
+#line 3
+this.FeatureBackground();
 #line 16
- testRunner.And("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I am not logged on to the site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 17
- testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
- testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
- testRunner.And("I enter a zip code 38118", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
- testRunner.When("I confirm the delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I enter a zip code 38118", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
- testRunner.And("I select the entered delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I confirm the delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22
+ testRunner.And("I select the entered delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 23
  testRunner.Then("The address should be saved as entered", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("3 - new customer enters new valid address and selects suggested address from fede" +
-            "x")]
-        public virtual void _3_NewCustomerEntersNewValidAddressAndSelectsSuggestedAddressFromFedex()
+        [NUnit.Framework.DescriptionAttribute("New customer enters new valid address and selects suggested address from fedex")]
+        public virtual void NewCustomerEntersNewValidAddressAndSelectsSuggestedAddressFromFedex()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3 - new customer enters new valid address and selects suggested address from fede" +
-                    "x", ((string[])(null)));
-#line 24
-this.ScenarioSetup(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("New customer enters new valid address and selects suggested address from fedex", ((string[])(null)));
 #line 25
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
+#line 3
+this.FeatureBackground();
 #line 26
- testRunner.And("I am not logged on to the site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I am not logged on to the site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 27
  testRunner.And("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 28
@@ -485,204 +497,204 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("4 - customer enters invalid address(no address 1)")]
-        public virtual void _4_CustomerEntersInvalidAddressNoAddress1()
+        [NUnit.Framework.DescriptionAttribute("Customer enters invalid address(no address 1)")]
+        public virtual void CustomerEntersInvalidAddressNoAddress1()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4 - customer enters invalid address(no address 1)", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer enters invalid address(no address 1)", ((string[])(null)));
 #line 35
 this.ScenarioSetup(scenarioInfo);
+#line 3
+this.FeatureBackground();
 #line 36
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I do not enter an address_1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 37
- testRunner.And("I do not enter an address_1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 38
- testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 39
- testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I enter a zip code 38118", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 40
- testRunner.And("I enter a zip code 38118", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I confirm the delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 41
- testRunner.When("I confirm the delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 42
  testRunner.Then("I should be warned that the address_1 field is required", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 43
+#line 42
  testRunner.And("The address should not be saved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("5 - customer enters invalid address(no city)")]
-        public virtual void _5_CustomerEntersInvalidAddressNoCity()
+        [NUnit.Framework.DescriptionAttribute("Customer enters invalid address(no city)")]
+        public virtual void CustomerEntersInvalidAddressNoCity()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("5 - customer enters invalid address(no city)", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer enters invalid address(no city)", ((string[])(null)));
+#line 44
+this.ScenarioSetup(scenarioInfo);
+#line 3
+this.FeatureBackground();
 #line 45
-this.ScenarioSetup(scenarioInfo);
+ testRunner.Given("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 46
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 47
- testRunner.And("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 48
  testRunner.And("I do not enter a city", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 47
+ testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 48
+ testRunner.And("I enter a zip code 38118", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 49
- testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I confirm the delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 50
- testRunner.And("I enter a zip code 38118", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 51
- testRunner.When("I confirm the delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 52
  testRunner.Then("I should be warned that the city field is required", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 51
+ testRunner.And("The address should not be saved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Customer enters invalid address(no state)")]
+        public virtual void CustomerEntersInvalidAddressNoState()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer enters invalid address(no state)", ((string[])(null)));
 #line 53
- testRunner.And("The address should not be saved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("6 - customer enters invalid address(no state)")]
-        public virtual void _6_CustomerEntersInvalidAddressNoState()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("6 - customer enters invalid address(no state)", ((string[])(null)));
+this.ScenarioSetup(scenarioInfo);
+#line 3
+this.FeatureBackground();
+#line 54
+ testRunner.Given("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 55
-this.ScenarioSetup(scenarioInfo);
+ testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 56
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 57
- testRunner.And("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 58
- testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 59
  testRunner.And("I do not select a state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 60
+#line 57
  testRunner.And("I enter a zip code 38118", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 61
+#line 58
  testRunner.When("I confirm the delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 62
+#line 59
  testRunner.Then("I should be warned that the state field is required", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 60
+ testRunner.And("The address should not be saved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Customer enters invalid address(no zip code)")]
+        public virtual void CustomerEntersInvalidAddressNoZipCode()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer enters invalid address(no zip code)", ((string[])(null)));
+#line 62
+this.ScenarioSetup(scenarioInfo);
+#line 3
+this.FeatureBackground();
 #line 63
- testRunner.And("The address should not be saved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("7 - customer enters invalid address(no zip code)")]
-        public virtual void _7_CustomerEntersInvalidAddressNoZipCode()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("7 - customer enters invalid address(no zip code)", ((string[])(null)));
+ testRunner.Given("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 64
+ testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 65
-this.ScenarioSetup(scenarioInfo);
+ testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 66
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 67
- testRunner.And("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 68
- testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 69
- testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 70
  testRunner.And("I do not enter a zip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 71
+#line 67
  testRunner.When("I confirm the delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 72
+#line 68
  testRunner.Then("I should be warned that the zip field is required", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 69
+ testRunner.And("The address should not be saved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Customer enters invalid address(invalid zip code)")]
+        public virtual void CustomerEntersInvalidAddressInvalidZipCode()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer enters invalid address(invalid zip code)", ((string[])(null)));
+#line 71
+this.ScenarioSetup(scenarioInfo);
+#line 3
+this.FeatureBackground();
+#line 72
+ testRunner.Given("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 73
- testRunner.And("The address should not be saved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("8 - customer enters invalid address(invalid zip code)")]
-        public virtual void _8_CustomerEntersInvalidAddressInvalidZipCode()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("8 - customer enters invalid address(invalid zip code)", ((string[])(null)));
+ testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 74
+ testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 75
-this.ScenarioSetup(scenarioInfo);
-#line 76
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 77
- testRunner.And("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 78
- testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 79
- testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 80
  testRunner.And("I enter a zip code xxxxx", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 81
+#line 76
  testRunner.When("I confirm the delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 82
+#line 77
  testRunner.Then("I should be warned that the zip code is invalid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 83
+#line 78
  testRunner.And("The address should not be saved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("9 - existing logged on customer enters new valid address")]
-        public virtual void _9_ExistingLoggedOnCustomerEntersNewValidAddress()
+        [NUnit.Framework.DescriptionAttribute("Existing logged on customer enters new valid address")]
+        public virtual void ExistingLoggedOnCustomerEntersNewValidAddress()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("9 - existing logged on customer enters new valid address", ((string[])(null)));
-#line 85
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Existing logged on customer enters new valid address", ((string[])(null)));
+#line 80
 this.ScenarioSetup(scenarioInfo);
-#line 86
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 87
- testRunner.And("I am logged on to the site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 88
+#line 3
+this.FeatureBackground();
+#line 81
+ testRunner.Given("I am logged on to the site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 82
  testRunner.And("I choose to enter the address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 89
+#line 83
  testRunner.And("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 90
+#line 84
  testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 91
+#line 85
  testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 92
+#line 86
  testRunner.And("I enter a zip code 38118", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 93
+#line 87
  testRunner.When("I confirm the delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 94
+#line 88
  testRunner.And("I select the entered delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 95
+#line 89
  testRunner.Then("the address should be saved as entered into my address book", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 96
+#line 90
  testRunner.And("saved as the shipping address for the try on order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("10 - existing logged on customer enters new valid default address")]
-        public virtual void _10_ExistingLoggedOnCustomerEntersNewValidDefaultAddress()
+        [NUnit.Framework.DescriptionAttribute("Existing logged on customer enters new valid default address")]
+        public virtual void ExistingLoggedOnCustomerEntersNewValidDefaultAddress()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("10 - existing logged on customer enters new valid default address", ((string[])(null)));
-#line 98
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Existing logged on customer enters new valid default address", ((string[])(null)));
+#line 92
 this.ScenarioSetup(scenarioInfo);
-#line 99
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 100
- testRunner.And("I am logged on to the site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 101
+#line 3
+this.FeatureBackground();
+#line 93
+ testRunner.Given("I am logged on to the site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 94
  testRunner.And("I choose to enter the address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 102
+#line 95
  testRunner.And("I enter an address_1 4400 quality drive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 103
+#line 96
  testRunner.And("I enter a city Memphis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 104
+#line 97
  testRunner.And("I select a state Tennessee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 105
+#line 98
  testRunner.And("I enter a zip code 38118", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 106
+#line 99
  testRunner.And("I choose to save the address as my default address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 107
+#line 100
  testRunner.When("I confirm the delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 108
+#line 101
  testRunner.And("I select the entered delivery address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 109
+#line 102
  testRunner.Then("the address should be saved as entered into my address book as the default addres" +
                     "s", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 110
+#line 103
  testRunner.And("saved as the shipping address for the try on order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

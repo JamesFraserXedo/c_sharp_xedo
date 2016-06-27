@@ -63,56 +63,64 @@ namespace SeleniumTests.Features.QuickTryOn
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Customer adds a Pocket Square to Try-On", SourceLine=5)]
+        public virtual void FeatureBackground()
+        {
+#line 6
+#line 7
+ testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Customer adds a Pocket Square to Try-On", SourceLine=8)]
         public virtual void CustomerAddsAPocketSquareToTry_On()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer adds a Pocket Square to Try-On", ((string[])(null)));
-#line 6
-this.ScenarioSetup(scenarioInfo);
-#line 7
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 8
- testRunner.And("the Try-On has less then two Pocket Squares", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
- testRunner.When("the Customer adds a Pocket Square", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
 #line 10
+ testRunner.Given("the Try-On has less then two Pocket Squares", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 11
+ testRunner.When("the Customer adds a Pocket Square", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 12
  testRunner.Then("the Pocket Square is added to the Try-On", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Customer attempts to add a Pocket Square to a Try-On containing the maximum numbe" +
-            "r of Pocket Squares allowed", SourceLine=11)]
+            "r of Pocket Squares allowed", SourceLine=13)]
         public virtual void CustomerAttemptsToAddAPocketSquareToATry_OnContainingTheMaximumNumberOfPocketSquaresAllowed()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer attempts to add a Pocket Square to a Try-On containing the maximum numbe" +
                     "r of Pocket Squares allowed", ((string[])(null)));
-#line 12
-this.ScenarioSetup(scenarioInfo);
-#line 13
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 14
- testRunner.And("the Try-On has the maximum number of Pocket Squares", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
 #line 15
- testRunner.When("the Customer adds a Pocket Square", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("the Try-On has the maximum number of Pocket Squares", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 16
- testRunner.Then("the Customer is informed of the maximum number of Pocket Squares", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("the Customer adds a Pocket Square", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
+ testRunner.Then("the Customer is informed of the maximum number of Pocket Squares", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 18
  testRunner.And("the new Pocket Square is not added to the Try-On", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Customer removes a Pocket Square from Try-On", SourceLine=18)]
+        [TechTalk.SpecRun.ScenarioAttribute("Customer removes a Pocket Square from Try-On", SourceLine=19)]
         public virtual void CustomerRemovesAPocketSquareFromTry_On()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer removes a Pocket Square from Try-On", ((string[])(null)));
-#line 19
-this.ScenarioSetup(scenarioInfo);
 #line 20
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
 #line 21
- testRunner.And("the Try-On has at least one Pocket Square", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("the Try-On has at least one Pocket Square", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 22
  testRunner.When("the Customer removes a Pocket Square", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 23
@@ -129,49 +137,49 @@ this.ScenarioSetup(scenarioInfo);
                     "lour", ((string[])(null)));
 #line 25
 this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
 #line 26
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("the Try-On has at least one Pocket Square", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 27
- testRunner.And("the Try-On has at least one Pocket Square", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 28
  testRunner.When("the Customer removes a Pocket Square by re-selecting the Pocket Square colour", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 29
+#line 28
  testRunner.Then("the Pocket Square is removed from the Try-On", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Customer does not add any Pocket Squares", SourceLine=30)]
+        [TechTalk.SpecRun.ScenarioAttribute("Customer does not add any Pocket Squares", SourceLine=29)]
         public virtual void CustomerDoesNotAddAnyPocketSquares()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer does not add any Pocket Squares", ((string[])(null)));
-#line 31
+#line 30
 this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 31
+ testRunner.Given("the Try-On contains zero Pocket Squares", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 32
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 33
- testRunner.And("the Try-On contains zero Pocket Squares", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 34
  testRunner.When("the Customer places the Try-On Order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 35
+#line 33
  testRunner.Then("the Customer is informed that at least one Pocket Square is required", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Customer attempts to add the same Pocket Square twice", SourceLine=36)]
+        [TechTalk.SpecRun.ScenarioAttribute("Customer attempts to add the same Pocket Square twice", SourceLine=34)]
         public virtual void CustomerAttemptsToAddTheSamePocketSquareTwice()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer attempts to add the same Pocket Square twice", ((string[])(null)));
-#line 37
+#line 35
 this.ScenarioSetup(scenarioInfo);
-#line 38
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 39
- testRunner.And("the Try-On contains one Pocket Square", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 40
+#line 6
+this.FeatureBackground();
+#line 36
+ testRunner.Given("the Try-On contains one Pocket Square", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 37
  testRunner.When("the Customer attempts to add the same Pocket Square to the Try-On", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 41
+#line 38
  testRunner.Then("the Pocket Square is not added to the Try-On twice", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -233,20 +241,28 @@ this.ScenarioSetup(scenarioInfo);
             testRunner.CollectScenarioErrors();
         }
         
+        public virtual void FeatureBackground()
+        {
+#line 6
+#line 7
+ testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+        }
+        
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Customer adds a Pocket Square to Try-On")]
         public virtual void CustomerAddsAPocketSquareToTry_On()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer adds a Pocket Square to Try-On", ((string[])(null)));
-#line 6
-this.ScenarioSetup(scenarioInfo);
-#line 7
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 8
- testRunner.And("the Try-On has less then two Pocket Squares", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
- testRunner.When("the Customer adds a Pocket Square", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
 #line 10
+ testRunner.Given("the Try-On has less then two Pocket Squares", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 11
+ testRunner.When("the Customer adds a Pocket Square", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 12
  testRunner.Then("the Pocket Square is added to the Try-On", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -259,17 +275,17 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer attempts to add a Pocket Square to a Try-On containing the maximum numbe" +
                     "r of Pocket Squares allowed", ((string[])(null)));
-#line 12
-this.ScenarioSetup(scenarioInfo);
-#line 13
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 14
- testRunner.And("the Try-On has the maximum number of Pocket Squares", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
 #line 15
- testRunner.When("the Customer adds a Pocket Square", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("the Try-On has the maximum number of Pocket Squares", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 16
- testRunner.Then("the Customer is informed of the maximum number of Pocket Squares", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("the Customer adds a Pocket Square", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
+ testRunner.Then("the Customer is informed of the maximum number of Pocket Squares", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 18
  testRunner.And("the new Pocket Square is not added to the Try-On", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -280,12 +296,12 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void CustomerRemovesAPocketSquareFromTry_On()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer removes a Pocket Square from Try-On", ((string[])(null)));
-#line 19
-this.ScenarioSetup(scenarioInfo);
 #line 20
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
 #line 21
- testRunner.And("the Try-On has at least one Pocket Square", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("the Try-On has at least one Pocket Square", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 22
  testRunner.When("the Customer removes a Pocket Square", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 23
@@ -303,13 +319,13 @@ this.ScenarioSetup(scenarioInfo);
                     "lour", ((string[])(null)));
 #line 25
 this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
 #line 26
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("the Try-On has at least one Pocket Square", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 27
- testRunner.And("the Try-On has at least one Pocket Square", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 28
  testRunner.When("the Customer removes a Pocket Square by re-selecting the Pocket Square colour", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 29
+#line 28
  testRunner.Then("the Pocket Square is removed from the Try-On", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -320,15 +336,15 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void CustomerDoesNotAddAnyPocketSquares()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer does not add any Pocket Squares", ((string[])(null)));
-#line 31
+#line 30
 this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 31
+ testRunner.Given("the Try-On contains zero Pocket Squares", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 32
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 33
- testRunner.And("the Try-On contains zero Pocket Squares", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 34
  testRunner.When("the Customer places the Try-On Order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 35
+#line 33
  testRunner.Then("the Customer is informed that at least one Pocket Square is required", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -339,15 +355,15 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void CustomerAttemptsToAddTheSamePocketSquareTwice()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer attempts to add the same Pocket Square twice", ((string[])(null)));
-#line 37
+#line 35
 this.ScenarioSetup(scenarioInfo);
-#line 38
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 39
- testRunner.And("the Try-On contains one Pocket Square", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 40
+#line 6
+this.FeatureBackground();
+#line 36
+ testRunner.Given("the Try-On contains one Pocket Square", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 37
  testRunner.When("the Customer attempts to add the same Pocket Square to the Try-On", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 41
+#line 38
  testRunner.Then("the Pocket Square is not added to the Try-On twice", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

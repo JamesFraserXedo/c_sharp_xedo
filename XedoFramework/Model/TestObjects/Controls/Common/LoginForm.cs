@@ -140,7 +140,6 @@ namespace XedoFramework.Model.TestObjects.Controls.Common
             public static readonly By ForgottenPasswordLink = By.Id("login-forgot-password");
             public static readonly By LoginButton = By.XPath("//button[contains(text(), 'Login')]");
             public static readonly By RegisterLink = By.XPath("//*[@class='register-link ga-event-click']");
-            
         }
     }
 }

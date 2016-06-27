@@ -12,6 +12,11 @@ namespace XedoFramework.Model.TestObjects.Pages
             TryOnPopup.Dismiss();
         }
 
+        public IWebElement TermsAndConditionsCheckbox
+        {
+            get { return Driver.FindElement(Locators.TermsAndConditionsCheckbox); }
+        }
+
         public IWebElement ReviewAndConfirmTryOnButton
         {
             get { return Driver.FindElement(Locators.ReviewAndConfirmTryOnButton); }
@@ -42,6 +47,14 @@ namespace XedoFramework.Model.TestObjects.Pages
             Driver.Navigate().GoToUrl(Urls.Xedo.QuickTryOnPage);
         }
 
+        public void AgreeToTermsAndConditions()
+        {
+            if (!TermsAndConditionsCheckbox.Selected)
+            {
+                TermsAndConditionsCheckbox.Click();
+            }
+        }
+
         public void PlaceOrder()
         {
             ReviewAndConfirmTryOnButton.Click();
@@ -50,6 +63,7 @@ namespace XedoFramework.Model.TestObjects.Pages
         public class Locators
         {
             public static By ReviewAndConfirmTryOnButton = By.XPath("//*[@data-galabel='quick-try-on-confirm']");
+            public static By TermsAndConditionsCheckbox = By.Id("AgreeTermsAndConditions");
         }
     }
 }

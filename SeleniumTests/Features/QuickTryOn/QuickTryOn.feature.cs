@@ -61,37 +61,45 @@ namespace SeleniumTests.Features.QuickTryOn
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Enter Preferred Try On date", SourceLine=2)]
+        public virtual void FeatureBackground()
+        {
+#line 3
+#line 4
+ testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Enter Preferred Try On date", SourceLine=5)]
         public virtual void EnterPreferredTryOnDate()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Enter Preferred Try On date", ((string[])(null)));
-#line 3
-this.ScenarioSetup(scenarioInfo);
-#line 4
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 5
- testRunner.When("I enter a preferred Try On date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 6
+this.ScenarioSetup(scenarioInfo);
+#line 3
+this.FeatureBackground();
+#line 7
+ testRunner.When("I enter a preferred Try On date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 8
  testRunner.Then("this should be confirmed on my Try On order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Change Preferred Try On date", SourceLine=7)]
+        [TechTalk.SpecRun.ScenarioAttribute("Change Preferred Try On date", SourceLine=9)]
         public virtual void ChangePreferredTryOnDate()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change Preferred Try On date", ((string[])(null)));
-#line 8
-this.ScenarioSetup(scenarioInfo);
-#line 9
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
- testRunner.And("that I have previously entered a Try On delivery date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
+#line 3
+this.FeatureBackground();
 #line 11
- testRunner.And("I havent confirmed my order yet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("that I have previously entered a Try On delivery date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 12
- testRunner.When("I then amend my Try On delivery date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.But("I havent confirmed my order yet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
 #line 13
+ testRunner.When("I then amend my Try On delivery date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
  testRunner.Then("the new date should be updated on my Try On order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -152,18 +160,26 @@ this.ScenarioSetup(scenarioInfo);
             testRunner.CollectScenarioErrors();
         }
         
+        public virtual void FeatureBackground()
+        {
+#line 3
+#line 4
+ testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+        }
+        
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Enter Preferred Try On date")]
         public virtual void EnterPreferredTryOnDate()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Enter Preferred Try On date", ((string[])(null)));
-#line 3
-this.ScenarioSetup(scenarioInfo);
-#line 4
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 5
- testRunner.When("I enter a preferred Try On date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 6
+this.ScenarioSetup(scenarioInfo);
+#line 3
+this.FeatureBackground();
+#line 7
+ testRunner.When("I enter a preferred Try On date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 8
  testRunner.Then("this should be confirmed on my Try On order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -174,17 +190,17 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void ChangePreferredTryOnDate()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change Preferred Try On date", ((string[])(null)));
-#line 8
-this.ScenarioSetup(scenarioInfo);
-#line 9
- testRunner.Given("I am on the Xedo QuickTryOn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
- testRunner.And("that I have previously entered a Try On delivery date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
+#line 3
+this.FeatureBackground();
 #line 11
- testRunner.And("I havent confirmed my order yet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("that I have previously entered a Try On delivery date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 12
- testRunner.When("I then amend my Try On delivery date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.But("I havent confirmed my order yet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
 #line 13
+ testRunner.When("I then amend my Try On delivery date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
  testRunner.Then("the new date should be updated on my Try On order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

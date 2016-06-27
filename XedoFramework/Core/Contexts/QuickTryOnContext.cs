@@ -1,10 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using NUnit.Framework;
-using OpenQA.Selenium;
-
-namespace XedoFramework.Core.Contexts
+﻿namespace XedoFramework.Core.Contexts
 {
     public class QuickTryOnContext
     {
@@ -18,6 +12,5 @@ namespace XedoFramework.Core.Contexts
         public string ThePocketSquareColour { get; set; }
 
         public string FedexSuggestedAddress { get; set; }
-        
     }
 }

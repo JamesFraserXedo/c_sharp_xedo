@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Threading;
 using XedoFramework.Core.Contexts;
 using XedoFramework.Core.Steps.StepsSupport;
 using TechTalk.SpecFlow;
 using NUnit.Framework;
+using XedoFramework.Model.TestObjects.Pages.Profile;
 
 namespace XedoFramework.Core.Steps
 {
@@ -14,6 +16,13 @@ namespace XedoFramework.Core.Steps
         {
             QuickTryOnPage.InfoForm.PreferredDateDatePicker.SelectFirstAvailableDate();
         }
+
+        [When(@"I enter a contact number (.*)")]
+        public void WhenIEnterAContactNumber(string phone)
+        {
+            QuickTryOnPage.InfoForm.ContactNumberInputBox.SendKeys(phone);
+        }
+
 
         [Given(@"that I have previously entered a Try On delivery date")]
         public void GivenThatIHavePreviouslyEnteredATryOnDeliveryDate()
@@ -79,6 +88,7 @@ namespace XedoFramework.Core.Steps
         public void WhenISelectTheEnteredDeliveryAddress()
         {
             QuickTryOnPage.InfoForm.ConfirmUserEnteredAddressButton.Click();
+            Thread.Sleep(2000);
         }
 
         [Then(@"The address should be saved as entered")]
@@ -129,11 +139,7 @@ namespace XedoFramework.Core.Steps
             Assert.IsTrue(QuickTryOnPage.InfoForm.ZipMissingLabel.Text.Contains("a valid"));
         }
 
-        [Given(@"I am logged on to the site")]
-        public void GivenIAmLoggedOnToTheSite()
-        {
-            LoginForm.Login();
-        }
+        
 
         [Given(@"I havent confirmed my order yet")]
         [Given(@"I am not logged on to the site")]
@@ -236,6 +242,13 @@ namespace XedoFramework.Core.Steps
             QuickTryOnPage.PlaceOrder();
         }
 
+        [When(@"I accept the terms and conditions")]
+        public void WhenIAcceptTheTermsAndConditions()
+        {
+            QuickTryOnPage.AgreeToTermsAndConditions();
+        }
+
+
         [Then(@"the Customer is informed that at least one Pocket Square is required")]
         public void ThenTheCustomerIsInformedThatAtLeastOnePocketSquareIsRequired()
         {
@@ -265,18 +278,6 @@ namespace XedoFramework.Core.Steps
             Assert.IsTrue(QuickTryOnPage.ColourSelect.FirstSelectedColour.Name != QuickTryOnPage.ColourSelect.SecondSelectedColour.Name);
         }
 
-        [Then(@"this should be confirmed on my Try On order")]
-        public void ThenThisShouldBeConfirmedOnMyTryOnOrder()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Then(@"the new date should be updated on my Try On order")]
-        public void ThenTheNewDateShouldBeUpdatedOnMyTryOnOrder()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
         [When(@"I select the suggested delivery address from Fedex")]
         public void WhenISelectTheSuggestedDeliveryAddressFromFedex()
         {
@@ -290,10 +291,41 @@ namespace XedoFramework.Core.Steps
             Assert.IsTrue(QuickTryOnPage.InfoForm.ConfirmedAddress == CurrentQuickTryOnContext.FedexSuggestedAddress);
         }
 
+        [Given(@"I choose to save the address as my default address")]
+        public void GivenIChooseToSaveTheAddressAsMyDefaultAddress()
+        {
+            QuickTryOnPage.InfoForm.SaveAsDefaultAddress();
+        }
+
+        [Then(@"this should be confirmed on my Try On order")]
+        public void ThenThisShouldBeConfirmedOnMyTryOnOrder()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [Then(@"the new date should be updated on my Try On order")]
+        public void ThenTheNewDateShouldBeUpdatedOnMyTryOnOrder()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
         [Then(@"the address should be saved as entered into my address book")]
         public void ThenTheAddressShouldBeSavedAsEnteredIntoMyAddressBook()
         {
-            ScenarioContext.Current.Pending();
+            Header.GoToProfileSection();
+            ProfilePage.GoToAddressBookTab();
+            var matched = false;
+            foreach (var address in AddressBookPage.Addresses)
+            {
+                if (address.Contains(CurrentQuickTryOnContext.EnteredAddress1) &&
+                    address.Contains(CurrentQuickTryOnContext.EnteredCity) &&
+                    (address.Contains(CurrentQuickTryOnContext.EnteredState) || address.Contains(CurrentQuickTryOnContext.EnteredStateCode)) &&
+                    address.Contains(CurrentQuickTryOnContext.EnteredZip))
+                {
+                    matched = true;
+                }
+            }
+            Assert.IsTrue(matched);
         }
 
         [Then(@"saved as the shipping address for the try on order")]
@@ -302,18 +334,16 @@ namespace XedoFramework.Core.Steps
             ScenarioContext.Current.Pending();
         }
 
-        [Given(@"I choose to save the address as my default address")]
-        public void GivenIChooseToSaveTheAddressAsMyDefaultAddress()
-        {
-            QuickTryOnPage.InfoForm.SaveAsDefaultAddress();
-        }
-
         [Then(@"the address should be saved as entered into my address book as the default address")]
         public void ThenTheAddressShouldBeSavedAsEnteredIntoMyAddressBookAsTheDefaultAddress()
         {
-            ScenarioContext.Current.Pending();
+            Header.GoToProfileSection();
+            ProfilePage.GoToAddressBookTab();
+            var selectedAddress = AddressBookPage.SelectedAddress;
+            Assert.IsTrue(selectedAddress.Contains(CurrentQuickTryOnContext.EnteredAddress1));
+            Assert.IsTrue(selectedAddress.Contains(CurrentQuickTryOnContext.EnteredCity));
+            Assert.IsTrue(selectedAddress.Contains(CurrentQuickTryOnContext.EnteredState) || selectedAddress.Contains(CurrentQuickTryOnContext.EnteredStateCode));
+            Assert.IsTrue(selectedAddress.Contains(CurrentQuickTryOnContext.EnteredZip));
         }
-
-
     }
 }

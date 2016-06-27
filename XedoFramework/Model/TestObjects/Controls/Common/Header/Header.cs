@@ -76,6 +76,11 @@ namespace XedoFramework.Model.TestObjects.Controls.Common.Header
             LogoutButton.Click();
         }
 
+        public void GoToProfileSection()
+        {
+            LoggedInUserNameLabel.Click();
+        }
+
         public class Locators
         {
             public static By Container = By.XPath("//div[contains(@class, 'header-container')]");
