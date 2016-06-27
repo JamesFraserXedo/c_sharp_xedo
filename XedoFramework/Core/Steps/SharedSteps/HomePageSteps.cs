@@ -32,6 +32,9 @@ namespace XedoFramework.Core.Steps.SharedSteps
                 case Page.OutfitBuilder:
                     OutfitBuilderPage.WaitUntilLoaded();
                     break;
+                case Page.Collections:
+                    CollectionsPage.WaitUntilLoaded();
+                    break;
             }
 
         }

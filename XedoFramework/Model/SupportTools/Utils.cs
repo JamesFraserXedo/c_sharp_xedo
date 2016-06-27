@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Threading;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -71,7 +74,7 @@ namespace XedoFramework.Model.SupportTools
             if (timeout > 0)
             {
                 var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeout));
-                wait.Until(drv => drv.FindElements(by).Any());
+                wait.Until(drv => drv.FindDisplayedElements(by).Any());
             }
             else
             {
@@ -84,7 +87,7 @@ namespace XedoFramework.Model.SupportTools
             if (timeout > 0)
             {
                 var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeout));
-                wait.Until(drv => drv.FindElements(by).Count == 0);
+                wait.Until(drv => drv.FindDisplayedElements(by).Count == 0);
             }
             else
             {
@@ -108,6 +111,20 @@ namespace XedoFramework.Model.SupportTools
             return element;
         }
 
+        public static ReadOnlyCollection<IWebElement> FindDisplayedElements(IWebDriver driver, By loc)
+        {
+            var foundElements = driver.FindElements(loc);
+            var displayedElements = foundElements.Where(foundElement => foundElement.Displayed).ToList();
+            return displayedElements.AsReadOnly();
+        }
+
+        public static ReadOnlyCollection<IWebElement> FindDisplayedElements(IWebDriver driver, IWebElement parent, By loc)
+        {
+            var foundElements = parent.FindElements(loc);
+            var displayedElements = foundElements.Where(foundElement => foundElement.Displayed).ToList();
+            return displayedElements.AsReadOnly();
+        }
+
         public static bool ElementExists(IWebDriver driver, By loc)
         {
             return driver.FindElements(loc).Count > 0;
@@ -115,16 +132,12 @@ namespace XedoFramework.Model.SupportTools
 
         public static bool ElementDisplayed(IWebDriver driver, By loc)
         {
-            var elements = driver.FindElements(loc);
-            if (elements.Count == 0) { return false; }
-            return elements[0].Displayed;
+            return FindDisplayedElements(driver, loc).Any();
         }
 
         public static bool ElementDisplayed(IWebDriver driver, IWebElement parent, By loc)
         {
-            var elements = parent.FindElements(loc);
-            if (elements.Count == 0) { return false; }
-            return elements[0].Displayed;
+            return FindDisplayedElements(driver, parent, loc).Any();
         }
 
         public static void SendKeysSlowly(IWebElement element, string text, int mSecDelay = 250)

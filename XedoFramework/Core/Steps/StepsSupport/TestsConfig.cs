@@ -6,7 +6,7 @@ namespace XedoFramework.Core.Steps.StepsSupport
 {
     public class TestsConfig
     {
-        private static readonly Configuration.Configuration Configuration = new Configuration.Configuration();
+        //private static readonly Configuration.Configuration Configuration = new Configuration.Configuration();
         public static readonly int NodeQueueingTimeout = Int32.Parse(ConfigurationManager.AppSettings["NodeQueueingTimeout"]);
 
         public static readonly string BrowserVariableName = ConfigurationManager.AppSettings["BrowserVariableName"];

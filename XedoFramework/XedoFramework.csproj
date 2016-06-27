@@ -62,8 +62,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Configuration\Configuration.cs" />
     <Compile Include="Core\Contexts\QuickTryOnContext.cs" />
+    <Compile Include="Core\Steps\CollectionsSteps.cs" />
     <Compile Include="Core\Steps\OutfitBuilderSteps.cs" />
     <Compile Include="Core\Steps\QuickTryOnSteps.cs" />
     <Compile Include="Core\Steps\SharedSteps\ExclusiveAccessPageSteps.cs" />
@@ -75,6 +75,7 @@
     <Compile Include="Core\Steps\StepsSupport\TestsConfig.cs" />
     <Compile Include="Core\Steps\StepsSupport\Transforms.cs" />
     <Compile Include="Core\Steps\StepsSupport\Urls.cs" />
+    <Compile Include="Core\Steps\TuxSummarySteps.cs" />
     <Compile Include="Core\Utilities\SaucelabsClient.cs" />
     <Compile Include="Core\Utilities\SaucelabsDriver.cs" />
     <Compile Include="Core\Utilities\WebDriverFactory.cs" />
@@ -120,6 +121,7 @@
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Filters\WaistcoatFilter.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\OutfitControls.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\WelcomePopup.cs" />
+    <Compile Include="Model\TestObjects\Controls\OutfitSummary\OutfitSummaryObject.cs" />
     <Compile Include="Model\TestObjects\Controls\PaymentConfirmation\BillingAddressForm.cs" />
     <Compile Include="Model\TestObjects\Controls\PaymentConfirmation\CreditCardDetailsForm.cs" />
     <Compile Include="Model\TestObjects\Controls\PaymentConfirmation\PaymentForm.cs" />
@@ -134,6 +136,7 @@
     <Compile Include="Model\TestObjects\Pages\HomePage.cs" />
     <Compile Include="Model\TestObjects\Pages\OrderConfirmationPage.cs" />
     <Compile Include="Model\TestObjects\Pages\OutfitBuilderPage.cs" />
+    <Compile Include="Model\TestObjects\Pages\OutfitSummaryPage.cs" />
     <Compile Include="Model\TestObjects\Pages\PaymentConfirmationPage.cs" />
     <Compile Include="Model\TestObjects\Pages\QuickTryOnPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using OpenQA.Selenium;
+using XedoFramework.Core.Steps.StepsSupport;
 using XedoFramework.Model.SupportTools;
 using XedoFramework.Model.TestObjects.Bases;
 
@@ -22,10 +24,10 @@ namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder
 
         public void Dismiss()
         {
-
             if (Driver.ElementDisplayed(Locators.DismissButton))
             {
                 DismissButton.Click();
+                Driver.WaitForElementToDisappear(Locators.Container, 2);
             }
         }
 

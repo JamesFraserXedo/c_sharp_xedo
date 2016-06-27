@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using System.Collections.ObjectModel;
+using OpenQA.Selenium;
 
 namespace XedoFramework.Model.SupportTools
 {
@@ -33,6 +34,11 @@ namespace XedoFramework.Model.SupportTools
         public static void WaitForElementToDisappear(this IWebDriver driver, By loc, int timeout = Utils.Timeouts.StandardTimeout)
         {
             Utils.WaitForElementToDisappear(driver, loc, timeout);
+        }
+
+        public static ReadOnlyCollection<IWebElement> FindDisplayedElements(this IWebDriver driver, By loc)
+        {
+            return Utils.FindDisplayedElements(driver, loc);
         }
     }
 }

@@ -26,7 +26,6 @@ namespace XedoFramework.Model.TestObjects.Controls.QuickTryOn
 
         public void SelectDate(string date)
         {
-            Console.WriteLine(date);
             GoToMonth(int.Parse(date.Split('-')[1])+1);
             GoToYear(date.Split('-')[0]);
             Driver.FindElement(Container, Locators.FindDate(date)).Click();

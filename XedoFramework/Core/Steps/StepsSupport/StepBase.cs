@@ -39,6 +39,15 @@ namespace XedoFramework.Core.Steps.StepsSupport
             get { return new OutfitBuilderPage(GetTestSettings()); }
         }
 
+        public static CollectionsPage CollectionsPage
+        {
+            get { return new CollectionsPage(GetTestSettings()); }
+        }
+        public static OutfitSummaryPage OutfitSummaryPage
+        {
+            get { return new OutfitSummaryPage(GetTestSettings()); }
+        }
+
         public static LoginForm LoginForm 
         {
             get { return new LoginForm(GetTestSettings()); }

@@ -26,6 +26,9 @@ namespace XedoFramework.Model.SupportTools
                         case Page.OutfitBuilder:
                             url = Urls.Xedo.OutfitBuilder;
                             break;
+                        case Page.Collections:
+                            url = Urls.Xedo.CollectionsPage;
+                            break;
                     }
                     break;
             }

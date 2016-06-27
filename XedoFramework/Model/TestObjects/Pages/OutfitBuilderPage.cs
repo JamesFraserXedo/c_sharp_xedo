@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using OpenQA.Selenium;
 using XedoFramework.Model.SupportTools;
 using XedoFramework.Model.TestObjects.Bases;
 using XedoFramework.Model.TestObjects.Controls.OutfitBuilder;
@@ -13,6 +14,7 @@ namespace XedoFramework.Model.TestObjects.Pages
         public OutfitBuilderPage(TestSettings testSettings) : base(testSettings)
         {
             WelcomePopup.Dismiss();
+            WaitUntilLoaded();
         }
 
         public WelcomePopup WelcomePopup
@@ -42,7 +44,7 @@ namespace XedoFramework.Model.TestObjects.Pages
 
         public override bool IsLoaded()
         {
-            return (!PageLoading && !ChoicePanelLoading);
+            return (!PageLoading && !ChoicePanelLoading && Driver.ElementDisplayed(ChooserPanel.Locators.Container));
         }
 
         public bool PageLoading
@@ -52,7 +54,10 @@ namespace XedoFramework.Model.TestObjects.Pages
 
         public bool ChoicePanelLoading
         {
-            get { return Driver.ElementDisplayed(Locators.ChoicePanelLoading); }
+            get
+            {
+                return Driver.ElementDisplayed(Locators.ChoicePanelLoading);
+            }
         }
 
         public override void SetupState()

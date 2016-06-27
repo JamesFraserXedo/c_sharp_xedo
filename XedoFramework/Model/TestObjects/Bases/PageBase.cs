@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Linq.Expressions;
 using System.Threading;
 using XedoFramework.Model.TestObjects.Controls.Common.Footer;
 using XedoFramework.Model.TestObjects.Controls.Common.Header;
@@ -49,15 +50,16 @@ namespace XedoFramework.Model.TestObjects.Bases
         {
             var s = new Stopwatch();
             s.Start();
-            while (!IsLoaded() && s.Elapsed < TimeSpan.FromSeconds(PageTimeoutSeconds))
+            while (s.Elapsed < TimeSpan.FromSeconds(PageTimeoutSeconds))
             {
+                if (IsLoaded())
+                {
+                    return;
+                }
                 Thread.Sleep(1000);
             }
             s.Stop();
-            if (!IsLoaded())
-            {
-                throw new TimeoutException(string.Format("The page did not load within {0} seconds", PageTimeoutSeconds));
-            }
+            throw new TimeoutException(string.Format("The page did not load within {0} seconds", PageTimeoutSeconds));
         }
 
         public abstract bool IsLoaded();

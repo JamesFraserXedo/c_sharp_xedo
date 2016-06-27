@@ -1,5 +1,4 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium.Remote;
+﻿using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using XedoFramework.Core.Steps.StepsSupport;
 using OpenQA.Selenium;
@@ -16,7 +15,7 @@ namespace XedoFramework.Core.Utilities
         public static string SaucelabsJobId;
         public static Utils.BrowserType CurrentBrowser;
         private const string EnvNotSetMessage = "Please specify an execution environment in App.config.";
-        private static readonly Configuration.Configuration Config = new Configuration.Configuration();
+        //private static readonly Configuration.Configuration Config = new Configuration.Configuration();
 
         internal static TestExecutionEnvironment GetTestExecutionEnvironment()
         {

@@ -8,7 +8,7 @@ using XedoFramework.Model.TestObjects.Controls.Collections;
 
 namespace XedoFramework.Model.TestObjects.Pages
 {
-    class CollectionsPage : PageBase
+    public class CollectionsPage : PageBase
     {
         public CollectionsPage(TestSettings testSettings) : base(testSettings)
         {

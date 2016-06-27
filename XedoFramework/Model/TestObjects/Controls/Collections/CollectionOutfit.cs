@@ -4,7 +4,7 @@ using XedoFramework.Model.TestObjects.Bases;
 
 namespace XedoFramework.Model.TestObjects.Controls.Collections
 {
-    class CollectionOutfit : ControlBase
+    public class CollectionOutfit : ControlBase
     {
         private IWebElement _container;
 
@@ -21,6 +21,11 @@ namespace XedoFramework.Model.TestObjects.Controls.Collections
         public string Name
         {
             get { return Utils.StripBreaks(Driver.FindElement(_container, Locators.NameLabel).Text); }
+        }
+
+        public void Select()
+        {
+            _container.Click();
         }
 
         public class Locators
