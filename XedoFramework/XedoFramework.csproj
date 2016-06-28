@@ -71,6 +71,7 @@
     <Compile Include="Core\Steps\SharedSteps\ExclusiveAccessPageSteps.cs" />
     <Compile Include="Core\Steps\SharedSteps\HeaderSteps.cs" />
     <Compile Include="Core\Steps\SharedSteps\HomePageSteps.cs" />
+    <Compile Include="Core\Steps\SharedSteps\LogInSteps.cs" />
     <Compile Include="Core\Steps\StepsSupport\ScenarioHooks.cs" />
     <Compile Include="Core\Steps\StepsSupport\ScreenshotCreator.cs" />
     <Compile Include="Core\Steps\StepsSupport\StepBase.cs" />
