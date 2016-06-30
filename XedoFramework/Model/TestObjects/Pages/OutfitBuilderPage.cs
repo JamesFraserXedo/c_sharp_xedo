@@ -65,10 +65,16 @@ namespace XedoFramework.Model.TestObjects.Pages
             Driver.Navigate().GoToUrl(BaseUrl);
         }
 
+        public ClothingType ActiveClothing
+        {
+            get { return ChooserPanel.CurrentChooser.ClothingType; }
+        }
+
         public class Locators
         {
             public static By PageLoading = By.XPath("//*[@class='outfit-builder ob-loading']");
             public static By ChoicePanelLoading = By.XPath("//*[contains(@class, 'outfit-catalogue-col loading')]");
+            
         }
     }
 }

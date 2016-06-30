@@ -37,6 +37,7 @@ namespace XedoFramework.Core.Steps.StepsSupport
         {
             if (!DidTestPass())
             {
+                Console.WriteLine("{0}Final URL: {0}{1}", Environment.NewLine, Driver.Url);
                 TakeScreenshot();
             }
             if (Driver != null)

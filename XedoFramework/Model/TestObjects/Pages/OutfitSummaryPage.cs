@@ -17,9 +17,24 @@ namespace XedoFramework.Model.TestObjects.Pages
         {
         }
 
+        public IWebElement AddToOrderButton
+        {
+            get { return Driver.FindElement(Locators.AddToOrderButton); }
+        }
+
+        public IWebElement OrderFreeTryOnButton
+        {
+            get { return Driver.FindElement(Locators.OrderFreeTryOnButton); }
+        }
+
         public IWebElement CustomiseTuxButton
         {
             get { return Driver.FindElement(Locators.CustomiseTuxButton); }
+        }
+
+        public IWebElement TotalLabel
+        {
+            get { return Driver.FindElement(Locators.TotalLabel); }
         }
 
         public OutfitSummaryObject TuxSummaryObject
@@ -45,6 +60,11 @@ namespace XedoFramework.Model.TestObjects.Pages
         public OutfitSummaryObject AccessoriesSummaryObject
         {
             get { return new OutfitSummaryObject(TestSettings, Driver.FindElement(Locators.AccessoriesSummaryObject)); }
+        }
+
+        public string TotalDue
+        {
+            get { return TotalLabel.Text; }
         }
 
         public override bool IsLoaded()

@@ -39,18 +39,17 @@
       <HintPath>..\packages\NUnit.3.0.0\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SpecRun.SpecFlowPlugin, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="SpecRun.SpecFlowPlugin">
       <HintPath>..\packages\SpecRun.SpecFlow.1.5.1\lib\net45\SpecRun.SpecFlowPlugin.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="TechTalk.SpecFlow, Version=2.1.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\SpecFlow.2.1.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="TechTalk.SpecRun, Version=1.5.1.0, Culture=neutral, PublicKeyToken=d0fc5cc18b3b389b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\SpecRun.SpecFlow.1.5.1\lib\net45\TechTalk.SpecRun.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="WebDriver, Version=2.53.0.0, Culture=neutral, PublicKeyToken=null" />
   </ItemGroup>
@@ -67,15 +66,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Features\HomePage.feature.cs">
+    <Compile Include="Features\HomePage\PerfectMatch.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HomePage.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\OutfitBuilder\FunctionalityTest.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FunctionalityTest.feature</DependentUpon>
+      <DependentUpon>PerfectMatch.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\QuickTryOn\PocketSquares.feature.cs">
       <AutoGen>True</AutoGen>
@@ -92,10 +86,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ShippingAddress.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\TuxSummary\TuxSummaryFuncTest.feature.cs">
+    <Compile Include="Features\UserJourneys\GroomGoesFree.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TuxSummaryFuncTest.feature</DependentUpon>
+      <DependentUpon>GroomGoesFree.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -107,13 +101,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Features\HomePage.feature">
+    <None Include="Features\HomePage\PerfectMatch.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>HomePage.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\OutfitBuilder\FunctionalityTest.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>FunctionalityTest.feature.cs</LastGenOutput>
+      <LastGenOutput>PerfectMatch.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\QuickTryOn\PocketSquares.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -127,9 +117,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ShippingAddress.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\TuxSummary\TuxSummaryFuncTest.feature">
+    <None Include="Features\UserJourneys\GroomGoesFree.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>TuxSummaryFuncTest.feature.cs</LastGenOutput>
+      <LastGenOutput>GroomGoesFree.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="runtests.cmd" />
@@ -146,6 +136,7 @@
       <Name>XedoFramework</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

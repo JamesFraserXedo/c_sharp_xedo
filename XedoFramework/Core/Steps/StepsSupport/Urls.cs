@@ -2,13 +2,21 @@
 {
     public class Urls
     {
-        public static class Xedo
+        public static class Sites
         {
-            public static string HomePage = "https://uat-xedo-usa.azurewebsites.net/";
-            public static string ExclusiveAccessPage = "https://uat-xedo-usa.azurewebsites.net/Home/PasswordPage?redirectUrl=https%3A%2F%2Fuat-xedo-usa.azurewebsites.net%2F";
-            public static string OutfitBuilder = "https://uat-xedo-usa.azurewebsites.net/OutfitBuilder/build";
-            public static string QuickTryOnPage = "https://uat-xedo-usa.azurewebsites.net/QuickTryOn/aag_black_tux_rec";
-            public static string CollectionsPage = "https://uat-xedo-usa.azurewebsites.net/collections";
+            public static string Xedo = "https://uat-xedo-usa.azurewebsites.net/";
+            public static string PromGuy = "https://suit-up-uat-promguy-us.azurewebsites.net/";
+            public static string TMLewin = "https://suitup-uk-test-web-tmlewin.azurewebsites.net/";
+            public static string AlfredAngelo = "";
+            public static string Youngs = "https://uat-youngs-uk.azurewebsites.net/";
+        }
+
+        public static class Pages
+        {
+            public static string ExclusiveAccessPage = "Home/PasswordPage?redirectUrl=https%3A%2F%2Fuat-xedo-usa.azurewebsites.net%2F";
+            public static string OutfitBuilder = "OutfitBuilder/build";
+            public static string QuickTryOnPage = "QuickTryOn/aag_black_tux_rec";
+            public static string CollectionsPage = "collections";
         }
     }
 }

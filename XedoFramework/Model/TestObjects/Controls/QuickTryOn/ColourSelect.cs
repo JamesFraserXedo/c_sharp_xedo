@@ -23,22 +23,22 @@ namespace XedoFramework.Model.TestObjects.Controls.QuickTryOn
 
         public IWebElement ColourFamilyChooser
         {
-            get { return Container.FindElement(Locators.ColourFamilyChooser); }
+            get { return Driver.FindElement(Container, Locators.ColourFamilyChooser); }
         }
 
         public IWebElement ColourChooser
         {
-            get { return Container.FindElement(Locators.ColourChooser); }
+            get { return Driver.FindElement(Container, Locators.ColourChooser); }
         }
 
         public IWebElement ColourLimitReachedMessage
         {
-            get { return Container.FindElement(Locators.ColourLimitReachedMessage); }
+            get { return Driver.FindElement(Container, Locators.ColourLimitReachedMessage); }
         }
 
         public IWebElement NoColoursSelectedMessage
         {
-            get { return Container.FindElement(Locators.NoColoursSelectedMessage); }
+            get { return Driver.FindElement(Container, Locators.NoColoursSelectedMessage); }
         }
 
         public void SelectColourFamily(string colour)
@@ -48,7 +48,7 @@ namespace XedoFramework.Model.TestObjects.Controls.QuickTryOn
 
         public string SelectedColourFamily
         {
-            get { return Container.FindElement(Locators.SelectedColourFamilyBox).GetAttribute("title"); }
+            get { return Driver.FindElement(Container, Locators.SelectedColourFamilyBox).GetAttribute("title"); }
         }
 
         public void SelectColour(string colour)
@@ -97,6 +97,8 @@ namespace XedoFramework.Model.TestObjects.Controls.QuickTryOn
             return null;
         }
 
+
+
         public List<string> SelectedColours
         {
             get
@@ -129,7 +131,7 @@ namespace XedoFramework.Model.TestObjects.Controls.QuickTryOn
 
         public class Locators
         {
-            public static By Container = By.XPath("//div[@class='try-on-step-wrap colour-selection-wrap']");
+            public static By Container = By.XPath("//div[contains(@class, 'try-on-step-wrap colour-selection-wrap')]");
             public static By ColourFamilyChooser = By.XPath("//ul[@class='colour-family-selection']");
             public static By ColourChooser = By.XPath("//*[@class='colour-selection-row']");
             public static By FirstChoiceContainer = By.XPath("//div[contains(@class, 'colour-selected-panel first-selection')]");
@@ -139,7 +141,7 @@ namespace XedoFramework.Model.TestObjects.Controls.QuickTryOn
             public static By ColourFamilyChoices = By.XPath("//a[@class='colour-family-link darkColour']");
             public static By ColourChoices = By.XPath("//a[@class='colour-item-link darkColour']");
             public static By ColourLimitReachedMessage = By.Id("maxColorSelectedMessage");
-            public static By NoColoursSelectedMessage = By.XPath("//span[@data-valmsg-for='SelectedProducts[0].ProductId']");
+            public static By NoColoursSelectedMessage = By.XPath(".//span[@class='tryon-error']");
         }
     }
 }

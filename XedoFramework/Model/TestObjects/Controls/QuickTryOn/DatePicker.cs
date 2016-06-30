@@ -21,7 +21,7 @@ namespace XedoFramework.Model.TestObjects.Controls.QuickTryOn
         
         public IWebElement Body
         {
-            get { return Container.FindElement(Locators.Body); }
+            get { return Driver.FindElement(Container, Locators.Body); }
         }
 
         public void SelectDate(string date)
@@ -41,19 +41,19 @@ namespace XedoFramework.Model.TestObjects.Controls.QuickTryOn
 
         public bool DateActive(int day, int month, int year)
         {
-            var dateElement = Container.FindElement(Locators.FindDate(day, month, year));
+            var dateElement = Driver.FindElement(Container, Locators.FindDate(day, month, year));
             return dateElement.GetAttribute("class").ToLower().Contains("dw-cal-day-v");
         }
 
         public string SelectedDate
         {
-            get { return Container.FindElement(Locators.SelectedDate).GetAttribute("data-full"); }
+            get { return Driver.FindElement(Container, Locators.SelectedDate).GetAttribute("data-full"); }
         }
 
         //Note, case-sensitive and full month required (i.e. "January" - instead of "Jan" or "january")
         public void GoToMonth(string month)
         {
-            Container.FindElement(Locators.MonthPicker).Click();
+            Driver.FindElement(Container, Locators.MonthPicker).Click();
             Thread.Sleep(250);
             Body.FindElement(By.XPath(string.Format("//div[@aria-label='{0}']/div/div", month))).Click();
             Thread.Sleep(250);
@@ -61,7 +61,7 @@ namespace XedoFramework.Model.TestObjects.Controls.QuickTryOn
 
         public void GoToMonth(int month)
         {
-            Container.FindElement(Locators.MonthPicker).Click();
+            Driver.FindElement(Container, Locators.MonthPicker).Click();
             Thread.Sleep(250);
             Body.FindElement(By.XPath(string.Format("//div[@data-val='{0}']/div/div", month-1))).Click();
             Thread.Sleep(250);
@@ -69,7 +69,7 @@ namespace XedoFramework.Model.TestObjects.Controls.QuickTryOn
 
         public void GoToYear(string year)
         {
-            Container.FindElement(Locators.YearPicker).Click();
+            Driver.FindElement(Container, Locators.YearPicker).Click();
             Thread.Sleep(250);
             Body.FindElement(By.XPath(string.Format("//div[@data-val='{0}']/div/div", year))).Click();
             Thread.Sleep(250);

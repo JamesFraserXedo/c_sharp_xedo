@@ -232,7 +232,7 @@ namespace XedoFramework.Model.TestObjects.Controls.QuickTryOn
 
         public string ConfirmedAddress
         {
-            get { return Container.FindElement(Locators.ConfirmedAddressLabel).Text; }
+            get { return Driver.FindElement(Container, Locators.ConfirmedAddressLabel).Text; }
         }
 
         public class Locators

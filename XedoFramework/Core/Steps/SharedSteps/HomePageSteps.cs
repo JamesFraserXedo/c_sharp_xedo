@@ -7,11 +7,10 @@ namespace XedoFramework.Core.Steps.SharedSteps
     [Binding]
     public class HomePageSteps : StepBase
     {
-        [Then(@"The main image content is visible")]
-        public void ThenTheMainImageContentIsVisible()
+        [When(@"I select the perfect match colour (.*)")]
+        public void WhenISelectThePerfectMatchColour(string colour)
         {
-            Assert.IsTrue(HomePage.MainImageContent.Displayed);
+            HomePage.SelectPerfectMatch(colour);
         }
-
     }
 }

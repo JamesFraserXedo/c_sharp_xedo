@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
 using XedoFramework.Model.TestObjects.Bases;
+using XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Filters;
 
 namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Choosers.Accessories
 {
@@ -24,6 +25,11 @@ namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Choosers.Access
                 var items = itemElements.Select(itemElement => new Accessory(TestSettings, itemElement)).Cast<ClothingItem>().ToList();
                 return items.AsReadOnly();
             }
+        }
+
+        public override ClothingType ClothingType
+        {
+            get { return ClothingType.Accessory; }
         }
     }
 }

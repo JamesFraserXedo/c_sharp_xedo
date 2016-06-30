@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Dynamic;
 using OpenQA.Selenium;
 using XedoFramework.Model.TestObjects.Bases;
 
@@ -15,9 +16,10 @@ namespace XedoFramework.Model.TestObjects.Pages
             get { return Driver.FindElement(Locators.MainImageContent); }
         }
 
+        //ToDo
         public override bool IsLoaded()
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public override void SetupState()
@@ -25,10 +27,25 @@ namespace XedoFramework.Model.TestObjects.Pages
             Driver.Navigate().GoToUrl(BaseUrl);
         }
 
+        public void SelectPerfectMatch(string colour)
+        {
+            Driver.FindElement(Locators.PerfectMatchColour(colour)).Click();
+        }
+
         public class Locators
         {
+            public class Common
+            {
+                
+            }
+
             public static readonly By MainImageContent = By.Id("hp-hero-Image");
-            
+
+            public static By PerfectMatchColour(string colour)
+            {
+                return
+                    By.XPath(string.Format("//*[(@class='colour-display ga-event-click') and (@title='{0}')]", colour));
+            }
         }
     }
 }

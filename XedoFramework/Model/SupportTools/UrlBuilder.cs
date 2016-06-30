@@ -8,37 +8,31 @@ namespace XedoFramework.Model.SupportTools
     {
         public static string GetUrl(Site site, Page page)
         {
-            string url = null;
+            string url;
             switch (site)
             {
                 case Site.Xedo:
-                    switch (page)
-                    {
-                        case Page.Home:
-                            url = Urls.Xedo.HomePage;
-                            break;
-                        case Page.ExclusiveAccess:
-                            url = Urls.Xedo.ExclusiveAccessPage;
-                            break;
-                        case Page.QuickTryOn:
-                            url = Urls.Xedo.QuickTryOnPage;
-                            break;
-                        case Page.OutfitBuilder:
-                            url = Urls.Xedo.OutfitBuilder;
-                            break;
-                        case Page.Collections:
-                            url = Urls.Xedo.CollectionsPage;
-                            break;
-                    }
+                    url = Urls.Sites.Xedo;
                     break;
+                default:
+                    throw new ArgumentException("This site is not implemented");
             }
 
-            if (url == null)
+            switch (page)
             {
-                throw new ArgumentException("Must be a valid site and page definition");
+                case Page.Home:
+                    return url;
+                case Page.OutfitBuilder:
+                    return url + Urls.Pages.OutfitBuilder;
+                case Page.Collections:
+                    return url + Urls.Pages.CollectionsPage;
+                case Page.ExclusiveAccess:
+                    return url + Urls.Pages.ExclusiveAccessPage;
+                case Page.QuickTryOn:
+                    return url + Urls.Pages.QuickTryOnPage;
+                default:
+                    throw new ArgumentException("This site is not implemented");
             }
-            return url;
-            
         }
     }
 }

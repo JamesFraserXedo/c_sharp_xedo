@@ -5,6 +5,7 @@ using System.Runtime.Remoting.Messaging;
 using OpenQA.Selenium;
 using XedoFramework.Model.SupportTools;
 using XedoFramework.Model.TestObjects.Bases;
+using XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Filters;
 
 namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Choosers.Suits
 {
@@ -28,6 +29,11 @@ namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Choosers.Suits
                 var items = itemElements.Select(itemElement => new Suit(TestSettings, itemElement)).Cast<ClothingItem>().ToList();
                 return items.AsReadOnly();
             }
+        }
+
+        public override ClothingType ClothingType
+        {
+            get { return ClothingType.Suit; }
         }
     }
 }

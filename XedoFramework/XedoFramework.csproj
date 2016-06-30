@@ -64,8 +64,13 @@
   <ItemGroup>
     <Compile Include="Core\Contexts\CommonContext.cs" />
     <Compile Include="Core\Contexts\QuickTryOnContext.cs" />
+    <Compile Include="Core\Contexts\UserJourneyContext.cs" />
+    <Compile Include="Core\Steps\BillingAddressSteps.cs" />
+    <Compile Include="Core\Steps\BuildPartySteps.cs" />
     <Compile Include="Core\Steps\CollectionsSteps.cs" />
+    <Compile Include="Core\Steps\ConfirmWeddingDateSteps.cs" />
     <Compile Include="Core\Steps\OutfitBuilderSteps.cs" />
+    <Compile Include="Core\Steps\PaymentOptions.cs" />
     <Compile Include="Core\Steps\QuickTryOnSteps.cs" />
     <Compile Include="Core\Steps\SharedSteps\CommonSteps.cs" />
     <Compile Include="Core\Steps\SharedSteps\ExclusiveAccessPageSteps.cs" />
@@ -120,6 +125,7 @@
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Filters\ExpandableFilterBase.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Filters\FilterBase.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Filters\FilterPanel.cs" />
+    <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Filters\ClothingType.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Filters\NeckwearFilter.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Filters\ShirtFilter.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\Filters\SuitFilter.cs" />
@@ -127,6 +133,8 @@
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\OutfitControls.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitBuilder\WelcomePopup.cs" />
     <Compile Include="Model\TestObjects\Controls\OutfitSummary\OutfitSummaryObject.cs" />
+    <Compile Include="Model\TestObjects\Controls\PartyBuilder\GroomGoesFreePopup.cs" />
+    <Compile Include="Model\TestObjects\Controls\PartyBuilder\NewPartyMemberPopup.cs" />
     <Compile Include="Model\TestObjects\Controls\PaymentConfirmation\BillingAddressForm.cs" />
     <Compile Include="Model\TestObjects\Controls\PaymentConfirmation\CreditCardDetailsForm.cs" />
     <Compile Include="Model\TestObjects\Controls\PaymentConfirmation\PaymentForm.cs" />
@@ -145,6 +153,10 @@
     <Compile Include="Model\TestObjects\Pages\OutfitBuilderPage.cs" />
     <Compile Include="Model\TestObjects\Pages\OutfitSummaryPage.cs" />
     <Compile Include="Model\TestObjects\Pages\PaymentConfirmationPage.cs" />
+    <Compile Include="Model\TestObjects\Pages\PaymentProcess\BillingAddressPage.cs" />
+    <Compile Include="Model\TestObjects\Pages\PaymentProcess\BuildPartyPage.cs" />
+    <Compile Include="Model\TestObjects\Pages\PaymentProcess\PaymentOptionsPage.cs" />
+    <Compile Include="Model\TestObjects\Pages\PaymentProcess\SelectWeddingDatePage.cs" />
     <Compile Include="Model\TestObjects\Pages\Profile\AddressBookPage.cs" />
     <Compile Include="Model\TestObjects\Pages\Profile\FavouritesPage.cs" />
     <Compile Include="Model\TestObjects\Pages\Profile\OrdersPage.cs" />

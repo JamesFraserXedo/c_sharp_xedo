@@ -37,10 +37,12 @@ namespace XedoFramework.Core.Steps.SharedSteps
             }
         }
 
+        //TODO
         [Then(@"I am on the (.*) (.*) page")]
-        public void ThenIAmOnThePage(Site site, Page page)
+        public void ThenIAmOnTheXedoOutfitBuilderPage(Site site, Page page)
         {
-            Assert.IsTrue(Driver.Url == UrlBuilder.GetUrl(site, page));
+            //ScenarioContext.Current.Pending();
         }
+
     }
 }

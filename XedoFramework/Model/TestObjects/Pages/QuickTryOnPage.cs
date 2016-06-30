@@ -1,5 +1,7 @@
 ﻿using OpenQA.Selenium;
 using XedoFramework.Core.Steps.StepsSupport;
+using XedoFramework.Model.Sites;
+using XedoFramework.Model.SupportTools;
 using XedoFramework.Model.TestObjects.Bases;
 using XedoFramework.Model.TestObjects.Controls.QuickTryOn;
 
@@ -44,7 +46,7 @@ namespace XedoFramework.Model.TestObjects.Pages
 
         public override void SetupState()
         {
-            Driver.Navigate().GoToUrl(Urls.Xedo.QuickTryOnPage);
+            Driver.Navigate().GoToUrl(UrlBuilder.GetUrl(Site.Xedo, Page.QuickTryOn));
         }
 
         public void AgreeToTermsAndConditions()

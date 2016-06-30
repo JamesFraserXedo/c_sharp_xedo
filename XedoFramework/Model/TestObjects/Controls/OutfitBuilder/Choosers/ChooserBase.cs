@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using System.Linq;
 using XedoFramework.Model.SupportTools;
 using XedoFramework.Model.TestObjects.Bases;
+using XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Filters;
 
 namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Choosers
 {
@@ -18,6 +19,8 @@ namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Choosers
         }
 
         public abstract ReadOnlyCollection<ClothingItem> Items { get; }
+
+        public abstract ClothingType ClothingType { get; }
         
         public ClothingItem SelectedItem
         {

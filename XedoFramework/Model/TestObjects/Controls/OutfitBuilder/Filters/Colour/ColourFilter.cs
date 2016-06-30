@@ -45,7 +45,7 @@ namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Filters.Colour
 
         public bool Active
         {
-            get { return !(SelectedColourChooser == null); }
+            get { return SelectedColourChooser != null; }
         }
 
         public ReadOnlyCollection<string> GetColourOptions()

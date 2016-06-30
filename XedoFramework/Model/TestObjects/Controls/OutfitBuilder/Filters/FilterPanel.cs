@@ -50,6 +50,7 @@ namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Filters
         public class Locators
         {
             public static By Container = By.Id("filters-view");
+
         }
     }
 }

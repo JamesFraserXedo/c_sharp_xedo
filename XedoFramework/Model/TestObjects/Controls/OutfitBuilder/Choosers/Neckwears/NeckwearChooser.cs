@@ -3,6 +3,7 @@ using System.Linq;
 using OpenQA.Selenium;
 using XedoFramework.Model.SupportTools;
 using XedoFramework.Model.TestObjects.Bases;
+using XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Filters;
 
 namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Choosers.Neckwears
 {
@@ -26,6 +27,11 @@ namespace XedoFramework.Model.TestObjects.Controls.OutfitBuilder.Choosers.Neckwe
                 var items = itemElements.Select(itemElement => new Neckwear(TestSettings, itemElement)).Cast<ClothingItem>().ToList();
                 return items.AsReadOnly();
             }
+        }
+
+        public override ClothingType ClothingType
+        {
+            get { return ClothingType.Neckwear; } 
         }
 
         public void ShowTies()

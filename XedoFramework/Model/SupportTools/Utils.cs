@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Threading;
-using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -157,7 +155,7 @@ namespace XedoFramework.Model.SupportTools
 
         public static class Timeouts
         {
-            public const int StandardTimeout = 5;
+            public const int StandardTimeout = 15;
         }
 
         public static void ShowElementOnScreen(IWebDriver driver, IWebElement element)

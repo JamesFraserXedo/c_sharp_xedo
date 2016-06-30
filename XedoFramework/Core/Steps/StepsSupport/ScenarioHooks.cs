@@ -11,6 +11,7 @@ namespace XedoFramework.Core.Steps.StepsSupport
         {
             ScenarioContext.Current[QuickTryOnContextName] = new QuickTryOnContext();
             ScenarioContext.Current[CommonContextName] = new CommonContext();
+            ScenarioContext.Current[UserJourneyContextName] = new UserJourneyContext();
 
             Driver = WebDriverFactory.Get();
         }

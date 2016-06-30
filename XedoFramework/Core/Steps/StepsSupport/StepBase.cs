@@ -5,7 +5,9 @@ using XedoFramework.Model.TestObjects.Bases;
 using XedoFramework.Model.TestObjects.Controls.Common;
 using XedoFramework.Model.TestObjects.Controls.Common.Footer;
 using XedoFramework.Model.TestObjects.Controls.Common.Header;
+using XedoFramework.Model.TestObjects.Controls.PartyBuilder;
 using XedoFramework.Model.TestObjects.Pages;
+using XedoFramework.Model.TestObjects.Pages.PaymentProcess;
 using XedoFramework.Model.TestObjects.Pages.Profile;
 using XedoFramework.TestObjects.Pages;
 
@@ -89,9 +91,35 @@ namespace XedoFramework.Core.Steps.StepsSupport
             get { return new FavouritesPage(GetTestSettings()); }
         }
 
+        public static SelectWeddingDatePage SelectWeddingDatePage
+        {
+            get { return new SelectWeddingDatePage(GetTestSettings()); }
+        }
+
+        public static BuildPartyPage BuildPartyPage
+        {
+            get { return new BuildPartyPage(GetTestSettings()); }
+        }
+
+        public static GroomGoesFreePopup GroomGoesFreePopup
+        {
+            get { return new GroomGoesFreePopup(GetTestSettings()); }
+        }
+
+        public static BillingAddressPage BillingAddressPage
+        {
+            get { return new BillingAddressPage(GetTestSettings()); }
+        }
+
+        public static PaymentOptionsPage PaymentOptionsPage
+        {
+            get { return new PaymentOptionsPage(GetTestSettings()); }
+        }
+
         protected const string QuickTryOnContextName = "QuickTryOnContext";
         protected const string CommonContextName = "CommonContext";
-
+        protected const string UserJourneyContextName = "UserJourneyContext";
+        
         protected static QuickTryOnContext CurrentQuickTryOnContext
         {
             get { return (QuickTryOnContext)ScenarioContext.Current[QuickTryOnContextName]; }
@@ -104,6 +132,10 @@ namespace XedoFramework.Core.Steps.StepsSupport
             set { ScenarioContext.Current[CommonContextName] = value; }
         }
 
-
+        protected static UserJourneyContext CurrentUserJourneyContext
+        {
+            get { return (UserJourneyContext)ScenarioContext.Current[UserJourneyContextName]; }
+            set { ScenarioContext.Current[UserJourneyContextName] = value; }
+        }
     }
 }
