@@ -71,6 +71,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PerfectMatch.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\LoadTimes\HomePageLoad.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HomePageLoad.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\QuickTryOn\PocketSquares.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -104,6 +109,10 @@
     <None Include="Features\HomePage\PerfectMatch.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PerfectMatch.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\LoadTimes\HomePageLoad.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>HomePageLoad.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\QuickTryOn\PocketSquares.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

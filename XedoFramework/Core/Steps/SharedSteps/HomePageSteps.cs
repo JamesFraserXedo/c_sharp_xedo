@@ -1,6 +1,5 @@
 ﻿using XedoFramework.Core.Steps.StepsSupport;
 using TechTalk.SpecFlow;
-using NUnit.Framework;
 
 namespace XedoFramework.Core.Steps.SharedSteps
 {

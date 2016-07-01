@@ -37,6 +37,10 @@ namespace XedoFramework.Core.Steps.StepsSupport
         {
             if (!DidTestPass())
             {
+                if (Driver.GetType() == typeof (CustomDriver))
+                {
+                    Console.WriteLine("{0}Session ID: {0}{1}", Environment.NewLine, ((CustomDriver)Driver).SessionId);
+                }
                 Console.WriteLine("{0}Final URL: {0}{1}", Environment.NewLine, Driver.Url);
                 TakeScreenshot();
             }

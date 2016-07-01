@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading;
 using XedoFramework.Core.Contexts;
 using XedoFramework.Core.Steps.StepsSupport;
@@ -101,28 +102,40 @@ namespace XedoFramework.Core.Steps
             Assert.IsTrue(savedAddress.Contains(CurrentQuickTryOnContext.EnteredZip));
         }
 
+        [Then(@"I should be warned that the first_name field is required")]
+        public void ThenIShouldBeWarnedThatTheFirstNameFieldIsRequired()
+        {
+            Assert.IsTrue(QuickTryOnPage.ErrorMessages.Any(l => l.Contains("Please enter your First Name")));
+        }
+
+        [Then(@"I should be warned that the last_name field is required")]
+        public void ThenIShouldBeWarnedThatTheLastNameFieldIsRequired()
+        {
+            Assert.IsTrue(QuickTryOnPage.ErrorMessages.Any(l => l.Contains("Please enter your Last Name")));
+        }
+
         [Then(@"I should be warned that the address_1 field is required")]
         public void ThenIShouldBeWarnedThatTheAddress_1FieldIsRequired()
         {
-            Assert.IsTrue(QuickTryOnPage.InfoForm.AddressOneMissingLabel.Displayed);
+            Assert.IsTrue(QuickTryOnPage.ErrorMessages.Any(l => l.Contains("Please enter the first line of your address")));
         }
 
         [Then(@"I should be warned that the city field is required")]
         public void ThenIShouldBeWarnedThatTheCityFieldIsRequired()
         {
-            Assert.IsTrue(QuickTryOnPage.InfoForm.CityMissingLabel.Displayed);
+            Assert.IsTrue(QuickTryOnPage.ErrorMessages.Any(l => l.Contains("Please enter your City")));
         }
 
         [Then(@"I should be warned that the state field is required")]
         public void ThenIShouldBeWarnedThatTheStateFieldIsRequired()
         {
-            Assert.IsTrue(QuickTryOnPage.InfoForm.StateMissingLabel.Displayed);
+            Assert.IsTrue(QuickTryOnPage.ErrorMessages.Any(l => l.Contains("Please select your State")));
         }
 
         [Then(@"I should be warned that the zip field is required")]
         public void ThenIShouldBeWarnedThatTheZipFieldIsRequired()
         {
-            Assert.IsTrue(QuickTryOnPage.InfoForm.ZipMissingLabel.Displayed);
+            Assert.IsTrue(QuickTryOnPage.ErrorMessages.Any(l => l.Contains("Please enter your Zip code")));
         }
 
 
@@ -135,12 +148,9 @@ namespace XedoFramework.Core.Steps
         [Then(@"I should be warned that the zip code is invalid")]
         public void ThenIShouldBeWarnedThatTheZipCodeIsInvalid()
         {
-            Assert.IsTrue(QuickTryOnPage.InfoForm.ZipMissingLabel.Displayed);
-            Assert.IsTrue(QuickTryOnPage.InfoForm.ZipMissingLabel.Text.Contains("a valid"));
+            Assert.IsTrue(QuickTryOnPage.InfoForm.InvalidZipErrorLabel.Displayed);
         }
-
         
-
         [Given(@"I havent confirmed my order yet")]
         [Given(@"I am not logged on to the site")]
         public void GivenIHaveNot()
@@ -252,7 +262,7 @@ namespace XedoFramework.Core.Steps
         [Then(@"the Customer is informed that at least one Pocket Square is required")]
         public void ThenTheCustomerIsInformedThatAtLeastOnePocketSquareIsRequired()
         {
-            Assert.IsTrue(QuickTryOnPage.ColourSelect.NoColoursSelectedMessage.Displayed);
+            Assert.IsTrue(QuickTryOnPage.ErrorMessages.Any(l => l.Contains("Please select at least one colour")));
         }
 
         [Given(@"the Try-On contains one Pocket Square")]

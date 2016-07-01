@@ -63,12 +63,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Contexts\CommonContext.cs" />
+    <Compile Include="Core\Contexts\LoadTimeContext.cs" />
     <Compile Include="Core\Contexts\QuickTryOnContext.cs" />
     <Compile Include="Core\Contexts\UserJourneyContext.cs" />
     <Compile Include="Core\Steps\BillingAddressSteps.cs" />
     <Compile Include="Core\Steps\BuildPartySteps.cs" />
     <Compile Include="Core\Steps\CollectionsSteps.cs" />
     <Compile Include="Core\Steps\ConfirmWeddingDateSteps.cs" />
+    <Compile Include="Core\Steps\LoadTimeSteps\CommonLoadTimeSteps.cs" />
     <Compile Include="Core\Steps\OutfitBuilderSteps.cs" />
     <Compile Include="Core\Steps\PaymentOptions.cs" />
     <Compile Include="Core\Steps\QuickTryOnSteps.cs" />
@@ -86,7 +88,7 @@
     <Compile Include="Core\Steps\StepsSupport\Urls.cs" />
     <Compile Include="Core\Steps\TuxSummarySteps.cs" />
     <Compile Include="Core\Utilities\SaucelabsClient.cs" />
-    <Compile Include="Core\Utilities\SaucelabsDriver.cs" />
+    <Compile Include="Core\Utilities\CustomDriver.cs" />
     <Compile Include="Core\Utilities\WebDriverFactory.cs" />
     <Compile Include="Model\Sites\Page.cs" />
     <Compile Include="Model\Sites\Site.cs" />

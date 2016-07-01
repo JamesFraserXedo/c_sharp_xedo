@@ -119,6 +119,8 @@ namespace XedoFramework.Core.Steps.StepsSupport
         protected const string QuickTryOnContextName = "QuickTryOnContext";
         protected const string CommonContextName = "CommonContext";
         protected const string UserJourneyContextName = "UserJourneyContext";
+        protected const string LoadTimeContextName = "LoadTimeContext";
+        
         
         protected static QuickTryOnContext CurrentQuickTryOnContext
         {
@@ -136,6 +138,12 @@ namespace XedoFramework.Core.Steps.StepsSupport
         {
             get { return (UserJourneyContext)ScenarioContext.Current[UserJourneyContextName]; }
             set { ScenarioContext.Current[UserJourneyContextName] = value; }
+        }
+
+        protected static LoadTimeContext CurrentLoadTimeContext
+        {
+            get { return (LoadTimeContext)ScenarioContext.Current[LoadTimeContextName]; }
+            set { ScenarioContext.Current[LoadTimeContextName] = value; }
         }
     }
 }

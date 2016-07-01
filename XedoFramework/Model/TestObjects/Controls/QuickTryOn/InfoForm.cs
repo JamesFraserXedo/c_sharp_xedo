@@ -114,6 +114,11 @@ namespace XedoFramework.Model.TestObjects.Controls.QuickTryOn
             get { return Driver.FindElement(Container, Locators.ConfirmSuggestedAddressButton); }
         }
 
+        public IWebElement InvalidZipErrorLabel
+        {
+            get { return Driver.FindElement(Container, Locators.InvalidZipErrorLabel); }
+        }
+
         public DatePicker WeddingDateDatePicker
         {
             get
@@ -133,27 +138,7 @@ namespace XedoFramework.Model.TestObjects.Controls.QuickTryOn
                 return new DatePicker(TestSettings, Driver.FindElement(Locators.PreferredDateDatePickerContainer));
             }
         }
-
-        public IWebElement AddressOneMissingLabel
-        {
-            get { return Driver.FindElement(Container, Locators.AddressOneMissingLabel); }
-        }
         
-        public IWebElement CityMissingLabel
-        {
-            get { return Driver.FindElement(Container, Locators.CityMissingLabel); }
-        }
-
-        public IWebElement StateMissingLabel
-        {
-            get { return Driver.FindElement(Container, Locators.StateMissingLabel); }
-        }
-
-        public IWebElement ZipMissingLabel
-        {
-            get { return Driver.FindElement(Container, Locators.ZipMissingLabel); }
-        }
-
         public void SetToManualAddressInput()
         {
             if (Driver.ElementDisplayed(Container, Locators.InputNewAddressButton))
@@ -264,12 +249,9 @@ namespace XedoFramework.Model.TestObjects.Controls.QuickTryOn
             public static By ConfirmUserEnteredAddressButton = By.Id("ConfirmUserEnteredAddressButton");
             public static By ConfirmSuggestedAddressButton = By.Id("ConfirmSuggestedAddressButton");
 
-            public static By AddressOneMissingLabel = By.XPath("//span[@data-valmsg-for='AddressEditor.NewAddress.Line1']");
-            public static By CityMissingLabel = By.XPath("//span[@data-valmsg-for='AddressEditor.NewAddress.City']");
-            public static By StateMissingLabel = By.XPath("//span[@data-valmsg-for='AddressEditor.NewAddress.StateCode']");
-            public static By ZipMissingLabel = By.XPath("//span[@data-valmsg-for='AddressEditor.NewAddress.ZipCode']");
-
             public static By InputNewAddressButton = By.Id("InputNewAddressButton");
+            public static By InvalidZipErrorLabel = By.XPath("//*[@class='field-validation-error']");
+            
         }
     }
 }

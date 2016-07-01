@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using NUnit.Framework.Compatibility;
 using TechTalk.SpecFlow;
 using XedoFramework.Core.Steps.StepsSupport;
 using XedoFramework.Model.Sites;
@@ -9,11 +10,12 @@ namespace XedoFramework.Core.Steps.SharedSteps
     [Binding]
     public class CommonSteps : StepBase
     {
+        [When(@"I go to the (.*) (.*) page")]
         [Given(@"I am on the (.*) (.*) page")]
         public void GivenIAmOnTheSite(Site site, Page page)
         {
-            //Driver.Navigate().GoToUrl(UrlBuilder.GetUrl(site, Page.Home));
             Driver.Navigate().GoToUrl(UrlBuilder.GetUrl(site, page));
+            
             if (ExclusiveAccessPage.OnPage)
             {
                 ExclusiveAccessPage.InputPassword("atlanta123");

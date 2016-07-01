@@ -1,4 +1,8 @@
-﻿using OpenQA.Selenium;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using NUnit.Framework;
+using OpenQA.Selenium;
 using XedoFramework.Core.Steps.StepsSupport;
 using XedoFramework.Model.Sites;
 using XedoFramework.Model.SupportTools;
@@ -39,6 +43,16 @@ namespace XedoFramework.Model.TestObjects.Pages
             get { return new ColourSelect(TestSettings); }
         }
 
+        public ReadOnlyCollection<string> ErrorMessages
+        {
+            get
+            {
+                var errors = Driver.FindElements(Locators.TryOnErrorMessages);
+                var messages = errors.Select(webElement => webElement.Text).ToList();
+                return messages.AsReadOnly();
+            }
+        } 
+
         public override bool IsLoaded()
         {
             return InfoForm.Container.Displayed || TryOnPopup.Container.Displayed;
@@ -66,6 +80,7 @@ namespace XedoFramework.Model.TestObjects.Pages
         {
             public static By ReviewAndConfirmTryOnButton = By.XPath("//*[@data-galabel='quick-try-on-confirm']");
             public static By TermsAndConditionsCheckbox = By.Id("AgreeTermsAndConditions");
+            public static By TryOnErrorMessages = By.XPath("//*[@class='tryon-error']");
         }
     }
 }

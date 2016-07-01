@@ -60,7 +60,6 @@ namespace XedoFramework.Core.Utilities
                 driver.Manage().Cookies.DeleteAllCookies();
             }
             
-
             return driver;
         }
 
@@ -168,7 +167,7 @@ namespace XedoFramework.Core.Utilities
             capabilities.SetCapability("name", ScenarioContext.Current.ScenarioInfo.Title);
             capabilities.SetCapability("tags", ScenarioContext.Current.ScenarioInfo.Tags);
 
-            var driver = new SaucelabsDriver(new Uri(sauceLabsHubUrl), capabilities, nodeQueueingTimeout);
+            var driver = new CustomDriver(new Uri(sauceLabsHubUrl), capabilities, nodeQueueingTimeout);
             SaucelabsJobId = driver.JobId.ToString();
             return driver;
         }
@@ -203,7 +202,7 @@ namespace XedoFramework.Core.Utilities
             capabilities.SetCapability("environment",
                                         String.Format("{0} ({1})", TestsConfig.GridIdentifier, Environment.MachineName));
 
-            IWebDriver driver = new RemoteWebDriver(
+            IWebDriver driver = new CustomDriver(
                 new Uri(TestsConfig.GridHubUrl), capabilities, TimeSpan.FromSeconds(900));
             
 

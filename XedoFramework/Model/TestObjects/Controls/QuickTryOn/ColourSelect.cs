@@ -35,12 +35,7 @@ namespace XedoFramework.Model.TestObjects.Controls.QuickTryOn
         {
             get { return Driver.FindElement(Container, Locators.ColourLimitReachedMessage); }
         }
-
-        public IWebElement NoColoursSelectedMessage
-        {
-            get { return Driver.FindElement(Container, Locators.NoColoursSelectedMessage); }
-        }
-
+        
         public void SelectColourFamily(string colour)
         {
             ColourFamilyChooser.FindElement(By.XPath("//a[@title='" + colour + "']")).Click();
@@ -141,7 +136,6 @@ namespace XedoFramework.Model.TestObjects.Controls.QuickTryOn
             public static By ColourFamilyChoices = By.XPath("//a[@class='colour-family-link darkColour']");
             public static By ColourChoices = By.XPath("//a[@class='colour-item-link darkColour']");
             public static By ColourLimitReachedMessage = By.Id("maxColorSelectedMessage");
-            public static By NoColoursSelectedMessage = By.XPath(".//span[@class='tryon-error']");
         }
     }
 }

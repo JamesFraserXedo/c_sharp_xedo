@@ -8,24 +8,24 @@ using OpenQA.Selenium.Remote;
 
 namespace XedoFramework.Core.Utilities
 {
-    class SaucelabsDriver : RemoteWebDriver
+    class CustomDriver : RemoteWebDriver
         {
-            public SaucelabsDriver(ICommandExecutor commandExecutor, ICapabilities desiredCapabilities)
+            public CustomDriver(ICommandExecutor commandExecutor, ICapabilities desiredCapabilities)
                 : base(commandExecutor, desiredCapabilities)
             {
             }
 
-            public SaucelabsDriver(ICapabilities desiredCapabilities)
+            public CustomDriver(ICapabilities desiredCapabilities)
                 : base(desiredCapabilities)
             {
             }
 
-            public SaucelabsDriver(Uri remoteAddress, ICapabilities desiredCapabilities)
+            public CustomDriver(Uri remoteAddress, ICapabilities desiredCapabilities)
                 : base(remoteAddress, desiredCapabilities)
             {
             }
 
-            public SaucelabsDriver(Uri remoteAddress, ICapabilities desiredCapabilities, TimeSpan commandTimeout)
+            public CustomDriver(Uri remoteAddress, ICapabilities desiredCapabilities, TimeSpan commandTimeout)
                 : base(remoteAddress, desiredCapabilities, commandTimeout)
             {
             }
