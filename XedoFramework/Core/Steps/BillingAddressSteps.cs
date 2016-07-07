@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using OpenQA.Selenium;
 using TechTalk.SpecFlow;
+using XedoFramework.Core.Contexts;
 using XedoFramework.Core.Steps.StepsSupport;
 using XedoFramework.Model.SupportTools;
 using XedoFramework.Model.TestObjects.Pages.PaymentProcess;
@@ -14,6 +15,10 @@ namespace XedoFramework.Core.Steps
     [Binding]
     public class BillingAddressSteps : StepBase
     {
+        public BillingAddressSteps(Context context) : base(context)
+        {
+        }
+
         [When(@"I complete billing")]
         public void WhenICompleteBilling()
         {

@@ -14,6 +14,9 @@ namespace XedoFramework.Model.SupportTools
                 case Site.Xedo:
                     url = Urls.Sites.Xedo;
                     break;
+                case Site.XedoPerformance:
+                    url = Urls.Sites.XedoPerformance;
+                    break;
                 default:
                     throw new ArgumentException("This site is not implemented");
             }

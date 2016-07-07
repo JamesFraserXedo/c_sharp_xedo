@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Linq.Expressions;
 using System.Threading;
 using XedoFramework.Model.TestObjects.Controls.Common.Footer;
 using XedoFramework.Model.TestObjects.Controls.Common.Header;
@@ -12,7 +11,7 @@ namespace XedoFramework.Model.TestObjects.Bases
         public Header Header;
         public Footer Footer;
 
-        protected int PageTimeoutSeconds = 15;
+        protected int PageTimeoutSeconds = 60;
 
         protected PageBase(TestSettings testSettings) : base(testSettings)
         {

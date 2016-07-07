@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Dynamic;
 using OpenQA.Selenium;
+using XedoFramework.Model.SupportTools;
 using XedoFramework.Model.TestObjects.Bases;
+using XedoFramework.Model.TestObjects.Controls.HomePage;
 
 namespace XedoFramework.Model.TestObjects.Pages
 {
@@ -11,15 +13,15 @@ namespace XedoFramework.Model.TestObjects.Pages
         {
         }
 
-        public IWebElement MainImageContent
+        public IWebElement HpHeroImage
         {
-            get { return Driver.FindElement(Locators.MainImageContent); }
+            get { return Driver.FindElement(Locators.HpHeroImage); }
         }
 
         //ToDo
         public override bool IsLoaded()
         {
-            return true;
+            return Driver.ElementDisplayed(Locators.HpHeroImage);
         }
 
         public override void SetupState()
@@ -27,25 +29,15 @@ namespace XedoFramework.Model.TestObjects.Pages
             Driver.Navigate().GoToUrl(BaseUrl);
         }
 
-        public void SelectPerfectMatch(string colour)
+        public PerfectMatchSelector PerfectMatchSelector
         {
-            Driver.FindElement(Locators.PerfectMatchColour(colour)).Click();
+            get { return new PerfectMatchSelector(TestSettings); }
         }
-
+        
         public class Locators
         {
-            public class Common
-            {
-                
-            }
-
-            public static readonly By MainImageContent = By.Id("hp-hero-Image");
-
-            public static By PerfectMatchColour(string colour)
-            {
-                return
-                    By.XPath(string.Format("//*[(@class='colour-display ga-event-click') and (@title='{0}')]", colour));
-            }
+            public static By HpHeroImage = By.Id("hp-hero-Image");
+            public static By LetsGetStartedButton = By.CssSelector("[data-galabel='Hero-Image-CTA-clicked']");
         }
     }
 }

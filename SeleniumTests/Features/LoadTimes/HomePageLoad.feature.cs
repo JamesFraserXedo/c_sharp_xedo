@@ -61,6 +61,106 @@ namespace SeleniumTests.Features.LoadTimes
             testRunner.CollectScenarioErrors();
         }
         
+        public virtual void FirstTimeHomePageLoadsInGoodTime(string site, string page, string timeout, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("First time home page loads in good time", exampleTags);
+#line 4
+this.ScenarioSetup(scenarioInfo);
+#line 5
+ testRunner.Given(string.Format("I am on the {0} OutfitBuilder page", site), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 6
+ testRunner.When(string.Format("I go to the {0} {1} page", site, page), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 7
+ testRunner.Then(string.Format("the page load time will be less than {0} seconds", timeout), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("First time home page loads in good time, Variant 0", SourceLine=10)]
+        public virtual void FirstTimeHomePageLoadsInGoodTime_Variant0()
+        {
+            this.FirstTimeHomePageLoadsInGoodTime("XedoPerformance", "Home", "3", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("First time home page loads in good time, Variant 1", SourceLine=10)]
+        public virtual void FirstTimeHomePageLoadsInGoodTime_Variant1()
+        {
+            this.FirstTimeHomePageLoadsInGoodTime("XedoPerformance", "Home", "3", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("First time home page loads in good time, Variant 2", SourceLine=10)]
+        public virtual void FirstTimeHomePageLoadsInGoodTime_Variant2()
+        {
+            this.FirstTimeHomePageLoadsInGoodTime("XedoPerformance", "Home", "3", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("First time home page loads in good time, Variant 3", SourceLine=10)]
+        public virtual void FirstTimeHomePageLoadsInGoodTime_Variant3()
+        {
+            this.FirstTimeHomePageLoadsInGoodTime("XedoPerformance", "Home", "3", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("First time home page loads in good time, Variant 4", SourceLine=10)]
+        public virtual void FirstTimeHomePageLoadsInGoodTime_Variant4()
+        {
+            this.FirstTimeHomePageLoadsInGoodTime("XedoPerformance", "Home", "3", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void SubsequentHomePageLoadsInGoodTime(string site, string page, string timeout, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Subsequent home page loads in good time", exampleTags);
+#line 17
+this.ScenarioSetup(scenarioInfo);
+#line 18
+ testRunner.Given(string.Format("I am on the {0} {1} page", site, page), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 19
+ testRunner.When(string.Format("I go to the {0} {1} page", site, page), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 20
+ testRunner.Then(string.Format("the page load time will be less than {0} seconds", timeout), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Subsequent home page loads in good time, Variant 0", SourceLine=23)]
+        public virtual void SubsequentHomePageLoadsInGoodTime_Variant0()
+        {
+            this.SubsequentHomePageLoadsInGoodTime("XedoPerformance", "Home", "3", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Subsequent home page loads in good time, Variant 1", SourceLine=23)]
+        public virtual void SubsequentHomePageLoadsInGoodTime_Variant1()
+        {
+            this.SubsequentHomePageLoadsInGoodTime("XedoPerformance", "Home", "3", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Subsequent home page loads in good time, Variant 2", SourceLine=23)]
+        public virtual void SubsequentHomePageLoadsInGoodTime_Variant2()
+        {
+            this.SubsequentHomePageLoadsInGoodTime("XedoPerformance", "Home", "3", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Subsequent home page loads in good time, Variant 3", SourceLine=23)]
+        public virtual void SubsequentHomePageLoadsInGoodTime_Variant3()
+        {
+            this.SubsequentHomePageLoadsInGoodTime("XedoPerformance", "Home", "3", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Subsequent home page loads in good time, Variant 4", SourceLine=23)]
+        public virtual void SubsequentHomePageLoadsInGoodTime_Variant4()
+        {
+            this.SubsequentHomePageLoadsInGoodTime("XedoPerformance", "Home", "3", ((string[])(null)));
+#line hidden
+        }
+        
         [TechTalk.SpecRun.TestRunCleanup()]
         public virtual void TestRunCleanup()
         {
@@ -114,6 +214,50 @@ namespace SeleniumTests.Features.LoadTimes
         public virtual void ScenarioCleanup()
         {
             testRunner.CollectScenarioErrors();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("First time home page loads in good time")]
+        [NUnit.Framework.TestCaseAttribute("XedoPerformance", "Home", "3", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("XedoPerformance", "Home", "3", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("XedoPerformance", "Home", "3", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("XedoPerformance", "Home", "3", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("XedoPerformance", "Home", "3", new string[0])]
+        public virtual void FirstTimeHomePageLoadsInGoodTime(string site, string page, string timeout, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("First time home page loads in good time", exampleTags);
+#line 4
+this.ScenarioSetup(scenarioInfo);
+#line 5
+ testRunner.Given(string.Format("I am on the {0} OutfitBuilder page", site), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 6
+ testRunner.When(string.Format("I go to the {0} {1} page", site, page), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 7
+ testRunner.Then(string.Format("the page load time will be less than {0} seconds", timeout), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Subsequent home page loads in good time")]
+        [NUnit.Framework.TestCaseAttribute("XedoPerformance", "Home", "3", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("XedoPerformance", "Home", "3", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("XedoPerformance", "Home", "3", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("XedoPerformance", "Home", "3", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("XedoPerformance", "Home", "3", new string[0])]
+        public virtual void SubsequentHomePageLoadsInGoodTime(string site, string page, string timeout, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Subsequent home page loads in good time", exampleTags);
+#line 17
+this.ScenarioSetup(scenarioInfo);
+#line 18
+ testRunner.Given(string.Format("I am on the {0} {1} page", site, page), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 19
+ testRunner.When(string.Format("I go to the {0} {1} page", site, page), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 20
+ testRunner.Then(string.Format("the page load time will be less than {0} seconds", timeout), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
         }
     }
 }

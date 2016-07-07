@@ -6,5 +6,6 @@ namespace XedoFramework.Core.Contexts
     {
         public Stopwatch Timer { get; set; }
         public long PageLoadTime { get; set; }
+        public long PageContentLoadTime { get; set; }
     }
 }

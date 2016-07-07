@@ -80,80 +80,80 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Perfect Match redirects to correct outfit builder tab, Black", SourceLine=11)]
+        [TechTalk.SpecRun.ScenarioAttribute("Perfect Match redirects to correct outfit builder tab, black", SourceLine=11)]
         public virtual void PerfectMatchRedirectsToCorrectOutfitBuilderTab_Black()
         {
-            this.PerfectMatchRedirectsToCorrectOutfitBuilderTab("Black", ((string[])(null)));
+            this.PerfectMatchRedirectsToCorrectOutfitBuilderTab("black", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Perfect Match redirects to correct outfit builder tab, Teal", SourceLine=11)]
+        [TechTalk.SpecRun.ScenarioAttribute("Perfect Match redirects to correct outfit builder tab, teal", SourceLine=11)]
         public virtual void PerfectMatchRedirectsToCorrectOutfitBuilderTab_Teal()
         {
-            this.PerfectMatchRedirectsToCorrectOutfitBuilderTab("Teal", ((string[])(null)));
+            this.PerfectMatchRedirectsToCorrectOutfitBuilderTab("teal", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Perfect Match redirects to correct outfit builder tab, Blue", SourceLine=11)]
+        [TechTalk.SpecRun.ScenarioAttribute("Perfect Match redirects to correct outfit builder tab, blue", SourceLine=11)]
         public virtual void PerfectMatchRedirectsToCorrectOutfitBuilderTab_Blue()
         {
-            this.PerfectMatchRedirectsToCorrectOutfitBuilderTab("Blue", ((string[])(null)));
+            this.PerfectMatchRedirectsToCorrectOutfitBuilderTab("blue", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Perfect Match redirects to correct outfit builder tab, Green", SourceLine=11)]
+        [TechTalk.SpecRun.ScenarioAttribute("Perfect Match redirects to correct outfit builder tab, green", SourceLine=11)]
         public virtual void PerfectMatchRedirectsToCorrectOutfitBuilderTab_Green()
         {
-            this.PerfectMatchRedirectsToCorrectOutfitBuilderTab("Green", ((string[])(null)));
+            this.PerfectMatchRedirectsToCorrectOutfitBuilderTab("green", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Perfect Match redirects to correct outfit builder tab, Purple", SourceLine=11)]
+        [TechTalk.SpecRun.ScenarioAttribute("Perfect Match redirects to correct outfit builder tab, purple", SourceLine=11)]
         public virtual void PerfectMatchRedirectsToCorrectOutfitBuilderTab_Purple()
         {
-            this.PerfectMatchRedirectsToCorrectOutfitBuilderTab("Purple", ((string[])(null)));
+            this.PerfectMatchRedirectsToCorrectOutfitBuilderTab("purple", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Perfect Match redirects to correct outfit builder tab, Gray", SourceLine=11)]
-        public virtual void PerfectMatchRedirectsToCorrectOutfitBuilderTab_Gray()
+        [TechTalk.SpecRun.ScenarioAttribute("Perfect Match redirects to correct outfit builder tab, grey", SourceLine=11)]
+        public virtual void PerfectMatchRedirectsToCorrectOutfitBuilderTab_Grey()
         {
-            this.PerfectMatchRedirectsToCorrectOutfitBuilderTab("Gray", ((string[])(null)));
+            this.PerfectMatchRedirectsToCorrectOutfitBuilderTab("grey", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Perfect Match redirects to correct outfit builder tab, Red", SourceLine=11)]
+        [TechTalk.SpecRun.ScenarioAttribute("Perfect Match redirects to correct outfit builder tab, red", SourceLine=11)]
         public virtual void PerfectMatchRedirectsToCorrectOutfitBuilderTab_Red()
         {
-            this.PerfectMatchRedirectsToCorrectOutfitBuilderTab("Red", ((string[])(null)));
+            this.PerfectMatchRedirectsToCorrectOutfitBuilderTab("red", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Perfect Match redirects to correct outfit builder tab, Tan", SourceLine=11)]
+        [TechTalk.SpecRun.ScenarioAttribute("Perfect Match redirects to correct outfit builder tab, tan", SourceLine=11)]
         public virtual void PerfectMatchRedirectsToCorrectOutfitBuilderTab_Tan()
         {
-            this.PerfectMatchRedirectsToCorrectOutfitBuilderTab("Tan", ((string[])(null)));
+            this.PerfectMatchRedirectsToCorrectOutfitBuilderTab("tan", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Perfect Match redirects to correct outfit builder tab, Pink", SourceLine=11)]
+        [TechTalk.SpecRun.ScenarioAttribute("Perfect Match redirects to correct outfit builder tab, pink", SourceLine=11)]
         public virtual void PerfectMatchRedirectsToCorrectOutfitBuilderTab_Pink()
         {
-            this.PerfectMatchRedirectsToCorrectOutfitBuilderTab("Pink", ((string[])(null)));
+            this.PerfectMatchRedirectsToCorrectOutfitBuilderTab("pink", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Perfect Match redirects to correct outfit builder tab, Yellow", SourceLine=11)]
+        [TechTalk.SpecRun.ScenarioAttribute("Perfect Match redirects to correct outfit builder tab, yellow", SourceLine=11)]
         public virtual void PerfectMatchRedirectsToCorrectOutfitBuilderTab_Yellow()
         {
-            this.PerfectMatchRedirectsToCorrectOutfitBuilderTab("Yellow", ((string[])(null)));
+            this.PerfectMatchRedirectsToCorrectOutfitBuilderTab("yellow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Perfect Match redirects to correct outfit builder tab, Ivory", SourceLine=11)]
+        [TechTalk.SpecRun.ScenarioAttribute("Perfect Match redirects to correct outfit builder tab, ivory", SourceLine=11)]
         public virtual void PerfectMatchRedirectsToCorrectOutfitBuilderTab_Ivory()
         {
-            this.PerfectMatchRedirectsToCorrectOutfitBuilderTab("Ivory", ((string[])(null)));
+            this.PerfectMatchRedirectsToCorrectOutfitBuilderTab("ivory", ((string[])(null)));
 #line hidden
         }
         
@@ -214,17 +214,17 @@ this.ScenarioSetup(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Perfect Match redirects to correct outfit builder tab")]
-        [NUnit.Framework.TestCaseAttribute("Black", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Teal", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Blue", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Green", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Purple", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Gray", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Red", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Tan", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Pink", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Yellow", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Ivory", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("black", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("teal", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("blue", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("green", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("purple", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("grey", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("red", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("tan", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("pink", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("yellow", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("ivory", new string[0])]
         public virtual void PerfectMatchRedirectsToCorrectOutfitBuilderTab(string colour, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Perfect Match redirects to correct outfit builder tab", exampleTags);

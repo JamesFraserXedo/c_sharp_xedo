@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using TechTalk.SpecFlow;
+using XedoFramework.Core.Contexts;
 using XedoFramework.Core.Steps.StepsSupport;
 using XedoFramework.Model.Sites;
 using XedoFramework.Model.SupportTools;
@@ -9,6 +10,10 @@ namespace XedoFramework.Core.Steps.SharedSteps
     [Binding]
     public sealed class ExclusiveAccessPageSteps : StepBase
     {
+        public ExclusiveAccessPageSteps(Context context) : base(context)
+        {
+        }
+
         [When(@"I enter ""(.*)"" into the exclusive access password box")]
         public void WhenIEnterIntoTheExclusiveAccessPasswordBox(string password)
         {

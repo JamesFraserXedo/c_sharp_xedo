@@ -9,14 +9,14 @@ Scenario Outline: Perfect Match redirects to correct outfit builder tab
 
 	Examples: 
 	| colour |
-	| Black  |
-	| Teal   |
-	| Blue	 |
-	| Green  |
-	| Purple |
-	| Gray	 |
-	| Red	 |
-	| Tan	 |
-	| Pink	 |
-	| Yellow |
-	| Ivory	 |
+	| black  |
+	| teal   |
+	| blue	 |
+	| green  |
+	| purple |
+	| grey	 |
+	| red	 |
+	| tan	 |
+	| pink	 |
+	| yellow |
+	| ivory	 |

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using TechTalk.SpecFlow;
+using XedoFramework.Core.Contexts;
 using XedoFramework.Core.Steps.StepsSupport;
 using XedoFramework.Model.SupportTools;
 using XedoFramework.Model.TestObjects.Controls.PartyBuilder;
@@ -13,6 +14,10 @@ namespace XedoFramework.Core.Steps
     [Binding]
     public class BuildPartySteps : StepBase
     {
+        public BuildPartySteps(Context context) : base(context)
+        {
+        }
+
         [When(@"I add (.*) additional party members")]
         public void WhenIAddAdditionalPartyMembers(int num)
         {

@@ -9,6 +9,8 @@
             public static string TMLewin = "https://suitup-uk-test-web-tmlewin.azurewebsites.net/";
             public static string AlfredAngelo = "";
             public static string Youngs = "https://uat-youngs-uk.azurewebsites.net/";
+
+            public static string XedoPerformance = "https://suitup-us-test-web-xedo.azurewebsites.net/";
         }
 
         public static class Pages

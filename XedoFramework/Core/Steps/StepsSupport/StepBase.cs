@@ -22,6 +22,12 @@ namespace XedoFramework.Core.Steps.StepsSupport
             return new TestSettings(Driver);
         }
 
+        public Context Context;
+        public StepBase(Context context)
+        {
+            Context = context;
+        }
+
         public static HomePage HomePage
         {
             get { return new HomePage(GetTestSettings()); }
@@ -116,13 +122,23 @@ namespace XedoFramework.Core.Steps.StepsSupport
             get { return new PaymentOptionsPage(GetTestSettings()); }
         }
 
+        
+        protected const string ContextName = "Context";
+
+        protected static Context CurrentContext
+        {
+            get { return (Context)ScenarioContext.Current[ContextName]; }
+            set { ScenarioContext.Current[ContextName] = value; }
+        }
+
+        /*
         protected const string QuickTryOnContextName = "QuickTryOnContext";
         protected const string CommonContextName = "CommonContext";
         protected const string UserJourneyContextName = "UserJourneyContext";
         protected const string LoadTimeContextName = "LoadTimeContext";
         
         
-        protected static QuickTryOnContext CurrentQuickTryOnContext
+        protected static QuickTryOnContext CurrentContext.QuickTryOn
         {
             get { return (QuickTryOnContext)ScenarioContext.Current[QuickTryOnContextName]; }
             set { ScenarioContext.Current[QuickTryOnContextName] = value; }
@@ -145,5 +161,6 @@ namespace XedoFramework.Core.Steps.StepsSupport
             get { return (LoadTimeContext)ScenarioContext.Current[LoadTimeContextName]; }
             set { ScenarioContext.Current[LoadTimeContextName] = value; }
         }
+         */
     }
 }

@@ -70,6 +70,7 @@ namespace XedoFramework.Core.Utilities
                 case Utils.BrowserType.FIREFOX:
                     var binary = new FirefoxBinary(TestsConfig.FirefoxPath);
                     var profile = new FirefoxProfile();
+                    profile.SetPreference("toolkit.startup.max_resumed_crashes", "-1");
                     return new FirefoxDriver(binary, profile);
 
                 case Utils.BrowserType.IE:
@@ -115,7 +116,6 @@ namespace XedoFramework.Core.Utilities
                     capabilities.SetCapability("selenium-version", seleniumVersion);
                     break;
                 case Utils.BrowserType.IE:
-
                     //var options = new InternetExplorerOptions { EnableNativeEvents = true };
 
                     capabilities = DesiredCapabilities.InternetExplorer();

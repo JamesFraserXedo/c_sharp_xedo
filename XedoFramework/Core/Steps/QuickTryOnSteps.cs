@@ -12,6 +12,10 @@ namespace XedoFramework.Core.Steps
     [Binding]
     public sealed class QuickTryOnSteps : StepBase
     {
+        public QuickTryOnSteps(Context context) : base(context)
+        {
+        }
+
         [When(@"I enter a preferred Try On date")]
         public void WhenIEnterAPreferredTryOnDate()
         {
@@ -47,22 +51,22 @@ namespace XedoFramework.Core.Steps
         public void GivenIEnterAnAddress1(string address)
         {
             QuickTryOnPage.InfoForm.AddressOneInputBox.SendKeys(address);
-            CurrentQuickTryOnContext.EnteredAddress1 = address;
+            CurrentContext.QuickTryOn.EnteredAddress1 = address;
         }
 
         [Given(@"I enter a city (.*)")]
         public void GivenIEnterACity(string city)
         {
             QuickTryOnPage.InfoForm.CityInputBox.SendKeys(city);
-            CurrentQuickTryOnContext.EnteredCity = city;
+            CurrentContext.QuickTryOn.EnteredCity = city;
         }
 
         [Given(@"I select a state (.*)")]
         public void GivenISelectAState(string state)
         {
             QuickTryOnPage.InfoForm.SelectStateByName(state);
-            CurrentQuickTryOnContext.EnteredState = QuickTryOnPage.InfoForm.StateSelect.SelectedOption.Text;
-            CurrentQuickTryOnContext.EnteredStateCode =
+            CurrentContext.QuickTryOn.EnteredState = QuickTryOnPage.InfoForm.StateSelect.SelectedOption.Text;
+            CurrentContext.QuickTryOn.EnteredStateCode =
                 QuickTryOnPage.InfoForm.StateSelect.SelectedOption.GetAttribute("value");
         }
 
@@ -70,7 +74,7 @@ namespace XedoFramework.Core.Steps
         public void GivenIEnterAZipCode(string zip)
         {
             QuickTryOnPage.InfoForm.ZipInputBox.SendKeys(zip);
-            CurrentQuickTryOnContext.EnteredZip = zip;
+            CurrentContext.QuickTryOn.EnteredZip = zip;
         }
 
         [When(@"I confirm the delivery address")]
@@ -96,10 +100,10 @@ namespace XedoFramework.Core.Steps
         public void ThenTheAddressShouldBeSavedAsEntered()
         {
             var savedAddress = QuickTryOnPage.InfoForm.ConfirmedAddress;
-            Assert.IsTrue(savedAddress.Contains(CurrentQuickTryOnContext.EnteredAddress1));
-            Assert.IsTrue(savedAddress.Contains(CurrentQuickTryOnContext.EnteredCity));
-            Assert.IsTrue(savedAddress.Contains(CurrentQuickTryOnContext.EnteredState) || savedAddress.Contains(CurrentQuickTryOnContext.EnteredStateCode));
-            Assert.IsTrue(savedAddress.Contains(CurrentQuickTryOnContext.EnteredZip));
+            Assert.IsTrue(savedAddress.Contains(CurrentContext.QuickTryOn.EnteredAddress1));
+            Assert.IsTrue(savedAddress.Contains(CurrentContext.QuickTryOn.EnteredCity));
+            Assert.IsTrue(savedAddress.Contains(CurrentContext.QuickTryOn.EnteredState) || savedAddress.Contains(CurrentContext.QuickTryOn.EnteredStateCode));
+            Assert.IsTrue(savedAddress.Contains(CurrentContext.QuickTryOn.EnteredZip));
         }
 
         [Then(@"I should be warned that the first_name field is required")]
@@ -177,13 +181,13 @@ namespace XedoFramework.Core.Steps
         public void WhenTheCustomerAddsAPocketSquare()
         {
             var element = QuickTryOnPage.ColourSelect.ChooseFirstAvailableColour();
-            CurrentQuickTryOnContext.ThePocketSquareColour = element.GetAttribute("title");
+            CurrentContext.QuickTryOn.ThePocketSquareColour = element.GetAttribute("title");
         }
 
         [Then(@"the Pocket Square is added to the Try-On")]
         public void ThenThePocketSquareIsAddedToTheTry_On()
         {
-            var squareColour = CurrentQuickTryOnContext.ThePocketSquareColour;
+            var squareColour = CurrentContext.QuickTryOn.ThePocketSquareColour;
             Assert.IsTrue(QuickTryOnPage.ColourSelect.SelectedColours.Contains(squareColour));
         }
 
@@ -205,7 +209,7 @@ namespace XedoFramework.Core.Steps
         [Then(@"the new Pocket Square is not added to the Try-On")]
         public void ThenTheNewPocketSquareIsNotAddedToTheTry_On()
         {
-            var squareColour = CurrentQuickTryOnContext.ThePocketSquareColour;
+            var squareColour = CurrentContext.QuickTryOn.ThePocketSquareColour;
             Assert.IsFalse(QuickTryOnPage.ColourSelect.SelectedColours.Contains(squareColour));
         }
 
@@ -221,14 +225,14 @@ namespace XedoFramework.Core.Steps
         [When(@"the Customer removes a Pocket Square")]
         public void WhenTheCustomerRemovesAPocketSquare()
         {
-            CurrentQuickTryOnContext.ThePocketSquareColour = QuickTryOnPage.ColourSelect.FirstSelectedColour.Name;
+            CurrentContext.QuickTryOn.ThePocketSquareColour = QuickTryOnPage.ColourSelect.FirstSelectedColour.Name;
             QuickTryOnPage.ColourSelect.FirstSelectedColour.Remove();
         }
 
         [Then(@"the Pocket Square is removed from the Try-On")]
         public void ThenThePocketSquareIsRemovedFromTheTry_On()
         {
-            var squareColour = CurrentQuickTryOnContext.ThePocketSquareColour;
+            var squareColour = CurrentContext.QuickTryOn.ThePocketSquareColour;
             Assert.IsFalse(QuickTryOnPage.ColourSelect.SelectedColours.Contains(squareColour));
         }
 
@@ -236,7 +240,7 @@ namespace XedoFramework.Core.Steps
         public void WhenTheCustomerRemovesAPocketSquareByRe_SelectingThePocketSquareColour()
         {
             var element = QuickTryOnPage.ColourSelect.DeselectFirstSelectedColour();
-            CurrentQuickTryOnContext.ThePocketSquareColour = element.GetAttribute("title");
+            CurrentContext.QuickTryOn.ThePocketSquareColour = element.GetAttribute("title");
         }
 
         [Given(@"the Try-On contains zero Pocket Squares")]
@@ -272,14 +276,14 @@ namespace XedoFramework.Core.Steps
             if (!QuickTryOnPage.ColourSelect.FirstSelectedColour.Selected)
             {
                 var element = QuickTryOnPage.ColourSelect.ChooseFirstAvailableColour();
-                CurrentQuickTryOnContext.ThePocketSquareColour = element.GetAttribute("title");
+                CurrentContext.QuickTryOn.ThePocketSquareColour = element.GetAttribute("title");
             }
         }
 
         [When(@"the Customer attempts to add the same Pocket Square to the Try-On")]
         public void WhenTheCustomerAttemptsToAddTheSamePocketSquareToTheTry_On()
         {
-            QuickTryOnPage.ColourSelect.SelectColour(CurrentQuickTryOnContext.ThePocketSquareColour);
+            QuickTryOnPage.ColourSelect.SelectColour(CurrentContext.QuickTryOn.ThePocketSquareColour);
         }
 
         [Then(@"the Pocket Square is not added to the Try-On twice")]
@@ -291,14 +295,14 @@ namespace XedoFramework.Core.Steps
         [When(@"I select the suggested delivery address from Fedex")]
         public void WhenISelectTheSuggestedDeliveryAddressFromFedex()
         {
-            CurrentQuickTryOnContext.FedexSuggestedAddress = QuickTryOnPage.InfoForm.SuggestedAddressLabel.Text;
+            CurrentContext.QuickTryOn.FedexSuggestedAddress = QuickTryOnPage.InfoForm.SuggestedAddressLabel.Text;
             QuickTryOnPage.InfoForm.ConfirmSuggestedAddressButton.Click();
         }
 
         [Then(@"the address should be saved as suggested by Fedex")]
         public void ThenTheAddressShouldBeSavedAsSuggestedByFedex()
         {
-            Assert.IsTrue(QuickTryOnPage.InfoForm.ConfirmedAddress == CurrentQuickTryOnContext.FedexSuggestedAddress);
+            Assert.IsTrue(QuickTryOnPage.InfoForm.ConfirmedAddress == CurrentContext.QuickTryOn.FedexSuggestedAddress);
         }
 
         [Given(@"I choose to save the address as my default address")]
@@ -327,10 +331,10 @@ namespace XedoFramework.Core.Steps
             var matched = false;
             foreach (var address in AddressBookPage.Addresses)
             {
-                if (address.Contains(CurrentQuickTryOnContext.EnteredAddress1) &&
-                    address.Contains(CurrentQuickTryOnContext.EnteredCity) &&
-                    (address.Contains(CurrentQuickTryOnContext.EnteredState) || address.Contains(CurrentQuickTryOnContext.EnteredStateCode)) &&
-                    address.Contains(CurrentQuickTryOnContext.EnteredZip))
+                if (address.Contains(CurrentContext.QuickTryOn.EnteredAddress1) &&
+                    address.Contains(CurrentContext.QuickTryOn.EnteredCity) &&
+                    (address.Contains(CurrentContext.QuickTryOn.EnteredState) || address.Contains(CurrentContext.QuickTryOn.EnteredStateCode)) &&
+                    address.Contains(CurrentContext.QuickTryOn.EnteredZip))
                 {
                     matched = true;
                 }
@@ -350,10 +354,10 @@ namespace XedoFramework.Core.Steps
             Header.GoToProfileSection();
             ProfilePage.GoToAddressBookTab();
             var selectedAddress = AddressBookPage.SelectedAddress;
-            Assert.IsTrue(selectedAddress.Contains(CurrentQuickTryOnContext.EnteredAddress1));
-            Assert.IsTrue(selectedAddress.Contains(CurrentQuickTryOnContext.EnteredCity));
-            Assert.IsTrue(selectedAddress.Contains(CurrentQuickTryOnContext.EnteredState) || selectedAddress.Contains(CurrentQuickTryOnContext.EnteredStateCode));
-            Assert.IsTrue(selectedAddress.Contains(CurrentQuickTryOnContext.EnteredZip));
+            Assert.IsTrue(selectedAddress.Contains(CurrentContext.QuickTryOn.EnteredAddress1));
+            Assert.IsTrue(selectedAddress.Contains(CurrentContext.QuickTryOn.EnteredCity));
+            Assert.IsTrue(selectedAddress.Contains(CurrentContext.QuickTryOn.EnteredState) || selectedAddress.Contains(CurrentContext.QuickTryOn.EnteredStateCode));
+            Assert.IsTrue(selectedAddress.Contains(CurrentContext.QuickTryOn.EnteredZip));
         }
     }
 }

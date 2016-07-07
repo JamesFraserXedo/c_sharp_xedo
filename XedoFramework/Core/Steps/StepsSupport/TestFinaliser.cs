@@ -1,4 +1,5 @@
-﻿using XedoFramework.Core.Utilities;
+﻿using XedoFramework.Core.Contexts;
+using XedoFramework.Core.Utilities;
 using System;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Events;
@@ -8,6 +9,10 @@ namespace XedoFramework.Core.Steps.StepsSupport
 {
     public class TestFinaliser : StepBase
     {
+        public TestFinaliser(Context context) : base(context)
+        {
+        }
+
         public static void TearDown()
         {
             switch (WebDriverFactory.GetTestExecutionEnvironment())

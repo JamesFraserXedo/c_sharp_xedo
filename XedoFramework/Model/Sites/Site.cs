@@ -3,6 +3,7 @@
     public enum Site
     {
         Xedo,
-        PromGuy
+        PromGuy,
+        XedoPerformance
     }
 }

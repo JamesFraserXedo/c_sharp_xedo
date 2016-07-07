@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using NUnit.Framework;
 using OpenQA.Selenium;
-using XedoFramework.Core.Steps.StepsSupport;
 using XedoFramework.Model.Sites;
 using XedoFramework.Model.SupportTools;
 using XedoFramework.Model.TestObjects.Bases;
